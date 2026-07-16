@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bdupkh0grwy27"]
+
+[ext_resource type="PackedScene" uid="uid://lqyku5wn2wo0" path="res://Player/MovementController.tscn" id="1_t1jcr"]
+[ext_resource type="PackedScene" uid="uid://b8drbos167vf8" path="res://Player/Head.tscn" id="2_41iu1"]
+[ext_resource type="Script" uid="uid://dvpiy7xtc0y0n" path="res://Player/Sprint.gd" id="3_bgqcu"]
+[ext_resource type="Script" uid="uid://cw5aospvvf7fp" path="res://Player/interaction.gd" id="4_8g4oa"]
+
+[node name="Player" unique_id=1117564067 node_paths=PackedStringArray("camera") instance=ExtResource("1_t1jcr")]
+speed = 5
+camera = NodePath("Head")
+
+[node name="Head" parent="." index="1" unique_id=315625654 instance=ExtResource("2_41iu1")]
+
+[node name="Sprint" type="Node" parent="." index="2" unique_id=1121165758]
+script = ExtResource("3_bgqcu")
+
+[node name="Interaction" type="Node3D" parent="." index="3" unique_id=1300558987]
+process_mode = 4
+script = ExtResource("4_8g4oa")
