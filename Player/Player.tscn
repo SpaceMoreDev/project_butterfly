@@ -13,6 +13,7 @@ camera = NodePath("Head")
 
 [node name="Sprint" type="Node" parent="." index="2" unique_id=1121165758]
 script = ExtResource("3_bgqcu")
+sprint_speed = 7
 
 [node name="Interaction" type="Node3D" parent="." index="3" unique_id=1300558987]
 process_mode = 4

@@ -24,7 +24,7 @@ func _enter_tree() -> void:
 	cam = get_node(cam_path)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
 	mouse_sensitivity = mouse_sensitivity / 1000
 	y_limit = deg_to_rad(y_limit)
 	rot = controller.rotation

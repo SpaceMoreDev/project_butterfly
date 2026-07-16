@@ -2,16 +2,18 @@
 
 [ext_resource type="Shader" uid="uid://dmbhp7o8hiis7" path="res://shaders/vhs.gdshader" id="1_01fhm"]
 [ext_resource type="Script" uid="uid://dnlcqu80mv56" path="res://Scene/rotate.gd" id="1_5ycrs"]
+[ext_resource type="Script" uid="uid://bfufojy8xh11b" path="res://Scene/node_3d.gd" id="1_suw74"]
 [ext_resource type="Shader" uid="uid://b1pg71a23bxt4" path="res://shaders/pixelize.gdshader" id="2_pn03a"]
+[ext_resource type="Texture2D" uid="uid://doe8bl58epvia" path="res://prototype textures/Dark/texture_01.png" id="4_yec6x"]
 [ext_resource type="PackedScene" uid="uid://bdupkh0grwy27" path="res://Player/Player.tscn" id="5_yec6x"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_aeui4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5ycrs"]
 shader = ExtResource("1_01fhm")
-shader_parameter/wiggle = 0.03
+shader_parameter/wiggle = 0.0499999988824
 shader_parameter/wiggle_speed = 25.0
-shader_parameter/smear = 1.0
+shader_parameter/smear = 1.46800006973
 shader_parameter/blur_samples = 15
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v03h0"]
@@ -31,6 +33,11 @@ shader_parameter/tint_color = Vector3(0.95, 1.03, 0.9)
 shader_parameter/tint_strength = 0.15
 shader_parameter/viewport_size_override = Vector2(0, 0)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_suw74"]
+albedo_texture = ExtResource("4_yec6x")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+
 [sub_resource type="BoxMesh" id="BoxMesh_dpcb8"]
 size = Vector3(18.057617, 0.12597656, 13.592041)
 
@@ -38,6 +45,7 @@ size = Vector3(18.057617, 0.12597656, 13.592041)
 data = PackedVector3Array(-9.0288, 0.063, 6.796, 9.0288, 0.063, 6.796, -9.0288, -0.063, 6.796, 9.0288, 0.063, 6.796, 9.0288, -0.063, 6.796, -9.0288, -0.063, 6.796, 9.0288, 0.063, -6.796, -9.0288, 0.063, -6.796, 9.0288, -0.063, -6.796, -9.0288, 0.063, -6.796, -9.0288, -0.063, -6.796, 9.0288, -0.063, -6.796, 9.0288, 0.063, 6.796, 9.0288, 0.063, -6.796, 9.0288, -0.063, 6.796, 9.0288, 0.063, -6.796, 9.0288, -0.063, -6.796, 9.0288, -0.063, 6.796, -9.0288, 0.063, -6.796, -9.0288, 0.063, 6.796, -9.0288, -0.063, -6.796, -9.0288, 0.063, 6.796, -9.0288, -0.063, 6.796, -9.0288, -0.063, -6.796, 9.0288, 0.063, 6.796, -9.0288, 0.063, 6.796, 9.0288, 0.063, -6.796, -9.0288, 0.063, 6.796, -9.0288, 0.063, -6.796, 9.0288, 0.063, -6.796, -9.0288, -0.063, 6.796, 9.0288, -0.063, 6.796, -9.0288, -0.063, -6.796, 9.0288, -0.063, 6.796, 9.0288, -0.063, -6.796, -9.0288, -0.063, -6.796)
 
 [node name="Node3D" type="Node3D" unique_id=1053958250]
+script = ExtResource("1_suw74")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1500577638]
 transform = Transform3D(0.10628059, -0.9660936, 0.23530313, 0.39767686, 0.25819203, 0.8804487, -0.9113493, 0, 0.41163388, 2.7018065, 1.0511191, 1.5195262)
@@ -86,6 +94,7 @@ grow_vertical = 2
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=174169684]
 transform = Transform3D(1, 0, 3.5527137e-15, 0, 1, 8.881784e-16, 0, 0, 1, 0.0070254803, -1.1687949, 1.4210855e-14)
+material_override = SubResource("StandardMaterial3D_suw74")
 mesh = SubResource("BoxMesh_dpcb8")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2" unique_id=611792758]
