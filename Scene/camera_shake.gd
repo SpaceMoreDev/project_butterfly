@@ -1,7 +1,7 @@
 extends Node3D
 @export var camera: Camera3D
 @export var randomStrength:float = 0.25
-@export var shakeFade:float = 5.0
+@export var shakeFade:float = 10.0
 
 var rng = RandomNumberGenerator.new()
 
@@ -17,7 +17,8 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("shake_test"):
 		apply_shake()
 	
-	if shake_strength>0:
+	if  !is_zero_approx(shake_strength):
+		
 		shake_strength = lerpf(shake_strength,0,shakeFade*delta)
 		var randomoffset =  randomOffset()
 		camera.h_offset = randomoffset.x

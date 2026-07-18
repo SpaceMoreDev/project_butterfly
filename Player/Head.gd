@@ -14,7 +14,7 @@ var rot := Vector3()
 var can_look = true
 
 @export_group("HeadBob")
-@export var headbob_frequency :=2.0
+@export var headbob_frequency :=3.0
 @export var headbob_amplitude :=0.2
 @export var headbob_time :=0.0
 @export var vel_length :=0.0

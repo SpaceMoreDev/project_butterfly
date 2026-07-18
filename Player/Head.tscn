@@ -4,18 +4,23 @@
 [ext_resource type="Script" uid="uid://drd7e2dp6nt0w" path="res://Scene/camera_shake.gd" id="2_irtxf"]
 
 [node name="Head" type="Node3D" unique_id=955601237]
+physics_interpolation_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.64, 0)
 script = ExtResource("1_enjfg")
 
 [node name="Camera" type="Camera3D" parent="." unique_id=1478984677]
+physics_interpolation_mode = 1
 current = true
 fov = 60.0
 
 [node name="Hand" type="Node3D" parent="." unique_id=1287922249]
+physics_interpolation_mode = 1
 
 [node name="CameraShake" type="Node3D" parent="." unique_id=5202881 node_paths=PackedStringArray("camera")]
+physics_interpolation_mode = 1
 transform = Transform3D(1, 0, 3.5527137e-15, 0, 1, 8.881784e-16, 0, 0, 1, 0, 0, 0)
 script = ExtResource("2_irtxf")
 camera = NodePath("../Camera")
 
 [node name="HeadBob" type="Node3D" parent="." unique_id=1905633388]
+physics_interpolation_mode = 1

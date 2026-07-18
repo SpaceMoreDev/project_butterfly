@@ -6,15 +6,21 @@
 [ext_resource type="Script" uid="uid://cw5aospvvf7fp" path="res://Player/interaction.gd" id="4_8g4oa"]
 
 [node name="Player" unique_id=1117564067 node_paths=PackedStringArray("camera") instance=ExtResource("1_t1jcr")]
+physics_interpolation_mode = 1
 speed = 5
 camera = NodePath("Head")
+
+[node name="Collision" parent="." index="0"]
+physics_interpolation_mode = 1
 
 [node name="Head" parent="." index="1" unique_id=315625654 instance=ExtResource("2_41iu1")]
 
 [node name="Sprint" type="Node" parent="." index="2" unique_id=1121165758]
+physics_interpolation_mode = 1
 script = ExtResource("3_bgqcu")
 sprint_speed = 7
 
 [node name="Interaction" type="Node3D" parent="." index="3" unique_id=1300558987]
 process_mode = 4
+physics_interpolation_mode = 1
 script = ExtResource("4_8g4oa")
