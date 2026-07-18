@@ -6,7 +6,7 @@
 [ext_resource type="Shader" uid="uid://b1pg71a23bxt4" path="res://shaders/pixelize.gdshader" id="2_pn03a"]
 [ext_resource type="Texture2D" uid="uid://doe8bl58epvia" path="res://prototype textures/Dark/texture_01.png" id="4_yec6x"]
 [ext_resource type="PackedScene" uid="uid://bdupkh0grwy27" path="res://Player/Player.tscn" id="5_yec6x"]
-[ext_resource type="Script" uid="uid://bwv8yvtd4wijj" path="res://Scene/butterfly.gd" id="7_fh2dk"]
+[ext_resource type="PackedScene" uid="uid://cvuiypa78lye" path="res://Scene/butterfly.tscn" id="7_fh2dk"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_aeui4"]
 
@@ -48,10 +48,6 @@ size = Vector3(18.057617, 0.12597656, 13.592041)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_v03h0"]
 data = PackedVector3Array(-9.0288, 0.063, 6.796, 9.0288, 0.063, 6.796, -9.0288, -0.063, 6.796, 9.0288, 0.063, 6.796, 9.0288, -0.063, 6.796, -9.0288, -0.063, 6.796, 9.0288, 0.063, -6.796, -9.0288, 0.063, -6.796, 9.0288, -0.063, -6.796, -9.0288, 0.063, -6.796, -9.0288, -0.063, -6.796, 9.0288, -0.063, -6.796, 9.0288, 0.063, 6.796, 9.0288, 0.063, -6.796, 9.0288, -0.063, 6.796, 9.0288, 0.063, -6.796, 9.0288, -0.063, -6.796, 9.0288, -0.063, 6.796, -9.0288, 0.063, -6.796, -9.0288, 0.063, 6.796, -9.0288, -0.063, -6.796, -9.0288, 0.063, 6.796, -9.0288, -0.063, 6.796, -9.0288, -0.063, -6.796, 9.0288, 0.063, 6.796, -9.0288, 0.063, 6.796, 9.0288, 0.063, -6.796, -9.0288, 0.063, 6.796, -9.0288, 0.063, -6.796, 9.0288, 0.063, -6.796, -9.0288, -0.063, 6.796, 9.0288, -0.063, 6.796, -9.0288, -0.063, -6.796, 9.0288, -0.063, 6.796, 9.0288, -0.063, -6.796, -9.0288, -0.063, -6.796)
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_suw74"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_aeui4"]
 
 [node name="Node3D" type="Node3D" unique_id=1053958250]
 script = ExtResource("1_suw74")
@@ -123,16 +119,26 @@ carve_navigation_mesh = true
 [node name="Player" parent="." unique_id=1117564067 instance=ExtResource("5_yec6x")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4, 1, 0)
 
-[node name="butterfly" type="Area3D" parent="." unique_id=1166223024]
+[node name="butterfly" parent="." unique_id=831181154 instance=ExtResource("7_fh2dk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
-script = ExtResource("7_fh2dk")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="butterfly" unique_id=393666757]
-transform = Transform3D(0.415, 0, 0, 0, 0.415, 0, 0, 0, 0.415, 0, 0, 0)
-shape = SubResource("SphereShape3D_suw74")
+[node name="butterfly8" parent="." unique_id=901612626 instance=ExtResource("7_fh2dk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.4880757, 0, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="butterfly" unique_id=1102692784]
-transform = Transform3D(0.415, 0, 0, 0, 0.415, 0, 0, 0, 0.415, 0, 0, 0)
-mesh = SubResource("SphereMesh_aeui4")
+[node name="butterfly2" parent="." unique_id=1861274953 instance=ExtResource("7_fh2dk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -4.134536)
 
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="butterfly" unique_id=865666023]
+[node name="butterfly3" parent="." unique_id=857456273 instance=ExtResource("7_fh2dk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 4.003254)
+
+[node name="butterfly4" parent="." unique_id=1653753595 instance=ExtResource("7_fh2dk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16525877, 0, 4.003254)
+
+[node name="butterfly5" parent="." unique_id=1566983632 instance=ExtResource("7_fh2dk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1685634, 0, 4.003254)
+
+[node name="butterfly6" parent="." unique_id=1478211235 instance=ExtResource("7_fh2dk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1685634, 0, -4.546129)
+
+[node name="butterfly7" parent="." unique_id=67128973 instance=ExtResource("7_fh2dk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24205017, 0, -4.546129)

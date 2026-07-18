@@ -7,7 +7,7 @@ var can_interact:bool:
 	get:
 		return controller.is_interacting
 
-const RAY_LENGTH = 5
+const RAY_LENGTH = 6
 
 @export_node_path("MovementController") var c_path := NodePath("../")
 @onready var controller: MovementController = get_node(c_path)

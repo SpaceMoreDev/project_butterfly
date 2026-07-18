@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cvuiypa78lye"]
+
+[ext_resource type="Script" uid="uid://bwv8yvtd4wijj" path="res://Scene/butterfly.gd" id="1_oa5ua"]
+[ext_resource type="PackedScene" uid="uid://bbs3vu0slfn76" path="res://butterfly.glb" id="2_fs35t"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_aeui4"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_suw74"]
+
+[node name="butterfly" type="Area3D" unique_id=831181154]
+script = ExtResource("1_oa5ua")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=151729297]
+transform = Transform3D(0.22539108, 0, 0, 0, 0.22539108, 0, 0, 0, 0.22539108, 0, 0, -0.34547222)
+visible = false
+mesh = SubResource("SphereMesh_aeui4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=354048803]
+transform = Transform3D(0.415, 0, 0, 0, 0.415, 0, 0, 0, 0.415, 0, 0, 0)
+shape = SubResource("SphereShape3D_suw74")
+
+[node name="butterfly" parent="." unique_id=2011391745 instance=ExtResource("2_fs35t")]
+transform = Transform3D(0.11, 0, 0, 0, 0.11, 0, 0, 0, 0.11, 0, 0, 0)
+
+[node name="AnimationPlayer" parent="butterfly" index="1" unique_id=505812566]
+autoplay = &"Butterfly"
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1498820510]
+avoidance_enabled = true
+
+[editable path="butterfly"]

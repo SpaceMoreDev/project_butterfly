@@ -6,7 +6,7 @@ class_name ButterFly
 # when in range of a landing collider the butterfly will land.
 # repeat
 @onready var nav_agent :NavigationAgent3D = $NavigationAgent3D
-#@onready var area3D :Area3D = $Area3D
+@onready var anim :AnimationPlayer = $butterfly/AnimationPlayer
 var height : float = -1
 var move_speed : float = -1
 
@@ -17,9 +17,14 @@ var target_pos : Vector3 = Vector3.ZERO
 
 func _ready() -> void:
 	nav = get_tree().get_first_node_in_group("navmesh") as NavigationRegion3D
-
-	height = Global.butterflies_height
+	
+	var rnd = RandomNumberGenerator.new()
+	var random_height_offset = rnd.randf_range(-1, 1)
+	nav_agent.path_height_offset = Global.butterflies_height + random_height_offset
 	move_speed = Global.butterflies_speed
+	
+	var offset : float = rnd.randf_range(0, anim.current_animation_length)
+	anim.advance(offset)
 	
 	get_random_pos()
 
@@ -38,7 +43,7 @@ func move_vec(tar_vec, weight)-> Vector3:
 	var tar = global_position+dir
 	
 	new_vec = new_vec.move_toward(tar, weight)
-	return Vector3(new_vec.x,height,new_vec.z)
+	return new_vec
 
 func _physics_process(delta: float) -> void:
 	if nav_agent.is_navigation_finished():
@@ -46,3 +51,7 @@ func _physics_process(delta: float) -> void:
 	
 	var next_pos = nav_agent.get_next_path_position()
 	global_position = move_vec(next_pos, move_speed * delta)
+	
+	var dir = global_position.direction_to(next_pos)
+	var lookdir = atan2(-dir.x, -dir.z)
+	rotation.y = lerp(rotation.y, lookdir,3 * delta)
