@@ -1,4 +1,4 @@
-extends Node3D
+extends Interactable
 class_name ButterFly
 
 # get random point.
@@ -6,6 +6,7 @@ class_name ButterFly
 # when in range of a landing collider the butterfly will land.
 # repeat
 @onready var nav_agent :NavigationAgent3D = $NavigationAgent3D
+#@onready var area3D :Area3D = $Area3D
 var height : float = -1
 var move_speed : float = -1
 
@@ -16,7 +17,7 @@ var target_pos : Vector3 = Vector3.ZERO
 
 func _ready() -> void:
 	nav = get_tree().get_first_node_in_group("navmesh") as NavigationRegion3D
-	
+
 	height = Global.butterflies_height
 	move_speed = Global.butterflies_speed
 	
@@ -28,6 +29,8 @@ func get_random_pos():
 	(nav_agent as NavigationAgent3D).target_position = random_point
 	
 
+func Interact():
+	queue_free()
 
 func move_vec(tar_vec, weight)-> Vector3:
 	var new_vec = global_position
