@@ -1,10 +1,6 @@
 extends Interactable
 class_name ButterFly
 
-# get random point.
-# move lerp to the point.
-# when in range of a landing collider the butterfly will land.
-# repeat
 @onready var nav_agent :NavigationAgent3D = $NavigationAgent3D
 @onready var anim :AnimationPlayer = $butterfly/AnimationPlayer
 var height : float = -1

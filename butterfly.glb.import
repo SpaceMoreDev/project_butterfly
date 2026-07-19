@@ -2098,6 +2098,13 @@ _subresources={
 "slices/amount": 0
 }
 },
+"materials": {
+"Empty": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://bf.tres",
+"use_external/path": "uid://c07rinqrhg1v4"
+}
+},
 "nodes": {
 "PATH:AnimationPlayer": {
 "optimizer/enabled": false

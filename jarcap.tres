@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cnv2lsd18d5a0"]
+
+[ext_resource type="Texture2D" uid="uid://dvliacc0jcfj7" path="res://Jar Color.png" id="1_ymrlj"]
+
+[resource]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_ymrlj")
+texture_filter = 0

@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c07rinqrhg1v4"]
+
+[ext_resource type="Texture2D" uid="uid://bcx2jdhcske5i" path="res://butterfly_butterfly.png" id="1_hsyfb"]
+
+[resource]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("1_hsyfb")

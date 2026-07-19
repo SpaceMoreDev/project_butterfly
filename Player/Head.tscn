@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bsw8c4y6ylwl4" path="res://Player/Head.gd" id="1_enjfg"]
 [ext_resource type="Script" uid="uid://drd7e2dp6nt0w" path="res://Scene/camera_shake.gd" id="2_irtxf"]
+[ext_resource type="Script" uid="uid://m6xpvqpujsgf" path="res://Player/jar.gd" id="3_3wvon"]
+[ext_resource type="PackedScene" uid="uid://cvuiypa78lye" path="res://Scene/butterfly.tscn" id="3_adwmk"]
+[ext_resource type="PackedScene" uid="uid://c4wn4nxwmiebn" path="res://container.blend" id="3_oowo0"]
 
 [node name="Head" type="Node3D" unique_id=955601237]
 physics_interpolation_mode = 1
@@ -24,3 +27,22 @@ camera = NodePath("../Camera")
 
 [node name="HeadBob" type="Node3D" parent="." unique_id=1905633388]
 physics_interpolation_mode = 1
+
+[node name="Jar" type="Node3D" parent="." unique_id=720132064]
+transform = Transform3D(-8.168722e-09, -1.4992411e-09, 0.19, -0.034298636, 0.18687858, 0, -0.18687858, -0.034298636, -8.305164e-09, -0.439, -1.3212978, -0.838)
+script = ExtResource("3_3wvon")
+
+[node name="container" parent="Jar" unique_id=1797219808 instance=ExtResource("3_oowo0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)
+
+[node name="butterfly" parent="Jar/container" unique_id=831181154 instance=ExtResource("3_adwmk")]
+transform = Transform3D(1.477632, 0.040144965, 0.14218652, 0.04014501, 1.2662671, -0.77471346, -0.14218652, 0.77471346, 1.2588992, -0.104194164, 0.56771123, 0.021881342)
+script = null
+
+[node name="butterfly2" parent="Jar/container" unique_id=2037011038 instance=ExtResource("3_adwmk")]
+transform = Transform3D(-1.3142133, -0.6703831, -0.16927792, -0.47225446, 1.1358606, -0.8318782, 0.505019, -0.6823725, -1.2184206, 0.1636672, 0.9377645, -0.17742753)
+script = null
+
+[node name="butterfly3" parent="Jar/container" unique_id=736761814 instance=ExtResource("3_adwmk")]
+transform = Transform3D(0.55324453, -0.8895191, -1.0525693, -0.1295118, 1.0956415, -0.9939923, 1.3719958, 0.4621155, 0.33060893, -0.020831585, 0.34831893, -0.06196332)
+script = null

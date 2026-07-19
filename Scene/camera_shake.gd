@@ -14,7 +14,7 @@ func apply_shake():
 	shake_strength = randomStrength
 
 func _process(delta: float) -> void: 
-	if Input.is_action_just_pressed("shake_test"):
+	if Input.is_action_just_pressed("interact"):
 		apply_shake()
 	
 	if  !is_zero_approx(shake_strength):
