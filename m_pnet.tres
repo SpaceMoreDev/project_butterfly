@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c20uodv2m5itn"]
+
+[ext_resource type="Texture2D" uid="uid://ctf7c4bvd3gsy" path="res://plastic_part Color.png" id="1_hj5c0"]
+
+[resource]
+shading_mode = 2
+diffuse_mode = 2
+specular_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_hj5c0")
+texture_filter = 0

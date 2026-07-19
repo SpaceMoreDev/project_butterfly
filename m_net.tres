@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://4t8aseobwcou"]
+
+[ext_resource type="Texture2D" uid="uid://c50q2dgyxygv2" path="res://net Color.png" id="1_gxdgu"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.69
+alpha_antialiasing_mode = 0
+shading_mode = 2
+diffuse_mode = 2
+specular_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_gxdgu")
+texture_filter = 0
