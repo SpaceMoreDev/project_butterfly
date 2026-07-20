@@ -5,15 +5,15 @@ class_name ButterFly
 @onready var anim :AnimationPlayer = $butterfly/AnimationPlayer
 var height : float = -1
 var move_speed : float = -1
-
+@onready var mesh : Node3D = $butterfly
 var random_point : Vector3
 var nav : NavigationRegion3D
 var target_pos : Vector3 = Vector3.ZERO
-
+var captured:bool = false
 
 func _ready() -> void:
 	nav = get_tree().get_first_node_in_group("navmesh") as NavigationRegion3D
-	
+	($particles as CPUParticles3D).emitting = false
 	var rnd = RandomNumberGenerator.new()
 	var random_height_offset = rnd.randf_range(-1, 1)
 	nav_agent.path_height_offset = Global.butterflies_height + random_height_offset
@@ -31,6 +31,11 @@ func get_random_pos():
 	
 
 func Interact():
+	($particles as CPUParticles3D).emitting = true
+	mesh.visible = false
+	captured = true
+	Global.add_score.emit(1)
+	await get_tree().create_timer(2).timeout
 	queue_free()
 
 func move_vec(tar_vec, weight)-> Vector3:
@@ -42,6 +47,9 @@ func move_vec(tar_vec, weight)-> Vector3:
 	return new_vec
 
 func _physics_process(delta: float) -> void:
+	if captured:
+		return
+	
 	if nav_agent.is_navigation_finished():
 		get_random_pos()
 	

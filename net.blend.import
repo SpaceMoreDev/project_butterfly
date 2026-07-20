@@ -2109,6 +2109,11 @@ _subresources={
 "use_external/fallback_path": "res://m_pnet.tres",
 "use_external/path": "uid://c20uodv2m5itn"
 }
+},
+"nodes": {
+"PATH:Armature/Skeleton3D/Net": {
+"mesh_instance/cast_shadow": 0
+}
 }
 }
 blender/nodes/visible=0

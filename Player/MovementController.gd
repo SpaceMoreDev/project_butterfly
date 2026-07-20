@@ -9,6 +9,7 @@ class_name MovementController
 @export_range(0.0, 1.0, 0.05) var air_control := 0.3
 @export var jump_height := 10
 @export var player_anim : AnimationPlayer
+@onready var UI : PlayerUI = $CanvasLayer
 
 var is_shooting = false
 var is_interacting : bool = false

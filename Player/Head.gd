@@ -11,7 +11,9 @@ var controller: MovementController
 @export var y_limit := 90.0
 var mouse_axis := Vector2()
 var rot := Vector3()
-var can_look = true
+var can_look:bool:
+	get:
+		return Global.can_look
 
 @export_group("HeadBob")
 @export var headbob_frequency :=3.0

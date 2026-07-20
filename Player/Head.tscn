@@ -6,12 +6,12 @@
 [ext_resource type="Script" uid="uid://m6xpvqpujsgf" path="res://Player/jar.gd" id="3_3wvon"]
 [ext_resource type="PackedScene" uid="uid://cvuiypa78lye" path="res://Scene/butterfly.tscn" id="3_adwmk"]
 [ext_resource type="PackedScene" uid="uid://c4wn4nxwmiebn" path="res://container.blend" id="3_oowo0"]
-[ext_resource type="Script" uid="uid://bgl2r673y1f4o" path="res://Player/net_action.gd" id="7_qy1gf"]
+[ext_resource type="Script" uid="uid://bsul5mu5smpa3" path="res://Player/net_hand.gd" id="7_i6cme"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qy1gf"]
 animation = &"Catching"
 use_custom_timeline = true
-timeline_length = 0.5
+timeline_length = 1.0
 stretch_time_scale = true
 start_offset = 0.0
 loop_mode = 0
@@ -19,27 +19,31 @@ loop_mode = 0
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_i6cme"]
 animation = &"Idle"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bdho6"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_i6cme"]
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rl845"]
-xfade_time = 0.1
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ji5ww"]
+xfade_time = 0.3
 advance_mode = 2
-advance_expression = "iscatching"
+advance_expression = "is_catching"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qy1gf"]
-xfade_time = 0.1
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4p2t4"]
+xfade_time = 0.3
 switch_mode = 2
 advance_mode = 2
+advance_expression = "
+"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_dpcb8"]
 states/Catching/node = SubResource("AnimationNodeAnimation_qy1gf")
-states/Catching/position = Vector2(470, 147)
+states/Catching/position = Vector2(411, 144)
 states/Idle/node = SubResource("AnimationNodeAnimation_i6cme")
-states/Idle/position = Vector2(470, 45)
-states/Start/position = Vector2(235, 56)
-transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_bdho6"), "Idle", "Catching", SubResource("AnimationNodeStateMachineTransition_rl845"), "Catching", "Idle", SubResource("AnimationNodeStateMachineTransition_qy1gf")]
-graph_offset = Vector2(-83, -3)
+states/Idle/position = Vector2(411, 45)
+states/Start/position = Vector2(161, 45)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_i6cme"), "Idle", "Catching", SubResource("AnimationNodeStateMachineTransition_ji5ww"), "Catching", "Idle", SubResource("AnimationNodeStateMachineTransition_4p2t4")]
+graph_offset = Vector2(-262, 10)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_aeui4"]
 
 [node name="Head" type="Node3D" unique_id=955601237]
 physics_interpolation_mode = 1
@@ -50,29 +54,6 @@ script = ExtResource("1_enjfg")
 physics_interpolation_mode = 1
 current = true
 fov = 60.0
-
-[node name="net" parent="Camera" unique_id=925678904 instance=ExtResource("2_xfbis")]
-transform = Transform3D(-0.51357836, 0.018219067, -0.12963541, 0, 0.52484196, 0.07376174, 0.1309094, 0.07147628, -0.5085802, 0.43, -1.44, -1.288)
-
-[node name="Skeleton3D" parent="Camera/net/Armature" parent_id_path=PackedInt32Array(925678904, 1088435216) index="0" unique_id=1155170609]
-bones/1/rotation = Quaternion(0.029720893, -9.951814e-21, 3.536624e-19, 0.99955827)
-bones/2/rotation = Quaternion(-0.06345247, 2.188699e-20, -3.5312467e-19, 0.9979849)
-bones/3/position = Vector3(-0.006531123, 1.263237, -0.14519003)
-bones/3/rotation = Quaternion(-0.94489825, -6.856006e-17, 1.4124951e-16, 0.3273642)
-bones/3/scale = Vector3(0.8925215, 0.6580325, 0.65803236)
-bones/4/position = Vector3(0.020810243, 0.66692495, -0.05542555)
-bones/4/rotation = Quaternion(-0.32499236, -1.3595847e-23, -4.7770253e-24, 0.9457166)
-bones/4/scale = Vector3(0.86677605, 0.75208455, 0.75208443)
-bones/5/position = Vector3(0.080652095, 0.12530959, 0.125218)
-bones/5/rotation = Quaternion(7.450581e-09, -1.4876326e-23, -8.698321e-24, 1)
-
-[node name="AnimationPlayer" parent="Camera/net" index="1" unique_id=548066688]
-autoplay = &"ArmatureAction"
-
-[node name="AnimationTree" type="AnimationTree" parent="Camera/net" unique_id=546557214]
-tree_root = SubResource("AnimationNodeStateMachine_dpcb8")
-advance_expression_base_node = NodePath("../../../net_action")
-anim_player = NodePath("../AnimationPlayer")
 
 [node name="Hand" type="Node3D" parent="." unique_id=1287922249]
 physics_interpolation_mode = 1
@@ -104,8 +85,39 @@ script = null
 transform = Transform3D(0.55324453, -0.8895191, -1.0525693, -0.1295118, 1.0956415, -0.9939923, 1.3719958, 0.4621155, 0.33060893, -0.020831585, 0.34831893, -0.06196332)
 script = null
 
-[node name="net_action" type="Node3D" parent="." unique_id=2122865728 node_paths=PackedStringArray("anim")]
-script = ExtResource("7_qy1gf")
-anim = NodePath("../Camera/net/AnimationTree")
+[node name="net_hand" type="Node3D" parent="." unique_id=1594775810]
+script = ExtResource("7_i6cme")
 
-[editable path="Camera/net"]
+[node name="net" parent="net_hand" unique_id=925678904 instance=ExtResource("2_xfbis")]
+transform = Transform3D(-0.51357836, 0.018219069, -0.12963541, 0, 0.52484196, 0.07376175, 0.1309094, 0.07147629, -0.5085802, 0.455, -1.555, -1.288)
+
+[node name="Skeleton3D" parent="net_hand/net/Armature" parent_id_path=PackedInt32Array(925678904, 454239457) index="0" unique_id=1037052422]
+bones/1/rotation = Quaternion(0.029720893, -9.951814e-21, 3.536624e-19, 0.99955827)
+bones/2/rotation = Quaternion(-0.06345247, 2.188699e-20, -3.5312467e-19, 0.9979849)
+bones/3/position = Vector3(-0.006531123, 1.263237, -0.14519003)
+bones/3/rotation = Quaternion(-0.94489825, -6.856006e-17, 1.4124951e-16, 0.3273642)
+bones/3/scale = Vector3(0.8925215, 0.6580325, 0.65803236)
+bones/4/position = Vector3(0.020810243, 0.66692495, -0.05542555)
+bones/4/rotation = Quaternion(-0.32499236, -1.3595847e-23, -4.7770253e-24, 0.9457166)
+bones/4/scale = Vector3(0.86677605, 0.75208455, 0.75208443)
+bones/5/position = Vector3(0.080652095, 0.12530959, 0.125218)
+bones/6/position = Vector3(-4.6566048e-10, 0.24405533, 0.29183772)
+
+[node name="AnimationPlayer" parent="net_hand/net" index="1" unique_id=1659157665]
+autoplay = &"Idle"
+
+[node name="AnimationTree" type="AnimationTree" parent="net_hand/net" unique_id=546557214]
+tree_root = SubResource("AnimationNodeStateMachine_dpcb8")
+advance_expression_base_node = NodePath("../..")
+anim_player = NodePath("../AnimationPlayer")
+
+[node name="Area3D" type="Area3D" parent="net_hand/net" unique_id=1772385657]
+transform = Transform3D(1.0000002, 0, -7.4505806e-08, -1.1175871e-08, 1, 0, 1.4901161e-08, 0, 1.0000001, 0.06570053, 2.3875973, 0.07526827)
+collision_layer = 16
+collision_mask = 16
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="net_hand/net/Area3D" unique_id=1871247701]
+shape = SubResource("SphereShape3D_aeui4")
+
+[editable path="net_hand/net"]

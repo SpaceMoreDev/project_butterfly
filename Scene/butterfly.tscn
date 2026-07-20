@@ -2,17 +2,52 @@
 
 [ext_resource type="Script" uid="uid://bwv8yvtd4wijj" path="res://Scene/butterfly.gd" id="1_oa5ua"]
 [ext_resource type="PackedScene" uid="uid://bbs3vu0slfn76" path="res://butterfly.glb" id="2_fs35t"]
+[ext_resource type="Texture2D" uid="uid://bds8oyklx72qr" path="res://particle.png" id="3_fs35t"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_aeui4"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_suw74"]
+radius = 1.102
 
-[node name="butterfly" type="Area3D" unique_id=831181154]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r5i0q"]
+transparency = 1
+depth_draw_mode = 1
+no_depth_test = true
+shading_mode = 0
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_texture = ExtResource("3_fs35t")
+texture_filter = 0
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_cdgbm"]
+material = SubResource("StandardMaterial3D_r5i0q")
+size = Vector2(0.1, 0.1)
+orientation = 2
+
+[sub_resource type="Curve" id="Curve_oa5ua"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1e-05, -360), 0.0, 0.0, 0, 0, Vector2(1, 360), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_fs35t"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_am8ci"]
+offsets = PackedFloat32Array(0, 0.5109489, 1)
+colors = PackedColorArray(0.15294118, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="butterfly" type="StaticBody3D" unique_id=768203715]
+collision_layer = 16
+collision_mask = 16
 script = ExtResource("1_oa5ua")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=151729297]
 transform = Transform3D(0.22539108, 0, 0, 0, 0.22539108, 0, 0, 0, 0.22539108, 0, 0, -0.34547222)
 visible = false
+layers = 16
 mesh = SubResource("SphereMesh_aeui4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=354048803]
@@ -22,10 +57,29 @@ shape = SubResource("SphereShape3D_suw74")
 [node name="butterfly" parent="." unique_id=2011391745 instance=ExtResource("2_fs35t")]
 transform = Transform3D(0.11, 0, 0, 0, 0.11, 0, 0, 0, 0.11, 0, 0, 0)
 
-[node name="AnimationPlayer" parent="butterfly" index="1" unique_id=505812566]
+[node name="AnimationPlayer" parent="butterfly" index="1" unique_id=1344750978]
 autoplay = &"Butterfly"
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1498820510]
 avoidance_enabled = true
+
+[node name="particles" type="CPUParticles3D" parent="." unique_id=1054813751]
+emitting = false
+amount = 20
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 0.5
+mesh = SubResource("PlaneMesh_cdgbm")
+emission_shape = 1
+emission_sphere_radius = 0.18
+direction = Vector3(0, 0, 0)
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_max = 1.0
+angular_velocity_curve = SubResource("Curve_oa5ua")
+scale_amount_max = 7.37
+scale_amount_curve = SubResource("Curve_fs35t")
+color_ramp = SubResource("Gradient_am8ci")
 
 [editable path="butterfly"]

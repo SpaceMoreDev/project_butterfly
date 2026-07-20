@@ -21,9 +21,9 @@ background_mode = 2
 sky = SubResource("Sky_m53yq")
 glow_enabled = true
 adjustment_enabled = true
-adjustment_brightness = 1.09
-adjustment_contrast = 1.15
-adjustment_saturation = 0.86
+adjustment_brightness = 1.59
+adjustment_contrast = 0.98
+adjustment_saturation = 1.3
 
 [sub_resource type="BoxMesh" id="BoxMesh_aeui4"]
 

@@ -3,7 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://lqyku5wn2wo0" path="res://Player/MovementController.tscn" id="1_t1jcr"]
 [ext_resource type="PackedScene" uid="uid://b8drbos167vf8" path="res://Player/Head.tscn" id="2_41iu1"]
 [ext_resource type="Script" uid="uid://dvpiy7xtc0y0n" path="res://Player/Sprint.gd" id="3_bgqcu"]
-[ext_resource type="Script" uid="uid://cw5aospvvf7fp" path="res://Player/interaction.gd" id="4_8g4oa"]
+[ext_resource type="Script" uid="uid://xx2fs681pgtb" path="res://Player/PlayerUI.gd" id="4_ddoul"]
+[ext_resource type="Script" uid="uid://dunou67it0y02" path="res://Player/audio_manager.gd" id="5_8g4oa"]
+[ext_resource type="AudioStream" uid="uid://dg4wkrqbgmud1" path="res://Samples1.wav" id="6_s1rgi"]
+[ext_resource type="AudioStream" uid="uid://0bfk26akhbx7" path="res://Samples2.wav" id="7_j23h2"]
+[ext_resource type="AudioStream" uid="uid://dmhfs4i41ded7" path="res://Samples3.wav" id="8_0j2ni"]
 
 [node name="Player" unique_id=1117564067 node_paths=PackedStringArray("camera") instance=ExtResource("1_t1jcr")]
 physics_interpolation_mode = 1
@@ -20,6 +24,24 @@ physics_interpolation_mode = 1
 script = ExtResource("3_bgqcu")
 sprint_speed = 7
 
-[node name="Interaction" type="Node3D" parent="." index="3" unique_id=1300558987]
-physics_interpolation_mode = 1
-script = ExtResource("4_8g4oa")
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="3" unique_id=264707594]
+script = ExtResource("4_ddoul")
+
+[node name="Label" type="Label" parent="CanvasLayer" index="0" unique_id=478948141]
+offset_left = 43.0
+offset_top = 23.0
+offset_right = 83.0
+offset_bottom = 86.0
+theme_override_colors/font_shadow_color = Color(0.89411765, 0, 0, 0.38431373)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 9
+theme_override_font_sizes/font_size = 45
+text = "0"
+horizontal_alignment = 1
+
+[node name="audio_manager" type="Node" parent="." index="4" unique_id=473677349]
+script = ExtResource("5_8g4oa")
+score_sounds = Array[AudioStream]([ExtResource("6_s1rgi"), ExtResource("7_j23h2"), ExtResource("8_0j2ni")])
