@@ -14,6 +14,9 @@ var move : bool = false
 @onready var anim_net : AnimationTree = $net/AnimationTree
 var mousedelta : Vector2
 
+var base_sensitivity : float= 0.0
+var focused_sensitivity : float = 0.0
+
 var limits_xy : Vector2 = Vector2.ZERO
 var default_net_pos : Transform3D
 var is_catching = false
@@ -36,6 +39,9 @@ func _ready() -> void:
 	base_rotation = net.rotation
 	obj_velocity = net.position
 	
+	base_sensitivity = Global.mouse_sensitivity
+	focused_sensitivity = base_sensitivity/2
+	
 	anim_net.animation_finished.connect(_animation_reset)
 	net_col.body_entered.connect(_body_entered)
 	
@@ -52,12 +58,13 @@ func _animation_reset(anim):
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.is_pressed() and event.button_index == MouseButton.MOUSE_BUTTON_LEFT:
-			Global.can_look = false
+			#Global.can_look = false
 			move = true
 		elif event.is_released() and event.button_index == MouseButton.MOUSE_BUTTON_LEFT:
 			forward_rotation = 0
 			side_rotation = 0
 			Global.can_look = true
+			Global.mouse_sensitivity = base_sensitivity
 			move = false
 	if move:
 		if event is InputEventMouseMotion:
@@ -106,11 +113,30 @@ func _physics_process(delta: float) -> void:
 		net.position.x += mousex
 		net.position.y += mousey
 		
-		net.position.x =  clamp (net.position.x ,-1.0 ,0.8)
-		net.position.y =  clamp (net.position.y, -2.0,-0.5 ) 
+	
+		var newX =  clamp (net.position.x ,-1.0 ,0.8)
+		var newY =  clamp (net.position.y, -0.8,-0.5) 
+		
+		net.position.x = newX
+		net.position.y = newY
+		if (net.position.x <= -1.0 or net.position.x >= 0.8):
+		#if (net.position.x <= -1.0 or net.position.x >= 0.8) or \
+			#(net.position.y <= -0.8 or net.position.y >= -0.5):
+			if abs(mousedelta.length_squared()) > 0.0:
+				if abs(mousedelta.x) > abs(mousedelta.y):
+					Global.can_look = true
+					Global.mouse_sensitivity = focused_sensitivity
+				else:
+					Global.can_look = false
+			else:
+				Global.can_look = false
+		else:
+			Global.can_look = false
+		
+		
 		
 	else:
 		net.transform = lerp(net.transform,default_net_pos, 5 * delta )
 	
-		mousedelta = Vector2.ZERO;
+	mousedelta = Vector2.ZERO;
 	pass

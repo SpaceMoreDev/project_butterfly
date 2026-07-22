@@ -32,6 +32,9 @@ var input_axis := Vector2()
 @export var camera: Head
 
 
+func _ready() -> void:
+	Global.score = 0
+
 # Called every physics tick. 'delta' is constant
 func _physics_process(delta: float) -> void:
 	if !canmove: 

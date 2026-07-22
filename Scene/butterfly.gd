@@ -35,6 +35,7 @@ func Interact():
 	mesh.visible = false
 	captured = true
 	Global.add_score.emit(1)
+	$CollisionShape3D.disabled = true
 	await get_tree().create_timer(2).timeout
 	queue_free()
 

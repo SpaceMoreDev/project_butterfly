@@ -26,8 +26,8 @@ func _enter_tree() -> void:
 	cam = get_node(cam_path)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Global.mouse_sensitivity = mouse_sensitivity / 1000
 	
-	mouse_sensitivity = mouse_sensitivity / 1000
 	y_limit = deg_to_rad(y_limit)
 	rot = controller.rotation
 
@@ -69,9 +69,9 @@ func _HeadBob(time) -> Vector2:
 
 func camera_rotation() -> void:
 	# Horizontal mouse look.
-	rot.y -= mouse_axis.x * mouse_sensitivity
+	rot.y -= mouse_axis.x * Global.mouse_sensitivity
 	# Vertical mouse look.
-	rot.x = clamp(rot.x - mouse_axis.y * mouse_sensitivity, -y_limit, y_limit)
+	rot.x = clamp(rot.x - mouse_axis.y * Global.mouse_sensitivity, -y_limit, y_limit)
 	
 	controller.rotation.y = rot.y
 	rotation.x = rot.x

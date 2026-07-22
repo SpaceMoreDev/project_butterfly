@@ -18,3 +18,5 @@ func _ready():
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("free_mouse"):
 		state = !state
+	if Input.is_action_just_pressed("reload_scene"):
+		get_tree().reload_current_scene()
