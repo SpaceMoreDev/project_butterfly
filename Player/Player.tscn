@@ -8,6 +8,10 @@
 [ext_resource type="AudioStream" uid="uid://dg4wkrqbgmud1" path="res://Samples1.wav" id="6_s1rgi"]
 [ext_resource type="AudioStream" uid="uid://0bfk26akhbx7" path="res://Samples2.wav" id="7_j23h2"]
 [ext_resource type="AudioStream" uid="uid://dmhfs4i41ded7" path="res://Samples3.wav" id="8_0j2ni"]
+[ext_resource type="Script" uid="uid://dxx15l58ymsvr" path="res://Player/repulser.gd" id="9_j23h2"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_aeui4"]
+radius = 1.1510435
 
 [node name="Player" unique_id=1117564067 node_paths=PackedStringArray("camera") instance=ExtResource("1_t1jcr")]
 physics_interpolation_mode = 1
@@ -45,3 +49,12 @@ horizontal_alignment = 1
 [node name="audio_manager" type="Node" parent="." index="4" unique_id=473677349]
 script = ExtResource("5_8g4oa")
 score_sounds = Array[AudioStream]([ExtResource("6_s1rgi"), ExtResource("7_j23h2"), ExtResource("8_0j2ni")])
+
+[node name="Repulser" type="Area3D" parent="." index="5" unique_id=1425382398]
+collision_mask = 16
+monitorable = false
+script = ExtResource("9_j23h2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Repulser" index="0" unique_id=881662622]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7500274, -0.81861675)
+shape = SubResource("SphereShape3D_aeui4")

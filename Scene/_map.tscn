@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://vljnm46ululh"]
+
+[ext_resource type="Script" uid="uid://bfufojy8xh11b" path="res://Scene/node_3d.gd" id="1_k70yf"]
+[ext_resource type="PackedScene" uid="uid://chi2xpdaapk2u" path="res://map_sc2a5.fbx" id="1_vo4uw"]
+[ext_resource type="PackedScene" uid="uid://bdupkh0grwy27" path="res://Player/Player.tscn" id="2_k70yf"]
+[ext_resource type="Shader" uid="uid://dmbhp7o8hiis7" path="res://shaders/vhs.gdshader" id="2_vodam"]
+[ext_resource type="Shader" uid="uid://b1pg71a23bxt4" path="res://shaders/pixelize.gdshader" id="3_niiao"]
+[ext_resource type="PackedScene" uid="uid://dn4cfaojfnplx" path="res://tree1.blend" id="6_niiao"]
+[ext_resource type="Script" uid="uid://dnlcqu80mv56" path="res://Scene/rotate.gd" id="7_rabrs"]
+[ext_resource type="PackedScene" uid="uid://bcsnt6yyxjpmu" path="res://Monster.fbx" id="8_4e8m4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t7jsh"]
+shader = ExtResource("2_vodam")
+shader_parameter/wiggle = 0.0499999988824
+shader_parameter/wiggle_speed = 25.0
+shader_parameter/smear = 0.36800001748
+shader_parameter/blur_samples = 15
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rabrs"]
+shader = ExtResource("3_niiao")
+shader_parameter/exposure = 1.1810000323474998
+shader_parameter/contrast = 1.1790000322525
+shader_parameter/saturation = 1.2550000596125
+shader_parameter/enable_pixelate = true
+shader_parameter/pixel_factor = 2.00000007125
+shader_parameter/enable_posterize = false
+shader_parameter/color_levels = 12.000000475
+shader_parameter/dither_strength = 0.0970000046075
+shader_parameter/chrom_aberration = 2.0
+shader_parameter/vignette_strength = 1.0000000475
+shader_parameter/grain_strength = 0.2000000095
+shader_parameter/tint_color = Vector3(0.95, 1.03, 0.9)
+shader_parameter/tint_strength = 0.15
+shader_parameter/viewport_size_override = Vector2(0, 0)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_k70yf"]
+sky_top_color = Color(0.47588432, 0.4952178, 1, 1)
+sky_horizon_color = Color(0.5084289, 0.32956067, 1, 1)
+sky_curve = 0.095591955
+ground_bottom_color = Color(0.14016074, 0.42105797, 0.31518224, 1)
+ground_curve = 0.002176374
+sun_angle_max = 14.87
+sun_curve = 0.14489044
+
+[sub_resource type="Sky" id="Sky_m53yq"]
+sky_material = SubResource("ProceduralSkyMaterial_k70yf")
+
+[sub_resource type="Environment" id="Environment_33jyv"]
+background_mode = 2
+background_color = Color(0.60142994, 0.5236664, 1, 1)
+sky = SubResource("Sky_m53yq")
+ambient_light_source = 2
+ambient_light_color = Color(0.2803198, 0.64437693, 0.47913596, 1)
+ambient_light_energy = 3.53
+fog_enabled = true
+fog_light_color = Color(0.4526664, 0.21404424, 0.9886934, 1)
+fog_sun_scatter = 0.01
+fog_sky_affect = 0.301
+adjustment_enabled = true
+adjustment_brightness = 1.48
+adjustment_contrast = 0.795
+adjustment_saturation = 1.15
+
+[sub_resource type="PointMesh" id="PointMesh_sygb5"]
+
+[node name="Node3D" type="Node3D" unique_id=1206666238]
+script = ExtResource("1_k70yf")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=591530562]
+
+[node name="shaders" type="BackBufferCopy" parent="CanvasLayer" unique_id=1682466308]
+position = Vector2(320, 240)
+scale = Vector2(3.2, 2.4)
+copy_mode = 2
+metadata/_edit_group_ = true
+
+[node name="vhs" type="ColorRect" parent="CanvasLayer/shaders" unique_id=1438074825]
+material = SubResource("ShaderMaterial_t7jsh")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -100.0
+offset_right = -100.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="shaders2" type="BackBufferCopy" parent="CanvasLayer" unique_id=484014485]
+position = Vector2(320, 240)
+scale = Vector2(3.2, 2.4)
+copy_mode = 2
+metadata/_edit_group_ = true
+
+[node name="psx" type="ColorRect" parent="CanvasLayer/shaders2" unique_id=1955430001]
+material = SubResource("ShaderMaterial_rabrs")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -100.0
+offset_right = -100.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1758771843]
+environment = SubResource("Environment_33jyv")
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="." unique_id=775329337]
+transform = Transform3D(-0.05015101, -0.8997623, 0.4334891, -0.5978029, 0.37474063, 0.70866156, -0.8000729, -0.22360094, -0.55667406, -1.2981935, 4.051119, -1.4804738)
+light_energy = 3.381
+light_indirect_energy = 1.92
+shadow_enabled = true
+
+[node name="map_sc2a5" parent="." unique_id=640142194 instance=ExtResource("1_vo4uw")]
+
+[node name="Player" parent="." unique_id=1117564067 instance=ExtResource("2_k70yf")]
+transform = Transform3D(-0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, -0.70710677, 68.75694, 1.59106, -55.648243)
+
+[node name="tree1" parent="." unique_id=172280077 instance=ExtResource("6_niiao")]
+transform = Transform3D(0.764415, 0, -0.6447245, -5.726304e-16, 1, -6.7893693e-16, 0.6447245, 0, 0.764415, 29.549257, 0.0630002, -21.7014)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=177647131]
+physics_interpolation_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.511925, 0.8845601, -35.920753)
+mesh = SubResource("PointMesh_sygb5")
+script = ExtResource("7_rabrs")
+
+[node name="Monster" parent="MeshInstance3D" unique_id=743246833 instance=ExtResource("8_4e8m4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9001474, 0)

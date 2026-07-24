@@ -4,6 +4,7 @@ signal add_score(score)
 signal updated_score()
 
 var mouse_sensitivity : float = 2.0/1000
+var Player : MovementController
 
 var butterflies_height : float = -1.5
 var butterflies_speed : float = 3.0

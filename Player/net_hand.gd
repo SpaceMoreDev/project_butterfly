@@ -115,10 +115,11 @@ func _physics_process(delta: float) -> void:
 		
 	
 		var newX =  clamp (net.position.x ,-1.0 ,0.8)
-		var newY =  clamp (net.position.y, -0.8,-0.5) 
+		var newY =  clamp (net.position.y, -2.0,-0.5) 
 		
 		net.position.x = newX
 		net.position.y = newY
+		
 		if (net.position.x <= -1.0 or net.position.x >= 0.8):
 		#if (net.position.x <= -1.0 or net.position.x >= 0.8) or \
 			#(net.position.y <= -0.8 or net.position.y >= -0.5):

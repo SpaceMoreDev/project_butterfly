@@ -10,6 +10,8 @@ var random_point : Vector3
 var nav : NavigationRegion3D
 var target_pos : Vector3 = Vector3.ZERO
 var captured:bool = false
+var base_speed : float
+var alerted_speed : float = false
 
 func _ready() -> void:
 	nav = get_tree().get_first_node_in_group("navmesh") as NavigationRegion3D
@@ -18,6 +20,8 @@ func _ready() -> void:
 	var random_height_offset = rnd.randf_range(-1, 1)
 	nav_agent.path_height_offset = Global.butterflies_height + random_height_offset
 	move_speed = Global.butterflies_speed
+	base_speed = move_speed
+	alerted_speed = move_speed * 1.7
 	
 	var offset : float = rnd.randf_range(0, anim.current_animation_length)
 	anim.advance(offset)
@@ -27,6 +31,7 @@ func _ready() -> void:
 
 func get_random_pos():
 	random_point = NavigationServer3D.map_get_random_point(nav.get_navigation_map(), 1, false)
+	move_speed = base_speed
 	(nav_agent as NavigationAgent3D).target_position = random_point
 	
 

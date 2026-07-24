@@ -1,0 +1,20 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://caom8ixbn4wve"]
+
+[ext_resource type="Texture2D" uid="uid://c33y0kdq2eymv" path="res://textures/Monster_Texture Normal.png" id="1_7cei5"]
+[ext_resource type="Texture2D" uid="uid://ufhayj6b758" path="res://textures/Monster_Texture Color.png" id="1_57mmy"]
+
+[resource]
+vertex_color_use_as_albedo = true
+metallic = 0.71
+metallic_specular = 0.0
+normal_enabled = true
+normal_scale = 5.0
+normal_texture = ExtResource("1_7cei5")
+anisotropy_enabled = true
+anisotropy = 1.0
+detail_enabled = true
+detail_albedo = ExtResource("1_57mmy")
+detail_normal = ExtResource("1_7cei5")
+texture_filter = 0
+distance_fade_min_distance = 100.0
+distance_fade_max_distance = 50.0
