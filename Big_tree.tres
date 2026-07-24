@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d4gnf4w4en7vp"]
+
+[ext_resource type="Texture2D" uid="uid://ckaumeolr167i" path="res://textures/Big_TREE Color.png" id="1_7aqu3"]
+
+[resource]
+cull_mode = 2
+diffuse_mode = 2
+specular_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_7aqu3")
+texture_filter = 0

@@ -34,6 +34,10 @@ const SIDE_LIMIT :float = deg_to_rad(65.0)
 
 @export var rotation_sensitivity := 0.01
 
+var cool_time : float =  0.25
+var on_cool_down : bool = false
+var ct : float  = 0.0
+
 func _ready() -> void:
 	default_net_pos = net.transform
 	base_rotation = net.rotation
@@ -47,9 +51,13 @@ func _ready() -> void:
 	
 
 func _body_entered(body):
+	if on_cool_down: 
+		return
+	
 	if body is Interactable and is_catching:
 		if abs(mousedelta.y) > abs(mousedelta.x):
 			body.Interact()
+			on_cool_down = true
 	pass
 
 func _animation_reset(anim):
@@ -102,6 +110,17 @@ func update_net_rotation() -> void:
 		side_rotation,
 		0.0
 	)
+
+
+func _process(delta: float) -> void:
+	if on_cool_down:
+		if ct < cool_time:
+			ct += delta
+		else:
+			ct = 0
+			on_cool_down = false
+		pass
+
 
 func _physics_process(delta: float) -> void:
 	if move:

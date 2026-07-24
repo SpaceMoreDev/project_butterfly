@@ -4,7 +4,7 @@
 
 [resource]
 transparency = 2
-alpha_scissor_threshold = 0.69
+alpha_scissor_threshold = 0.784
 alpha_antialiasing_mode = 0
 shading_mode = 2
 diffuse_mode = 2
@@ -12,3 +12,5 @@ specular_mode = 2
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("1_gxdgu")
 texture_filter = 0
+use_z_clip_scale = true
+z_clip_scale = 0.67

@@ -14,7 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://cvx0mpdk31p8u" path="res://PlaceHolder_BGmusic.wav" id="13_y0oog"]
 [ext_resource type="PackedScene" uid="uid://bcsnt6yyxjpmu" path="res://Monster.fbx" id="14_sfrn0"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dpcb8"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y0oog"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
@@ -28,7 +28,7 @@ stencil_flags = 2
 stencil_outline_thickness = 0.0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_aeui4"]
-material = SubResource("StandardMaterial3D_dpcb8")
+material = SubResource("StandardMaterial3D_y0oog")
 size = Vector2(1, 2)
 orientation = 2
 
@@ -41,13 +41,13 @@ ground_curve = 0.002176374
 sun_angle_max = 14.87
 sun_curve = 0.14489044
 
-[sub_resource type="Sky" id="Sky_m53yq"]
+[sub_resource type="Sky" id="Sky_y0oog"]
 sky_material = SubResource("ProceduralSkyMaterial_14qi7")
 
 [sub_resource type="Environment" id="Environment_8lent"]
 background_mode = 2
 background_energy_multiplier = 1.72
-sky = SubResource("Sky_m53yq")
+sky = SubResource("Sky_y0oog")
 ambient_light_color = Color(0.7018794, 0.4195095, 0.54633164, 1)
 fog_enabled = true
 fog_light_color = Color(0.36744002, 0.33113945, 0.61431754, 1)

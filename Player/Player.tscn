@@ -10,6 +10,8 @@
 [ext_resource type="AudioStream" uid="uid://dmhfs4i41ded7" path="res://Samples3.wav" id="8_0j2ni"]
 [ext_resource type="Script" uid="uid://dxx15l58ymsvr" path="res://Player/repulser.gd" id="9_j23h2"]
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j23h2"]
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_aeui4"]
 radius = 1.1510435
 
@@ -20,8 +22,10 @@ camera = NodePath("Head")
 
 [node name="Collision" parent="." index="0"]
 physics_interpolation_mode = 1
+shape = SubResource("CapsuleShape3D_j23h2")
 
 [node name="Head" parent="." index="1" unique_id=315625654 instance=ExtResource("2_41iu1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.64, 0.45268548)
 
 [node name="Sprint" type="Node" parent="." index="2" unique_id=1121165758]
 physics_interpolation_mode = 1

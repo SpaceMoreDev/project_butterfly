@@ -13,6 +13,7 @@ var captured:bool = false
 var base_speed : float
 var alerted_speed : float = false
 
+
 func _ready() -> void:
 	nav = get_tree().get_first_node_in_group("navmesh") as NavigationRegion3D
 	($particles as CPUParticles3D).emitting = false

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://chi2xpdaapk2u"
-path="res://.godot/imported/map_sc2a5.fbx-f7a7880050c9db102e3c0235351947fe.scn"
+uid="uid://8m5vi3q6s8x"
+path="res://.godot/imported/map_sc2a5.glb-fb2514c51262e99c3dfb326bdd9d97ae.scn"
 
 [deps]
 
-source_file="res://map_sc2a5.fbx"
-dest_files=["res://.godot/imported/map_sc2a5.fbx-f7a7880050c9db102e3c0235351947fe.scn"]
+source_file="res://map_sc2a5.glb"
+dest_files=["res://.godot/imported/map_sc2a5.glb-fb2514c51262e99c3dfb326bdd9d97ae.scn"]
 
 [params]
 
@@ -32,7 +32,7 @@ meshes/force_disable_compression=false
 skins/use_named_skins=true
 animation/import=true
 animation/fps=30
-animation/trimming=true
+animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
@@ -45,10 +45,24 @@ _subresources={
 "use_external/enabled": true,
 "use_external/fallback_path": "res://grid_proto.tres",
 "use_external/path": "uid://da1btfnydpv5g"
+},
+"Rock": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://m_rock.tres",
+"use_external/path": "uid://c85u2tnkr72kc"
+},
+"TREE": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://tree.tres",
+"use_external/path": "uid://clfsfeigwjleq"
+},
+"leafs": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://leafs.tres",
+"use_external/path": "uid://bpchhqc5v8rjc"
 }
 }
 }
-fbx/importer=0
-fbx/allow_geometry_helper_nodes=false
-fbx/embedded_image_handling=1
-fbx/naming_version=2
+gltf/naming_version=2
+gltf/embedded_image_handling=1
+gltf/texture_map_mode=1

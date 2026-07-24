@@ -1,6 +1,7 @@
 extends Node3D
 
 var _state = true
+@export var scenes : PackedScene
 
 var state :
 	set(val):

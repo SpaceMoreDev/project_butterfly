@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c85u2tnkr72kc"]
+
+[ext_resource type="Texture2D" uid="uid://c85upbxl0r3um" path="res://map_sc2a5_Ucupaint Rock Color.png" id="1_j4576"]
+[ext_resource type="Texture2D" uid="uid://diiv6muog07wd" path="res://map_sc2a5_Ucupaint Rock Normal.png" id="2_2a781"]
+
+[resource]
+shading_mode = 2
+diffuse_mode = 2
+specular_mode = 2
+albedo_texture = ExtResource("1_j4576")
+metallic = 0.64
+metallic_specular = 0.0
+roughness = 0.7
+detail_enabled = true
+detail_albedo = ExtResource("1_j4576")
+detail_normal = ExtResource("2_2a781")
+texture_filter = 0
