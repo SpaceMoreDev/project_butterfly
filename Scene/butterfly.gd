@@ -13,6 +13,25 @@ var captured:bool = false
 var base_speed : float
 var alerted_speed : float = false
 
+var _active : bool = false
+
+var active : bool:
+	set(val):
+		if val:
+			mesh.visible = true
+			$CollisionShape3D.disabled = false
+			visible = true
+			captured = false
+			get_random_pos()
+		else:
+			mesh.visible = false
+			$CollisionShape3D.disabled = true
+			visible = false
+		
+		_active = val
+	get:
+		return _active
+
 
 func _ready() -> void:
 	nav = get_tree().get_first_node_in_group("navmesh") as NavigationRegion3D
@@ -27,7 +46,6 @@ func _ready() -> void:
 	var offset : float = rnd.randf_range(0, anim.current_animation_length)
 	anim.advance(offset)
 	
-	get_random_pos()
 
 
 func get_random_pos():
@@ -43,7 +61,7 @@ func Interact():
 	Global.add_score.emit(1)
 	$CollisionShape3D.disabled = true
 	await get_tree().create_timer(2).timeout
-	queue_free()
+	active = false
 
 func move_vec(tar_vec, weight)-> Vector3:
 	var new_vec = global_position
@@ -54,7 +72,7 @@ func move_vec(tar_vec, weight)-> Vector3:
 	return new_vec
 
 func _physics_process(delta: float) -> void:
-	if captured:
+	if captured or not visible:
 		return
 	
 	if nav_agent.is_navigation_finished():

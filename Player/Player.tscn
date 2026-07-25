@@ -24,15 +24,20 @@ camera = NodePath("Head")
 physics_interpolation_mode = 1
 shape = SubResource("CapsuleShape3D_j23h2")
 
-[node name="Head" parent="." index="1" unique_id=315625654 instance=ExtResource("2_41iu1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.64, 0.45268548)
+[node name="Collision2" type="CollisionShape3D" parent="." index="1" unique_id=1176322972]
+physics_interpolation_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.4080071)
+shape = SubResource("CapsuleShape3D_j23h2")
 
-[node name="Sprint" type="Node" parent="." index="2" unique_id=1121165758]
+[node name="Head" parent="." index="2" unique_id=315625654 instance=ExtResource("2_41iu1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.64, 0.89709723)
+
+[node name="Sprint" type="Node" parent="." index="3" unique_id=1121165758]
 physics_interpolation_mode = 1
 script = ExtResource("3_bgqcu")
 sprint_speed = 7
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." index="3" unique_id=264707594]
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="4" unique_id=264707594]
 script = ExtResource("4_ddoul")
 
 [node name="Label" type="Label" parent="CanvasLayer" index="0" unique_id=478948141]
@@ -50,11 +55,11 @@ theme_override_font_sizes/font_size = 45
 text = "0"
 horizontal_alignment = 1
 
-[node name="audio_manager" type="Node" parent="." index="4" unique_id=473677349]
+[node name="audio_manager" type="Node" parent="." index="5" unique_id=473677349]
 script = ExtResource("5_8g4oa")
 score_sounds = Array[AudioStream]([ExtResource("6_s1rgi"), ExtResource("7_j23h2"), ExtResource("8_0j2ni")])
 
-[node name="Repulser" type="Area3D" parent="." index="5" unique_id=1425382398]
+[node name="Repulser" type="Area3D" parent="." index="6" unique_id=1425382398]
 collision_mask = 16
 monitorable = false
 script = ExtResource("9_j23h2")

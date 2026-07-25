@@ -5,8 +5,24 @@
 [ext_resource type="PackedScene" uid="uid://cw41sj7xr2pyu" path="res://net.blend" id="2_xfbis"]
 [ext_resource type="Script" uid="uid://m6xpvqpujsgf" path="res://Player/jar.gd" id="3_3wvon"]
 [ext_resource type="PackedScene" uid="uid://cvuiypa78lye" path="res://Scene/butterfly.tscn" id="3_adwmk"]
+[ext_resource type="PackedScene" uid="uid://b86sh1c56cl24" path="res://shotgun.glb" id="3_i6cme"]
 [ext_resource type="PackedScene" uid="uid://c4wn4nxwmiebn" path="res://container.blend" id="3_oowo0"]
+[ext_resource type="Texture2D" uid="uid://cncjophmp5aoc" path="res://ShotGun Color.png" id="4_bdho6"]
 [ext_resource type="Script" uid="uid://bsul5mu5smpa3" path="res://Player/net_hand.gd" id="7_i6cme"]
+[ext_resource type="Texture2D" uid="uid://dpakb1m35b1gk" path="res://Page1BFJ.png" id="10_rl845"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rl845"]
+resource_name = "Cylinder"
+transparency = 4
+cull_mode = 2
+shading_mode = 2
+diffuse_mode = 2
+specular_mode = 1
+albedo_texture = ExtResource("4_bdho6")
+texture_filter = 2
+use_z_clip_scale = true
+z_clip_scale = 0.9
+metadata/_gltf_primary_texture_coord = 0
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qy1gf"]
 animation = &"Catching"
@@ -44,6 +60,17 @@ transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(-262, 10)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_aeui4"]
+radius = 0.37454784
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ji5ww"]
+transparency = 2
+alpha_scissor_threshold = 0.056
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("10_rl845")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_bdho6"]
+orientation = 2
 
 [node name="Head" type="Node3D" unique_id=955601237]
 physics_interpolation_mode = 1
@@ -68,6 +95,13 @@ randomStrength = 0.35
 [node name="HeadBob" type="Node3D" parent="." unique_id=1905633388]
 physics_interpolation_mode = 1
 
+[node name="shotgun" parent="." unique_id=386872980 instance=ExtResource("3_i6cme")]
+transform = Transform3D(-0.34576347, 0.045473665, 0.93721914, -0.39926374, 0.896761, -0.190809, -0.8491384, -0.44017243, -0.2919112, 0.24, -0.35, -0.628)
+visible = false
+
+[node name="Shotgun" parent="shotgun" index="0" unique_id=153550908]
+material_override = SubResource("StandardMaterial3D_rl845")
+
 [node name="net_hand" type="Node3D" parent="." unique_id=1594775810]
 script = ExtResource("7_i6cme")
 
@@ -80,7 +114,7 @@ advance_expression_base_node = NodePath("../..")
 anim_player = NodePath("../AnimationPlayer")
 
 [node name="Area3D" type="Area3D" parent="net_hand/net" unique_id=1772385657]
-transform = Transform3D(1.0000002, 0, -7.4505806e-08, -1.1175871e-08, 1, 0, 1.4901161e-08, 0, 1.0000001, 0.06570053, 2.3875973, 0.07526827)
+transform = Transform3D(1.0000002, 0, -7.4505806e-08, -1.1175871e-08, 1, 0, 1.4901161e-08, 0, 1.0000001, 0, 2.468, 0.175)
 collision_layer = 16
 collision_mask = 16
 monitorable = false
@@ -106,3 +140,11 @@ script = null
 [node name="butterfly3" parent="Jar/container" unique_id=736761814 instance=ExtResource("3_adwmk")]
 transform = Transform3D(0.55324453, -0.8895191, -1.0525693, -0.1295118, 1.0956415, -0.9939923, 1.3719958, 0.4621155, 0.33060893, -0.020831585, 0.34831893, -0.06196332)
 script = null
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1451032241]
+transform = Transform3D(0.486, 0, 0, 0, 0.486, 0, 0, 0, 0.486, 0.011, 0.005, -0.769)
+visible = false
+material_override = SubResource("StandardMaterial3D_ji5ww")
+mesh = SubResource("PlaneMesh_bdho6")
+
+[editable path="shotgun"]

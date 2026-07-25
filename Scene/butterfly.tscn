@@ -2,12 +2,20 @@
 
 [ext_resource type="Script" uid="uid://bwv8yvtd4wijj" path="res://Scene/butterfly.gd" id="1_oa5ua"]
 [ext_resource type="PackedScene" uid="uid://bbs3vu0slfn76" path="res://butterfly.glb" id="2_fs35t"]
+[ext_resource type="Texture2D" uid="uid://bcx2jdhcske5i" path="res://butterfly_butterfly.png" id="3_40jj8"]
 [ext_resource type="Texture2D" uid="uid://bds8oyklx72qr" path="res://particle.png" id="3_fs35t"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_aeui4"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_suw74"]
 radius = 1.102
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vm6fl"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(0.3129209, 0.7530745, 1.9768668, 1)
+albedo_texture = ExtResource("3_40jj8")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r5i0q"]
 transparency = 1
@@ -56,6 +64,14 @@ shape = SubResource("SphereShape3D_suw74")
 
 [node name="butterfly" parent="." unique_id=2011391745 instance=ExtResource("2_fs35t")]
 transform = Transform3D(0.11, 0, 0, 0, 0.11, 0, 0, 0, 0.11, 0, 0, 0)
+
+[node name="Skeleton3D" parent="butterfly/Butterfly" parent_id_path=PackedInt32Array(2011391745, 975465141) index="0" unique_id=1413909928]
+bones/0/position = Vector3(-2.7770184e-16, 1.2387661, -0.37100697)
+bones/1/rotation = Quaternion(0.3909082, -0.39090836, -0.5892288, 0.589229)
+bones/2/rotation = Quaternion(0.39090824, 0.39090833, 0.58922887, 0.5892289)
+
+[node name="Empty_001" parent="butterfly/Butterfly/Skeleton3D" index="0" unique_id=947929560]
+material_override = SubResource("StandardMaterial3D_vm6fl")
 
 [node name="AnimationPlayer" parent="butterfly" index="1" unique_id=1344750978]
 autoplay = &"Butterfly"

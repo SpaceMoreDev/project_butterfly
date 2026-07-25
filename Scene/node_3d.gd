@@ -13,11 +13,23 @@ var state :
 	get:
 		return _state
 
+var on_pc :bool= true
+
 func _ready():
+	match OS.get_name():
+		"Web":
+			on_pc = false
+	
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
+func _input(event: InputEvent) -> void:
+	if not on_pc:
+		if event is InputEventMouseButton:
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("free_mouse"):
-		state = !state
+	if on_pc:
+		if Input.is_action_just_pressed("free_mouse"):
+			state = !state
 	if Input.is_action_just_pressed("reload_scene"):
 		get_tree().reload_current_scene()

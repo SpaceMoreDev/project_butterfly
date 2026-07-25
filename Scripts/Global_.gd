@@ -8,8 +8,11 @@ var Player : MovementController
 
 var butterflies_height : float = -1.5
 var butterflies_speed : float = 3.0
+
 var can_look = true
 var score = 0
+
+var max_count_of_butterflies : int = 0
 
 func _ready() -> void:
 	add_score.connect(_score_add)
