@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://b5uea50dcchha" path="res://Assets/Book/Page4BFJ.png" id="14_sqcjl"]
 [ext_resource type="Texture2D" uid="uid://dk32amxjiomtw" path="res://Assets/Book/Page5BFJ.png" id="15_qv2u7"]
 [ext_resource type="Texture2D" uid="uid://iy8xmsbvgql8" path="res://Assets/Book/Page1BFJ.png" id="15_sqcjl"]
+[ext_resource type="Texture2D" uid="uid://d06eej632rqkv" path="res://Assets/Book/EmptyPage.png" id="18_2kqho"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rl845"]
 resource_name = "Cylinder"
@@ -159,7 +160,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -0.615)
 script = ExtResource("12_4p2t4")
 inactive_transform = Vector3(0, -1, -0.615)
 active_transform = Vector3(0, -0.185, -0.615)
-all_pages = Array[Texture2D]([ExtResource("15_sqcjl"), ExtResource("13_05oep"), ExtResource("14_s2hpm"), ExtResource("14_sqcjl"), ExtResource("15_qv2u7")])
+all_pages = Array[Texture2D]([ExtResource("15_sqcjl"), ExtResource("13_05oep"), ExtResource("14_s2hpm"), ExtResource("14_sqcjl"), ExtResource("15_qv2u7"), ExtResource("18_2kqho")])
 
 [node name="AnimationPlayer" parent="Book" index="1" unique_id=1425422155]
 autoplay = &"Idle"

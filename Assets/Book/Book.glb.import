@@ -4170,6 +4170,14 @@ _subresources={
 "use_external/fallback_path": "res://Assets/Book/m_book_curr.tres",
 "use_external/path": "uid://bbmp8i3ult74b"
 }
+},
+"nodes": {
+"PATH:Armature/Skeleton3D/Cube": {
+"mesh_instance/cast_shadow": 0
+},
+"PATH:Armature/Skeleton3D/Pages": {
+"mesh_instance/cast_shadow": 0
+}
 }
 }
 gltf/naming_version=2

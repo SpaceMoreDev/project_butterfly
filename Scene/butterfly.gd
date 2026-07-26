@@ -49,7 +49,8 @@ func _ready() -> void:
 
 
 func get_random_pos():
-	random_point = NavigationServer3D.map_get_random_point(nav.get_navigation_map(), 1, false)
+	var map_rid = nav.get_navigation_map()
+	random_point = NavigationServer3D.map_get_random_point(map_rid, 1, false)
 	move_speed = base_speed
 	(nav_agent as NavigationAgent3D).target_position = random_point
 	

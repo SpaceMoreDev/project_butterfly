@@ -46,7 +46,7 @@ func _ready() -> void:
 	
 	_anim.animation_finished.connect(func (anim) -> void:
 		animation_complete = true
-		if curent_index+1 < all_pages.size()-1:
+		if curent_index+1 <= all_pages.size()-1:
 			current_page = all_pages[curent_index+1]
 
 		
