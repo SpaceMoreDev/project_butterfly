@@ -10,6 +10,13 @@
 [ext_resource type="Texture2D" uid="uid://cncjophmp5aoc" path="res://ShotGun Color.png" id="4_bdho6"]
 [ext_resource type="Script" uid="uid://bsul5mu5smpa3" path="res://Player/net_hand.gd" id="7_i6cme"]
 [ext_resource type="Texture2D" uid="uid://dpakb1m35b1gk" path="res://Page1BFJ.png" id="10_rl845"]
+[ext_resource type="PackedScene" uid="uid://datmfdttqlr5l" path="res://Assets/Book/Book.glb" id="11_ji5ww"]
+[ext_resource type="Script" uid="uid://c5lubxgc71v61" path="res://Assets/Book/book.gd" id="12_4p2t4"]
+[ext_resource type="Texture2D" uid="uid://cl8d02kdcf6f5" path="res://Assets/Book/Page2BFJ.png" id="13_05oep"]
+[ext_resource type="Texture2D" uid="uid://b2emvgpkywmde" path="res://Assets/Book/Page3BFJ.png" id="14_s2hpm"]
+[ext_resource type="Texture2D" uid="uid://b5uea50dcchha" path="res://Assets/Book/Page4BFJ.png" id="14_sqcjl"]
+[ext_resource type="Texture2D" uid="uid://dk32amxjiomtw" path="res://Assets/Book/Page5BFJ.png" id="15_qv2u7"]
+[ext_resource type="Texture2D" uid="uid://iy8xmsbvgql8" path="res://Assets/Book/Page1BFJ.png" id="15_sqcjl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rl845"]
 resource_name = "Cylinder"
@@ -147,4 +154,15 @@ visible = false
 material_override = SubResource("StandardMaterial3D_ji5ww")
 mesh = SubResource("PlaneMesh_bdho6")
 
+[node name="Book" parent="." unique_id=369547485 instance=ExtResource("11_ji5ww")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -0.615)
+script = ExtResource("12_4p2t4")
+inactive_transform = Vector3(0, -1, -0.615)
+active_transform = Vector3(0, -0.185, -0.615)
+all_pages = Array[Texture2D]([ExtResource("15_sqcjl"), ExtResource("13_05oep"), ExtResource("14_s2hpm"), ExtResource("14_sqcjl"), ExtResource("15_qv2u7")])
+
+[node name="AnimationPlayer" parent="Book" index="1" unique_id=1425422155]
+autoplay = &"Idle"
+
 [editable path="shotgun"]
+[editable path="Book"]

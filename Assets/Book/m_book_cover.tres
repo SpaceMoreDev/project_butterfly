@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://iir4ail761ep"]
+
+[ext_resource type="Texture2D" uid="uid://bcvq623b7m7r" path="res://Assets/Book/Book_Book Color.png" id="1_rgiff"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+diffuse_mode = 2
+albedo_texture = ExtResource("1_rgiff")
+texture_filter = 0

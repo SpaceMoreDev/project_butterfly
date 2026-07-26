@@ -12,6 +12,8 @@ var butterflies_speed : float = 3.0
 var can_look = true
 var score = 0
 
+var Player_net : NetHand
+
 var max_count_of_butterflies : int = 0
 
 func _ready() -> void:
@@ -20,3 +22,7 @@ func _ready() -> void:
 func _score_add(_score):
 	score += _score
 	updated_score.emit()
+
+func _use_net(active):
+	if Player_net:
+		Player_net.active = active

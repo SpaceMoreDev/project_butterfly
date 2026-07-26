@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://vxjh51usucbj"]
+
+[ext_resource type="Texture2D" uid="uid://cl8d02kdcf6f5" path="res://Assets/Book/Page2BFJ.png" id="1_r2qu4"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+diffuse_mode = 2
+albedo_texture = ExtResource("1_r2qu4")
+texture_filter = 0

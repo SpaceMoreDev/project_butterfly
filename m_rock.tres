@@ -1,7 +1,7 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://c85u2tnkr72kc"]
 
-[ext_resource type="Texture2D" uid="uid://c85upbxl0r3um" path="res://map_sc2a5_Ucupaint Rock Color.png" id="1_j4576"]
-[ext_resource type="Texture2D" uid="uid://diiv6muog07wd" path="res://map_sc2a5_Ucupaint Rock Normal.png" id="2_2a781"]
+[ext_resource type="Texture2D" uid="uid://c85upbxl0r3um" path="res://Map Assets/map_sc2a5_Ucupaint Rock Color.png" id="1_j4576"]
+[ext_resource type="Texture2D" uid="uid://diiv6muog07wd" path="res://Map Assets/map_sc2a5_Ucupaint Rock Normal.png" id="2_2a781"]
 
 [resource]
 shading_mode = 2

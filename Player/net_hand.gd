@@ -38,7 +38,18 @@ var cool_time : float =  0.25
 var on_cool_down : bool = false
 var ct : float  = 0.0
 
+var _active = true
+var active : bool = true:
+	set(val):
+		_active = val
+		if val:
+			visible = true
+		else:
+			visible = false
+
+
 func _ready() -> void:
+	Global.Player_net = self
 	default_net_pos = net.transform
 	base_rotation = net.rotation
 	obj_velocity = net.position
@@ -64,6 +75,9 @@ func _animation_reset(anim):
 	is_catching = false
 
 func _input(event: InputEvent) -> void:
+	if not active:
+		return
+	
 	if event is InputEventMouseButton:
 		if event.is_pressed() and event.button_index == MouseButton.MOUSE_BUTTON_LEFT:
 			#Global.can_look = false
@@ -113,6 +127,9 @@ func update_net_rotation() -> void:
 
 
 func _process(delta: float) -> void:
+	if not active:
+		return
+	
 	if on_cool_down:
 		if ct < cool_time:
 			ct += delta
@@ -123,6 +140,9 @@ func _process(delta: float) -> void:
 
 
 func _physics_process(delta: float) -> void:
+	if not active:
+		return
+	
 	if move:
 		var mousex = mousedelta.x* delta
 		var mousey = -mousedelta.y* delta
