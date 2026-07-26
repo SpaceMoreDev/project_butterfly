@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://bd47lr0s8nf3d"]
+
+[ext_resource type="Shader" uid="uid://vcuuulp5wbch" path="res://Scene/VHS_TEST.gdshader" id="1_cobfo"]
+[ext_resource type="Shader" uid="uid://dmbhp7o8hiis7" path="res://shaders/vhs.gdshader" id="1_kvh2l"]
+[ext_resource type="Script" uid="uid://dnlcqu80mv56" path="res://Scene/rotate.gd" id="1_lm5s1"]
+[ext_resource type="Shader" uid="uid://b1pg71a23bxt4" path="res://shaders/pixelize.gdshader" id="2_cobfo"]
+[ext_resource type="PackedScene" uid="uid://bcsnt6yyxjpmu" path="res://Monster.fbx" id="2_vj80r"]
+
+[sub_resource type="PointMesh" id="PointMesh_na2i1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vj80r"]
+shader = ExtResource("1_cobfo")
+shader_parameter/vhs_resolution = Vector2(320, 240)
+shader_parameter/samples = 2
+shader_parameter/crease_noise = 1.0000000149012
+shader_parameter/crease_opacity = 0.5000000074506
+shader_parameter/filter_intensity = 0.1
+shader_parameter/tape_crease_smear = 0.20000000298024
+shader_parameter/tape_crease_intensity = 0.2
+shader_parameter/tape_crease_jitter = 0.1
+shader_parameter/tape_crease_speed = 0.5
+shader_parameter/tape_crease_discoloration = 1.0000000149012
+shader_parameter/bottom_border_thickness = 6.0
+shader_parameter/bottom_border_jitter = 6.0
+shader_parameter/noise_intensity = 0.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pwftu"]
+shader = ExtResource("1_kvh2l")
+shader_parameter/wiggle = 0.0499999988824
+shader_parameter/wiggle_speed = 25.0
+shader_parameter/smear = 0.2510000119225
+shader_parameter/blur_samples = 15
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lm5s1"]
+shader = ExtResource("2_cobfo")
+shader_parameter/exposure = 1.0
+shader_parameter/contrast = 1.25
+shader_parameter/saturation = 0.9
+shader_parameter/enable_pixelate = true
+shader_parameter/pixel_factor = 2.0
+shader_parameter/enable_posterize = false
+shader_parameter/color_levels = 12.0
+shader_parameter/dither_strength = 0.75
+shader_parameter/chrom_aberration = 4.0
+shader_parameter/vignette_strength = 1.0
+shader_parameter/grain_strength = 0.2000000095
+shader_parameter/tint_color = Vector3(0.95, 1.03, 0.9)
+shader_parameter/tint_strength = 0.15
+shader_parameter/viewport_size_override = Vector2(0, 0)
+
+[node name="Node2D" type="Node3D" unique_id=1994912741]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=950374283]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2014391, 3.3075025)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera3D" unique_id=1531186666]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2014391, -3.3075025)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=674900814]
+physics_interpolation_mode = 1
+mesh = SubResource("PointMesh_na2i1")
+script = ExtResource("1_lm5s1")
+
+[node name="Monster" parent="MeshInstance3D" unique_id=743246833 instance=ExtResource("2_vj80r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9001474, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=882426837]
+
+[node name="shaders" type="BackBufferCopy" parent="CanvasLayer" unique_id=1054993868]
+position = Vector2(320, 240)
+scale = Vector2(3.2, 2.4)
+copy_mode = 2
+metadata/_edit_group_ = true
+
+[node name="vhs" type="ColorRect" parent="CanvasLayer/shaders" unique_id=439790081]
+material = SubResource("ShaderMaterial_vj80r")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -100.0
+offset_right = -100.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="shaders3" type="BackBufferCopy" parent="CanvasLayer" unique_id=1513213706]
+position = Vector2(320, 240)
+scale = Vector2(3.2, 2.4)
+copy_mode = 2
+metadata/_edit_group_ = true
+
+[node name="vhs" type="ColorRect" parent="CanvasLayer/shaders3" unique_id=1234309814]
+visible = false
+material = SubResource("ShaderMaterial_pwftu")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -100.0
+offset_right = -100.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="shaders2" type="BackBufferCopy" parent="CanvasLayer" unique_id=1235263870]
+position = Vector2(320, 240)
+scale = Vector2(3.2, 2.4)
+copy_mode = 2
+metadata/_edit_group_ = true
+
+[node name="psx" type="ColorRect" parent="CanvasLayer/shaders2" unique_id=2090363978]
+visible = false
+material = SubResource("ShaderMaterial_lm5s1")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -100.0
+offset_right = -100.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
