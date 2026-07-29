@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://b5uea50dcchha" path="res://Assets/Book/Page4BFJ.png" id="14_sqcjl"]
 [ext_resource type="Texture2D" uid="uid://dk32amxjiomtw" path="res://Assets/Book/Page5BFJ.png" id="15_qv2u7"]
 [ext_resource type="Texture2D" uid="uid://iy8xmsbvgql8" path="res://Assets/Book/Page1BFJ.png" id="15_sqcjl"]
+[ext_resource type="Texture2D" uid="uid://cn6leoe82v56m" path="res://Assets/dialogue/Data/Guide_page.png" id="15_udlcd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rl845"]
 resource_name = "Cylinder"
@@ -148,12 +149,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)
 [node name="butterfly4" parent="Jar/container" unique_id=2011391745 instance=ExtResource("9_2kqho")]
 transform = Transform3D(-0.04714072, -0.11287976, -0.10825486, -0.03406756, 0.11776148, -0.10795748, 0.15264459, -0.008578017, -0.05752621, 0.13693476, 0.39828038, 0.021881342)
 
-[node name="Skeleton3D" parent="Jar/container/butterfly4/Butterfly" parent_id_path=PackedInt32Array(2011391745, 975465141) index="0" unique_id=1413909928]
-bones/0/position = Vector3(0.15944919, 1.4084167, -2.2883193)
-bones/1/rotation = Quaternion(0.069307245, -0.06930733, -0.703702, 0.7037021)
-bones/2/rotation = Quaternion(0.069307186, 0.069307275, 0.70370203, 0.70370203)
-
-[node name="Empty_001" parent="Jar/container/butterfly4/Butterfly/Skeleton3D" index="0" unique_id=947929560]
+[node name="Empty_001" parent="Jar/container/butterfly4/Butterfly/Skeleton3D" parent_id_path=PackedInt32Array(2011391745, 1413909928) index="0" unique_id=947929560]
 material_override = SubResource("StandardMaterial3D_vm6fl")
 
 [node name="AnimationPlayer" parent="Jar/container/butterfly4" index="1" unique_id=1344750978]
@@ -163,12 +159,7 @@ autoplay = &"Butterfly"
 [node name="butterfly6" parent="Jar/container" unique_id=2139218565 instance=ExtResource("9_2kqho")]
 transform = Transform3D(-0.1386813, -0.080550596, -0.031020958, -0.0508684, 0.12369498, -0.093782395, 0.069736086, -0.06995949, -0.130099, 0.04629612, 0.89213014, -0.2255218)
 
-[node name="Skeleton3D" parent="Jar/container/butterfly6/Butterfly" parent_id_path=PackedInt32Array(2139218565, 975465141) index="0" unique_id=1413909928]
-bones/0/position = Vector3(0.004663557, 1.7808203, 1.536076)
-bones/1/rotation = Quaternion(0.30155355, -0.3015537, -0.6395822, 0.6395822)
-bones/2/rotation = Quaternion(0.3015536, 0.3015537, 0.6395822, 0.6395822)
-
-[node name="Empty_001" parent="Jar/container/butterfly6/Butterfly/Skeleton3D" index="0" unique_id=947929560]
+[node name="Empty_001" parent="Jar/container/butterfly6/Butterfly/Skeleton3D" parent_id_path=PackedInt32Array(2139218565, 1413909928) index="0" unique_id=947929560]
 material_override = SubResource("StandardMaterial3D_vm6fl")
 
 [node name="AnimationPlayer" parent="Jar/container/butterfly6" index="1" unique_id=1344750978]
@@ -177,12 +168,7 @@ autoplay = &"Butterfly"
 [node name="butterfly5" parent="Jar/container" unique_id=1231741750 instance=ExtResource("9_2kqho")]
 transform = Transform3D(0.16253945, 0.004415948, 0.015640516, 0.004415944, 0.1392893, -0.085218474, -0.015640516, 0.08521848, 0.13847889, 0.0037164688, 1.1241283, 0.021881342)
 
-[node name="Skeleton3D" parent="Jar/container/butterfly5/Butterfly" parent_id_path=PackedInt32Array(1231741750, 975465141) index="0" unique_id=1413909928]
-bones/0/position = Vector3(0.76495826, 1.2339106, 1.1133882)
-bones/1/rotation = Quaternion(-0.10527745, 0.105277374, -0.6992257, 0.69922584)
-bones/2/rotation = Quaternion(-0.105277345, -0.10527726, 0.69922584, 0.6992257)
-
-[node name="Empty_001" parent="Jar/container/butterfly5/Butterfly/Skeleton3D" index="0" unique_id=947929560]
+[node name="Empty_001" parent="Jar/container/butterfly5/Butterfly/Skeleton3D" parent_id_path=PackedInt32Array(1231741750, 1413909928) index="0" unique_id=947929560]
 material_override = SubResource("StandardMaterial3D_vm6fl")
 
 [node name="AnimationPlayer" parent="Jar/container/butterfly5" index="1" unique_id=1344750978]
@@ -219,7 +205,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -0.615)
 script = ExtResource("12_4p2t4")
 inactive_transform = Vector3(0, -1, -0.615)
 active_transform = Vector3(0, -0.185, -0.615)
-all_pages = Array[Texture2D]([ExtResource("15_sqcjl"), ExtResource("13_05oep"), ExtResource("14_s2hpm"), ExtResource("14_sqcjl"), ExtResource("15_qv2u7")])
+all_pages = Array[Texture2D]([ExtResource("15_udlcd"), ExtResource("15_sqcjl"), ExtResource("13_05oep"), ExtResource("14_s2hpm"), ExtResource("14_sqcjl"), ExtResource("15_qv2u7")])
 
 [node name="AnimationPlayer" parent="Book" index="1" unique_id=1020760046]
 autoplay = &"Idle"

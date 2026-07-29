@@ -25,11 +25,10 @@ shape = SubResource("CapsuleShape3D_j23h2")
 
 [node name="Collision2" type="CollisionShape3D" parent="." index="1" unique_id=1176322972]
 physics_interpolation_mode = 1
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.4080071)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.94323426)
 shape = SubResource("CapsuleShape3D_j23h2")
 
 [node name="Head" parent="." index="2" unique_id=315625654 instance=ExtResource("2_41iu1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.64, 0.89709723)
 
 [node name="Sprint" type="Node" parent="." index="3" unique_id=1121165758]
 physics_interpolation_mode = 1

@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ddam4k65hl7kr"]
+
+[ext_resource type="Texture2D" uid="uid://dvsxdbl20g76v" path="res://Assets/Cutscene/S1_Base_skin Color.png" id="1_1ban5"]
+
+[resource]
+albedo_texture = ExtResource("1_1ban5")
+metallic_specular = 0.98
+texture_filter = 0
