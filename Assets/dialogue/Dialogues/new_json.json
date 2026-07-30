@@ -1,7 +1,7 @@
 [
 	{
 		"scene": "intro scene",
-		"next_scene": "res://Scene/_map.scn",
+		"next_scene": "res://Scene/_map_day.scn",
 		"dialogue": [
 			{
 				"speaker": "Man",

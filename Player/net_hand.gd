@@ -38,18 +38,22 @@ var cool_time : float =  1
 var on_cool_down : bool = false
 var ct : float  = 0.0
 
-var _active = true
+@export var _active = true
 var active : bool = true:
 	set(val):
 		_active = val
 		if val:
 			visible = true
+			Global._use_gun(false)
 		else:
 			visible = false
+			Global._use_gun(true)
 
 
 func _ready() -> void:
 	Global.Player_net = self
+	active = _active
+	
 	default_net_pos = net.transform
 	base_rotation = net.rotation
 	obj_velocity = net.position
@@ -76,7 +80,7 @@ func _animation_reset(anim):
 	is_catching = false
 
 func _input(event: InputEvent) -> void:
-	if not active:
+	if not _active:
 		return
 	
 	if event is InputEventMouseButton:
@@ -128,7 +132,7 @@ func update_net_rotation() -> void:
 
 
 func _process(delta: float) -> void:
-	if not active:
+	if not _active:
 		return
 	
 	if on_cool_down:
@@ -141,7 +145,7 @@ func _process(delta: float) -> void:
 
 
 func _physics_process(delta: float) -> void:
-	if not active:
+	if not _active:
 		return
 	
 	if move:

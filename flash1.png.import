@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhobhihdubluh"
-path.s3tc="res://.godot/imported/BirdWingBF.png-486da5f25f98aefe43c61745896022c1.s3tc.ctex"
+uid="uid://p75rjpnjoa85"
+path.s3tc="res://.godot/imported/flash1.png-5635908dc3ba95fdb6d429a70eb2a875.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Butterfly/BirdWingBF.png"
-dest_files=["res://.godot/imported/BirdWingBF.png-486da5f25f98aefe43c61745896022c1.s3tc.ctex"]
+source_file="res://flash1.png"
+dest_files=["res://.godot/imported/flash1.png-5635908dc3ba95fdb6d429a70eb2a875.s3tc.ctex"]
 
 [params]
 

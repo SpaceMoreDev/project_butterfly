@@ -13,7 +13,7 @@
 [sub_resource type="SphereMesh" id="SphereMesh_aeui4"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_suw74"]
-radius = 1.102
+radius = 1.4445975
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vm6fl"]
 transparency = 2
@@ -81,9 +81,9 @@ shape = SubResource("SphereShape3D_suw74")
 transform = Transform3D(0.11, 0, 0, 0, 0.11, 0, 0, 0, 0.11, 0, 0, 0)
 
 [node name="Skeleton3D" parent="butterfly/Butterfly" parent_id_path=PackedInt32Array(2011391745, 975465141) index="0" unique_id=1413909928]
-bones/0/position = Vector3(-0.013537586, 1.1273137, -0.2833265)
-bones/1/rotation = Quaternion(0.3439295, -0.34392956, -0.61782885, 0.6178289)
-bones/2/rotation = Quaternion(0.3439296, 0.3439297, 0.6178288, 0.61782885)
+bones/0/position = Vector3(0.12669775, 0.982833, 0.37099278)
+bones/1/rotation = Quaternion(-0.19855547, 0.19855538, -0.6786573, 0.6786574)
+bones/2/rotation = Quaternion(-0.19855538, -0.19855529, 0.6786573, 0.6786574)
 
 [node name="Empty_001" parent="butterfly/Butterfly/Skeleton3D" index="0" unique_id=947929560]
 material_override = SubResource("StandardMaterial3D_vm6fl")

@@ -2,7 +2,7 @@ extends Node
 
 signal add_score(score)
 signal updated_score()
-
+signal shoot()
 var mouse_sensitivity : float = 2.0/1000
 var Player : MovementController
 
@@ -13,6 +13,7 @@ var can_look = true
 var score = 0
 
 var Player_net : NetHand
+var Player_gun : ShotGun
 
 var max_count_of_butterflies : int = 0
 
@@ -26,3 +27,7 @@ func _score_add(_score):
 func _use_net(active):
 	if Player_net:
 		Player_net.active = active
+
+func _use_gun(active):
+	if Player_gun:
+		Player_gun.active = active

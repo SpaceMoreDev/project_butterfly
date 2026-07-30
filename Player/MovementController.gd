@@ -9,7 +9,7 @@ class_name MovementController
 @export_range(0.0, 1.0, 0.05) var air_control := 0.3
 @export var jump_height := 10
 @export var player_anim : AnimationPlayer
-
+@onready var footsteps: AnimationPlayer = $AnimationPlayer
 var is_shooting = false
 var is_interacting : bool = false
 
@@ -46,6 +46,10 @@ func _physics_process(delta: float) -> void:
 	direction_input()
 	
 	if is_on_floor():
+		if input_axis.length_squared() > 0:
+			footsteps.play("Footsteps")
+		else:
+			footsteps.stop()
 		#if Input.is_action_just_pressed(&"jump"):
 			#velocity.y = jump_height
 		pass

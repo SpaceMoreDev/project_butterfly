@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhobhihdubluh"
-path.s3tc="res://.godot/imported/BirdWingBF.png-486da5f25f98aefe43c61745896022c1.s3tc.ctex"
+uid="uid://b2iam12isusqi"
+path.s3tc="res://.godot/imported/Monster_Monster_Texture Fake Lighting.png-46d6dc0e0c3c6495cad48312a1879f37.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "d8062b295c7bcbec99a9617a797d1b54"
+}
 
 [deps]
 
-source_file="res://Assets/Butterfly/BirdWingBF.png"
-dest_files=["res://.godot/imported/BirdWingBF.png-486da5f25f98aefe43c61745896022c1.s3tc.ctex"]
+source_file="res://Assets/Monster/Monster_Monster_Texture Fake Lighting.png"
+dest_files=["res://.godot/imported/Monster_Monster_Texture Fake Lighting.png-46d6dc0e0c3c6495cad48312a1879f37.s3tc.ctex"]
 
 [params]
 

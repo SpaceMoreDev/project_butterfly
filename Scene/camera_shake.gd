@@ -1,5 +1,6 @@
 extends Node3D
 @onready var camera: Camera3D = $"../Camera"
+
 @export var randomStrength:float = 0.25
 @export var shakeFade:float = 10.0
 
@@ -9,9 +10,13 @@ var shake_strength: float = 0.0
 
 func _ready(): 
 	Global.updated_score.connect(score_changed)
+	Global.shoot.connect(player_shoot)
 
 func score_changed():
 	apply_shake()
+
+func player_shoot():
+	shake_strength = 0.1
 
 func apply_shake(): 
 	shake_strength = randomStrength

@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_dugvx")
 speed = 2.0
-height = -2.0
+height = -1.8
 metadata/_custom_type_script = "uid://bcveeafljnper"

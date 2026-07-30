@@ -7,32 +7,24 @@
 [ext_resource type="PackedScene" uid="uid://b86sh1c56cl24" path="res://shotgun.glb" id="3_i6cme"]
 [ext_resource type="PackedScene" uid="uid://c4wn4nxwmiebn" path="res://container.blend" id="3_oowo0"]
 [ext_resource type="Texture2D" uid="uid://cncjophmp5aoc" path="res://ShotGun Color.png" id="4_bdho6"]
+[ext_resource type="Script" uid="uid://cmgwbss78wa42" path="res://shotgun.gd" id="4_cldr2"]
 [ext_resource type="Script" uid="uid://bsul5mu5smpa3" path="res://Player/net_hand.gd" id="7_i6cme"]
 [ext_resource type="PackedScene" uid="uid://bbs3vu0slfn76" path="res://butterfly.glb" id="9_2kqho"]
-[ext_resource type="Texture2D" uid="uid://bcx2jdhcske5i" path="res://butterfly_butterfly.png" id="10_6sv8d"]
-[ext_resource type="Texture2D" uid="uid://dpakb1m35b1gk" path="res://Page1BFJ.png" id="10_rl845"]
+[ext_resource type="Texture2D" uid="uid://bhobhihdubluh" path="res://Assets/Butterfly/BirdWingBF.png" id="10_udlcd"]
 [ext_resource type="Script" uid="uid://xx2fs681pgtb" path="res://Player/PlayerUI.gd" id="11_6sv8d"]
+[ext_resource type="Texture2D" uid="uid://dfkoyoc7ekvb1" path="res://Assets/Butterfly/BlueMorphoBF.png" id="11_cldr2"]
 [ext_resource type="PackedScene" uid="uid://datmfdttqlr5l" path="res://Assets/Book/Book.glb" id="11_ji5ww"]
+[ext_resource type="Texture2D" uid="uid://dnr6koh4fobuj" path="res://Assets/Butterfly/CommonPosyBF.png" id="12_00ku8"]
 [ext_resource type="Script" uid="uid://c5lubxgc71v61" path="res://Assets/Book/book.gd" id="12_4p2t4"]
+[ext_resource type="AudioStream" uid="uid://cpky6gtcfi5lt" path="res://Audio/gunn.wav" id="12_es1v0"]
 [ext_resource type="Texture2D" uid="uid://cl8d02kdcf6f5" path="res://Assets/Book/Page2BFJ.png" id="13_05oep"]
 [ext_resource type="Texture2D" uid="uid://b2emvgpkywmde" path="res://Assets/Book/Page3BFJ.png" id="14_s2hpm"]
 [ext_resource type="Texture2D" uid="uid://b5uea50dcchha" path="res://Assets/Book/Page4BFJ.png" id="14_sqcjl"]
+[ext_resource type="Texture2D" uid="uid://p75rjpnjoa85" path="res://flash1.png" id="15_00ku8"]
 [ext_resource type="Texture2D" uid="uid://dk32amxjiomtw" path="res://Assets/Book/Page5BFJ.png" id="15_qv2u7"]
 [ext_resource type="Texture2D" uid="uid://iy8xmsbvgql8" path="res://Assets/Book/Page1BFJ.png" id="15_sqcjl"]
 [ext_resource type="Texture2D" uid="uid://cn6leoe82v56m" path="res://Assets/dialogue/Data/Guide_page.png" id="15_udlcd"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rl845"]
-resource_name = "Cylinder"
-transparency = 4
-cull_mode = 2
-shading_mode = 2
-diffuse_mode = 2
-specular_mode = 1
-albedo_texture = ExtResource("4_bdho6")
-texture_filter = 2
-use_z_clip_scale = true
-z_clip_scale = 0.9
-metadata/_gltf_primary_texture_coord = 0
+[ext_resource type="Texture2D" uid="uid://clsgdxgq27mo" path="res://Muzzleflash.png" id="18_es1v0"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qy1gf"]
 animation = &"Catching"
@@ -70,28 +62,285 @@ transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(-262, 10)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_aeui4"]
-radius = 0.68449616
+radius = 0.72360426
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dpcb8"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 1, 1, 0)
+albedo_texture = ExtResource("15_00ku8")
+texture_filter = 0
+disable_receive_shadows = true
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_aeui4"]
+orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rl845"]
+resource_name = "Cylinder"
+transparency = 4
+cull_mode = 2
+shading_mode = 2
+diffuse_mode = 2
+specular_mode = 1
+albedo_texture = ExtResource("4_bdho6")
+texture_filter = 2
+use_z_clip_scale = true
+z_clip_scale = 0.9
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_00ku8"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_texture = ExtResource("18_es1v0")
+texture_filter = 0
+disable_receive_shadows = true
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_es1v0"]
+material = SubResource("StandardMaterial3D_00ku8")
+orientation = 2
+
+[sub_resource type="Curve" id="Curve_00ku8"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, -360), 0.0, 0.0, 0, 0, Vector2(1, 93.03375), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_ykasc"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, -360), 0.0, 0.0, 0, 0, Vector2(0.9882075, 360), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_4fqg5"]
+_data = [Vector2(0, 1), 0.0, -2.1433249, 0, 0, Vector2(1, 0), -2.1121945, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_02xh5"]
+offsets = PackedFloat32Array(0, 0.5276382, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.003921569, 0.003921569, 0.003921569, 0.85490197, 0.14901961, 0.14901961, 0.14901961, 0)
+
+[sub_resource type="Animation" id="Animation_00ku8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.24, -0.35, -0.628)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.19198623, 1.8727382, -0.41887903)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../MeshInstance3D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.352, 0.352, 0.352)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../MeshInstance3D:material_override:albedo_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../AudioStreamPlayer3D:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Shotgun/CPUParticles3D:emitting")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Shotgun/CPUParticles3D/OmniLight3D:light_energy")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_cldr2"]
+resource_name = "Shoot"
+length = 0.6666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333336, 0.23333338, 0.36666667, 0.6666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.24, -0.205, -0.628), Vector3(0.18, -0.16, -0.628), Vector3(0.17, -0.2, -0.628), Vector3(0.2, -0.145, -0.123), Vector3(0.24, -0.205, -0.628)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.23333335, 0.36624044, 0.6666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.19198622, 1.532399, -0.075049154), Vector3(0.10297442, 1.5166911, 0.064577185), Vector3(0.10297442, 1.3439035, 0.27576202), Vector3(0.19198622, 1.532399, -0.075049154)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath("../MeshInstance3D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.23333333, 0.43333334, 0.6666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.207, 0.207, 0.207), Vector3(0.207, 0.207, 0.207), Vector3(0.142, 0.142, 0.142), Vector3(0.352, 0.352, 0.352)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = false
+tracks/3/path = NodePath("../MeshInstance3D:material_override:albedo_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.23333335, 0.4, 0.53333336, 0.6666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(0.13333334, 0.13333334, 0.13333334, 0.7176471), Color(0, 0, 0, 0.49411765), Color(0, 0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../AudioStreamPlayer3D:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.26666668),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Shotgun/CPUParticles3D:emitting")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.23333335, 0.43333337),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("..")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.26666668),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_cam_shake"
+}]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Shotgun/CPUParticles3D/OmniLight3D:light_energy")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.23333333, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0.0, 2.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_00ku8"]
+_data = {
+&"RESET": SubResource("Animation_00ku8"),
+&"Shoot": SubResource("Animation_cldr2")
+}
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vm6fl"]
 transparency = 1
 cull_mode = 2
 shading_mode = 0
 albedo_color = Color(0.3129209, 0.7530745, 1.9768668, 1)
-albedo_texture = ExtResource("10_6sv8d")
+albedo_texture = ExtResource("10_udlcd")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ji5ww"]
-transparency = 2
-alpha_scissor_threshold = 0.056
-alpha_antialiasing_mode = 0
-albedo_texture = ExtResource("10_rl845")
-texture_filter = 0
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_es1v0"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(0.3129209, 0.7530745, 1.9768668, 1)
+albedo_texture = ExtResource("11_cldr2")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_bdho6"]
-orientation = 2
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ykasc"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(0.3129209, 0.7530745, 1.9768668, 1)
+albedo_texture = ExtResource("12_00ku8")
 
 [node name="Head" type="Node3D" unique_id=955601237]
 physics_interpolation_mode = 1
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.64, 0)
 script = ExtResource("1_enjfg")
 
 [node name="Camera" type="Camera3D" parent="." unique_id=1478984677]
@@ -99,9 +348,6 @@ physics_interpolation_mode = 1
 cull_mask = 1048573
 current = true
 fov = 60.0
-
-[node name="Hand" type="Node3D" parent="." unique_id=1287922249]
-physics_interpolation_mode = 1
 
 [node name="CameraShake" type="Node3D" parent="." unique_id=5202881]
 physics_interpolation_mode = 1
@@ -112,15 +358,10 @@ randomStrength = 0.35
 [node name="HeadBob" type="Node3D" parent="." unique_id=1905633388]
 physics_interpolation_mode = 1
 
-[node name="shotgun" parent="." unique_id=386872980 instance=ExtResource("3_i6cme")]
-transform = Transform3D(-0.34576347, 0.045473665, 0.93721914, -0.39926374, 0.896761, -0.190809, -0.8491384, -0.44017243, -0.2919112, 0.24, -0.35, -0.628)
-visible = false
-
-[node name="Shotgun" parent="shotgun" index="0" unique_id=153550908]
-material_override = SubResource("StandardMaterial3D_rl845")
-
 [node name="net_hand" type="Node3D" parent="." unique_id=1594775810]
+visible = false
 script = ExtResource("7_i6cme")
+_active = false
 
 [node name="net" parent="net_hand" unique_id=925678904 instance=ExtResource("2_xfbis")]
 transform = Transform3D(-0.51357836, 0.018219069, -0.12963541, 0, 0.52484196, 0.07376175, 0.1309094, 0.07147629, -0.5085802, 0.455, -1.555, -1.288)
@@ -137,8 +378,75 @@ collision_mask = 16
 monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="net_hand/net/Area3D" unique_id=1871247701]
-transform = Transform3D(1, -3.7252903e-09, 0, -1.1175871e-08, 1.0000002, 4.4703484e-08, 0, -1.4901161e-08, 1, -0.009453058, 0.2628647, -0.19958162)
+transform = Transform3D(1, -3.7252903e-09, 0, -2.6077032e-08, 1.0000002, 8.940697e-08, 0, -1.4901161e-08, 1, -0.03680992, 0.0026018322, -0.12777889)
 shape = SubResource("SphereShape3D_aeui4")
+
+[node name="Book" parent="." unique_id=369547485 instance=ExtResource("11_ji5ww")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -0.615)
+script = ExtResource("12_4p2t4")
+inactive_transform = Vector3(0, -1, -0.615)
+active_transform = Vector3(0, -0.185, -0.615)
+all_pages = Array[Texture2D]([ExtResource("15_udlcd"), ExtResource("15_sqcjl"), ExtResource("13_05oep"), ExtResource("14_s2hpm"), ExtResource("14_sqcjl"), ExtResource("15_qv2u7")])
+
+[node name="AnimationPlayer" parent="Book" index="1" unique_id=1020760046]
+autoplay = &"Idle"
+
+[node name="ShotGun" type="Node3D" parent="." unique_id=1503847516]
+script = ExtResource("4_cldr2")
+_active = true
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="ShotGun" unique_id=895831067]
+stream = ExtResource("12_es1v0")
+volume_db = -80.0
+max_db = 1.0
+bus = &"New Bus"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ShotGun" unique_id=134911881]
+transform = Transform3D(-0.3480817, -0.002637854, 0.05230838, -0.00854653, 0.34970188, -0.039237082, -0.05167284, -0.04007036, -0.34587324, 0.182, -0.126, -1.208)
+material_override = SubResource("StandardMaterial3D_dpcb8")
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_aeui4")
+
+[node name="shotgun" parent="ShotGun" unique_id=386872980 instance=ExtResource("3_i6cme")]
+transform = Transform3D(-0.3457634, 0.04547367, 0.937219, -0.39926365, 0.89676076, -0.19080898, -0.8491382, -0.4401723, -0.29191118, 0.24, -0.35, -0.628)
+
+[node name="Shotgun" parent="ShotGun/shotgun" index="0" unique_id=153550908]
+transform = Transform3D(0.04000001, 2.3283064e-10, 0, 0, 0.04000001, 2.4738256e-10, -1.1641532e-10, 2.3283064e-10, 0.04000001, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_rl845")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="ShotGun/shotgun/Shotgun" index="0" unique_id=267831965]
+transform = Transform3D(0.5995923, -1.8400294, -24.92499, 4.8252487, 24.471598, -1.6904833, 24.522585, -4.7702265, 0.94206375, 12.524067, 0.96713233, 0.13052511)
+emitting = false
+amount = 1
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.1
+randomness = 0.4
+mesh = SubResource("PlaneMesh_es1v0")
+direction = Vector3(1, 1, 0)
+gravity = Vector3(0, 1, 0)
+angular_velocity_curve = SubResource("Curve_00ku8")
+angle_min = -107.8
+angle_max = 210.4
+angle_curve = SubResource("Curve_ykasc")
+scale_amount_min = 0.25
+scale_amount_max = 0.25
+scale_amount_curve = SubResource("Curve_4fqg5")
+color = Color(0.7792914, 0.7792914, 0.7792913, 1)
+color_ramp = SubResource("Gradient_02xh5")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="ShotGun/shotgun/Shotgun/CPUParticles3D" unique_id=2017007553]
+transform = Transform3D(1.0000001, 7.4505834e-08, -7.450582e-09, -2.9802337e-08, 1.0000002, -2.6077029e-08, -3.7252896e-09, -6.053596e-09, 0.9999997, 0, 1.4901161e-08, -1.1920929e-07)
+light_color = Color(0.9999997, 0.91624135, 0.69021094, 1)
+light_energy = 0.0
+light_volumetric_fog_energy = 5.0
+shadow_enabled = true
+omni_range = 100.0
+omni_attenuation = 0.5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ShotGun" unique_id=2048154864]
+root_node = NodePath("../shotgun")
+libraries/ = SubResource("AnimationLibrary_00ku8")
 
 [node name="Jar" type="Node3D" parent="." unique_id=720132064]
 transform = Transform3D(-8.168722e-09, -1.4992411e-09, 0.19, -0.034298636, 0.18687858, 0, -0.18687858, -0.034298636, -8.305164e-09, -0.439, -1.3212978, -0.838)
@@ -154,14 +462,13 @@ transform = Transform3D(-0.04714072, -0.11287976, -0.10825486, -0.03406756, 0.11
 material_override = SubResource("StandardMaterial3D_vm6fl")
 
 [node name="AnimationPlayer" parent="Jar/container/butterfly4" index="1" unique_id=1344750978]
-root_node = NodePath("../../butterfly4")
 autoplay = &"Butterfly"
 
 [node name="butterfly6" parent="Jar/container" unique_id=2139218565 instance=ExtResource("9_2kqho")]
 transform = Transform3D(-0.1386813, -0.080550596, -0.031020958, -0.0508684, 0.12369498, -0.093782395, 0.069736086, -0.06995949, -0.130099, 0.04629612, 0.89213014, -0.2255218)
 
 [node name="Empty_001" parent="Jar/container/butterfly6/Butterfly/Skeleton3D" parent_id_path=PackedInt32Array(2139218565, 1413909928) index="0" unique_id=947929560]
-material_override = SubResource("StandardMaterial3D_vm6fl")
+material_override = SubResource("StandardMaterial3D_es1v0")
 
 [node name="AnimationPlayer" parent="Jar/container/butterfly6" index="1" unique_id=1344750978]
 autoplay = &"Butterfly"
@@ -170,7 +477,7 @@ autoplay = &"Butterfly"
 transform = Transform3D(0.16253945, 0.004415948, 0.015640516, 0.004415944, 0.1392893, -0.085218474, -0.015640516, 0.08521848, 0.13847889, 0.0037164688, 1.1241283, 0.021881342)
 
 [node name="Empty_001" parent="Jar/container/butterfly5/Butterfly/Skeleton3D" parent_id_path=PackedInt32Array(1231741750, 1413909928) index="0" unique_id=947929560]
-material_override = SubResource("StandardMaterial3D_vm6fl")
+material_override = SubResource("StandardMaterial3D_ykasc")
 
 [node name="AnimationPlayer" parent="Jar/container/butterfly5" index="1" unique_id=1344750978]
 autoplay = &"Butterfly"
@@ -195,24 +502,8 @@ text = "Collected 0"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1451032241]
-transform = Transform3D(0.486, 0, 0, 0, 0.486, 0, 0, 0, 0.486, 0.011, 0.004999995, -0.80825055)
-visible = false
-material_override = SubResource("StandardMaterial3D_ji5ww")
-mesh = SubResource("PlaneMesh_bdho6")
-
-[node name="Book" parent="." unique_id=369547485 instance=ExtResource("11_ji5ww")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -0.615)
-script = ExtResource("12_4p2t4")
-inactive_transform = Vector3(0, -1, -0.615)
-active_transform = Vector3(0, -0.185, -0.615)
-all_pages = Array[Texture2D]([ExtResource("15_udlcd"), ExtResource("15_sqcjl"), ExtResource("13_05oep"), ExtResource("14_s2hpm"), ExtResource("14_sqcjl"), ExtResource("15_qv2u7")])
-
-[node name="AnimationPlayer" parent="Book" index="1" unique_id=1020760046]
-autoplay = &"Idle"
-
-[editable path="shotgun"]
+[editable path="Book"]
+[editable path="ShotGun/shotgun"]
 [editable path="Jar/container/butterfly4"]
 [editable path="Jar/container/butterfly6"]
 [editable path="Jar/container/butterfly5"]
-[editable path="Book"]
