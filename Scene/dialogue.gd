@@ -30,7 +30,7 @@ func _ready() -> void:
 	_next_line()
 
 func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("ui_accept"):
+	if event.is_pressed() and not event.is_echo():
 		if animation_node:
 			if not animation_node.is_anim_playing:
 				_next_line()

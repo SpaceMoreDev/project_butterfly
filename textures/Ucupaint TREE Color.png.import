@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://donjo45bh00e2"
 path.s3tc="res://.godot/imported/Ucupaint TREE Color.png-500cc624bab07b64a40a097052c8a63f.s3tc.ctex"
+path.etc2="res://.godot/imported/Ucupaint TREE Color.png-500cc624bab07b64a40a097052c8a63f.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +14,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://textures/Ucupaint TREE Color.png"
-dest_files=["res://.godot/imported/Ucupaint TREE Color.png-500cc624bab07b64a40a097052c8a63f.s3tc.ctex"]
+dest_files=["res://.godot/imported/Ucupaint TREE Color.png-500cc624bab07b64a40a097052c8a63f.s3tc.ctex", "res://.godot/imported/Ucupaint TREE Color.png-500cc624bab07b64a40a097052c8a63f.etc2.ctex"]
 
 [params]
 

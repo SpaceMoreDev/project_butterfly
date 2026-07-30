@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://joid3on74qcv"
 path.s3tc="res://.godot/imported/Human_Ucupaint Base_skin Color.png-34e70366a1519feeb768e0fc66f01cb3.s3tc.ctex"
+path.etc2="res://.godot/imported/Human_Ucupaint Base_skin Color.png-34e70366a1519feeb768e0fc66f01cb3.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/Man/Human_Ucupaint Base_skin Color.png"
-dest_files=["res://.godot/imported/Human_Ucupaint Base_skin Color.png-34e70366a1519feeb768e0fc66f01cb3.s3tc.ctex"]
+dest_files=["res://.godot/imported/Human_Ucupaint Base_skin Color.png-34e70366a1519feeb768e0fc66f01cb3.s3tc.ctex", "res://.godot/imported/Human_Ucupaint Base_skin Color.png-34e70366a1519feeb768e0fc66f01cb3.etc2.ctex"]
 
 [params]
 

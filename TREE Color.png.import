@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bx55nlo1sbddd"
 path.s3tc="res://.godot/imported/TREE Color.png-a4da7924abbe3483185b9eac8fb34a1d.s3tc.ctex"
+path.etc2="res://.godot/imported/TREE Color.png-a4da7924abbe3483185b9eac8fb34a1d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://TREE Color.png"
-dest_files=["res://.godot/imported/TREE Color.png-a4da7924abbe3483185b9eac8fb34a1d.s3tc.ctex"]
+dest_files=["res://.godot/imported/TREE Color.png-a4da7924abbe3483185b9eac8fb34a1d.s3tc.ctex", "res://.godot/imported/TREE Color.png-a4da7924abbe3483185b9eac8fb34a1d.etc2.ctex"]
 
 [params]
 

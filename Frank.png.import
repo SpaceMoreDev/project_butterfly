@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://e2cgjpjw1evn"
 path.s3tc="res://.godot/imported/Frank.png-2a852d78cbf2bd83b845e90544957d7d.s3tc.ctex"
+path.etc2="res://.godot/imported/Frank.png-2a852d78cbf2bd83b845e90544957d7d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Frank.png"
-dest_files=["res://.godot/imported/Frank.png-2a852d78cbf2bd83b845e90544957d7d.s3tc.ctex"]
+dest_files=["res://.godot/imported/Frank.png-2a852d78cbf2bd83b845e90544957d7d.s3tc.ctex", "res://.godot/imported/Frank.png-2a852d78cbf2bd83b845e90544957d7d.etc2.ctex"]
 
 [params]
 

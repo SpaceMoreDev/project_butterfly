@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bio6uf3ojycwp"
 path.s3tc="res://.godot/imported/Bigtree_TREE Color.png-442727bcecf7b22c632af00c1a4e300d.s3tc.ctex"
+path.etc2="res://.godot/imported/Bigtree_TREE Color.png-442727bcecf7b22c632af00c1a4e300d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Map Assets/Assets/Bigtree_TREE Color.png"
-dest_files=["res://.godot/imported/Bigtree_TREE Color.png-442727bcecf7b22c632af00c1a4e300d.s3tc.ctex"]
+dest_files=["res://.godot/imported/Bigtree_TREE Color.png-442727bcecf7b22c632af00c1a4e300d.s3tc.ctex", "res://.godot/imported/Bigtree_TREE Color.png-442727bcecf7b22c632af00c1a4e300d.etc2.ctex"]
 
 [params]
 

@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cevorxxubpmhc"
 path.s3tc="res://.godot/imported/Tree_Ucupaint TREE Color.png-b7095423723c17ca6e9a9334655aff1b.s3tc.ctex"
+path.etc2="res://.godot/imported/Tree_Ucupaint TREE Color.png-b7095423723c17ca6e9a9334655aff1b.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Map Assets/Assets/Tree_Ucupaint TREE Color.png"
-dest_files=["res://.godot/imported/Tree_Ucupaint TREE Color.png-b7095423723c17ca6e9a9334655aff1b.s3tc.ctex"]
+dest_files=["res://.godot/imported/Tree_Ucupaint TREE Color.png-b7095423723c17ca6e9a9334655aff1b.s3tc.ctex", "res://.godot/imported/Tree_Ucupaint TREE Color.png-b7095423723c17ca6e9a9334655aff1b.etc2.ctex"]
 
 [params]
 

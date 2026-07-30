@@ -43,6 +43,13 @@ var forward : bool = true
 var animation_complete : bool = true
 
 func _ready() -> void:
+	current_page = all_pages[curent_index]
+	if mat_current_page:
+		if all_pages.size()-1 > curent_index:
+			mat_current_page.albedo_texture = all_pages[curent_index]
+	if mat_next_page:
+		if all_pages.size()-1 > curent_index+1:
+			mat_next_page.albedo_texture = all_pages[curent_index+1]
 	
 	_anim.animation_finished.connect(func (anim) -> void:
 		animation_complete = true

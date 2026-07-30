@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="butterflies_types" format=3 uid="uid://b76cu114u6jyr"]
+
+[ext_resource type="Script" uid="uid://bcveeafljnper" path="res://Assets/Butterfly/BF_Types.gd" id="1_h4bm6"]
+
+[resource]
+script = ExtResource("1_h4bm6")
+Type = 1
+speed = 2.5
+height = -1.0
+scale = 0.6
+metadata/_custom_type_script = "uid://bcveeafljnper"

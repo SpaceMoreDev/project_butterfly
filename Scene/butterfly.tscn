@@ -2,8 +2,13 @@
 
 [ext_resource type="Script" uid="uid://bwv8yvtd4wijj" path="res://Scene/butterfly.gd" id="1_oa5ua"]
 [ext_resource type="PackedScene" uid="uid://bbs3vu0slfn76" path="res://butterfly.glb" id="2_fs35t"]
+[ext_resource type="Resource" uid="uid://bd386s8q3ybbt" path="res://Assets/Butterfly/Types/WaffleAcer.tres" id="2_vm6fl"]
 [ext_resource type="Texture2D" uid="uid://bcx2jdhcske5i" path="res://butterfly_butterfly.png" id="3_40jj8"]
 [ext_resource type="Texture2D" uid="uid://bds8oyklx72qr" path="res://particle.png" id="3_fs35t"]
+[ext_resource type="Texture2D" uid="uid://bgw2jef0nbxam" path="res://Assets/BF/WaffleAcer.png" id="3_u475r"]
+[ext_resource type="Texture2D" uid="uid://ba3he3lpuvuq3" path="res://Assets/BF/AlaeDivisa.png" id="4_8v8lw"]
+[ext_resource type="Texture2D" uid="uid://dofb5c4bqdckp" path="res://Assets/BF/AlaeFlavae.png" id="5_ye0oy"]
+[ext_resource type="Texture2D" uid="uid://dlcqp1x3qbkmf" path="res://Assets/BF/MorningBlues.png" id="6_4tav1"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_aeui4"]
 
@@ -11,11 +16,14 @@
 radius = 1.102
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vm6fl"]
-transparency = 1
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
 cull_mode = 2
-shading_mode = 0
-albedo_color = Color(0.3129209, 0.7530745, 1.9768668, 1)
+diffuse_mode = 2
 albedo_texture = ExtResource("3_40jj8")
+emission_operator = 1
+disable_receive_shadows = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r5i0q"]
 transparency = 1
@@ -51,6 +59,13 @@ colors = PackedColorArray(0.15294118, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0)
 collision_layer = 16
 collision_mask = 16
 script = ExtResource("1_oa5ua")
+_type = ExtResource("2_vm6fl")
+bf_visual = Dictionary[int, Texture2D]({
+0: ExtResource("3_u475r"),
+1: ExtResource("4_8v8lw"),
+2: ExtResource("5_ye0oy"),
+3: ExtResource("6_4tav1")
+})
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=151729297]
 transform = Transform3D(0.22539108, 0, 0, 0, 0.22539108, 0, 0, 0, 0.22539108, 0, 0, -0.34547222)
@@ -59,16 +74,16 @@ layers = 16
 mesh = SubResource("SphereMesh_aeui4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=354048803]
-transform = Transform3D(0.415, 0, 0, 0, 0.415, 0, 0, 0, 0.415, 0, 0, 0)
+transform = Transform3D(0.415, 0, 0, 0, 0.415, 0, 0, 0, 0.415, 0, 0.15751702, 0)
 shape = SubResource("SphereShape3D_suw74")
 
 [node name="butterfly" parent="." unique_id=2011391745 instance=ExtResource("2_fs35t")]
 transform = Transform3D(0.11, 0, 0, 0, 0.11, 0, 0, 0, 0.11, 0, 0, 0)
 
 [node name="Skeleton3D" parent="butterfly/Butterfly" parent_id_path=PackedInt32Array(2011391745, 975465141) index="0" unique_id=1413909928]
-bones/0/position = Vector3(-2.7770184e-16, 1.2387661, -0.37100697)
-bones/1/rotation = Quaternion(0.3909082, -0.39090836, -0.5892288, 0.589229)
-bones/2/rotation = Quaternion(0.39090824, 0.39090833, 0.58922887, 0.5892289)
+bones/0/position = Vector3(-0.013537586, 1.1273137, -0.2833265)
+bones/1/rotation = Quaternion(0.3439295, -0.34392956, -0.61782885, 0.6178289)
+bones/2/rotation = Quaternion(0.3439296, 0.3439297, 0.6178288, 0.61782885)
 
 [node name="Empty_001" parent="butterfly/Butterfly/Skeleton3D" index="0" unique_id=947929560]
 material_override = SubResource("StandardMaterial3D_vm6fl")

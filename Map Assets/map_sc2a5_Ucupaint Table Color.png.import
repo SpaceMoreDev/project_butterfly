@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bj3bnb0pba8dr"
 path.s3tc="res://.godot/imported/map_sc2a5_Ucupaint Table Color.png-0b1dbc1165f590214c1bda4c744c8c86.s3tc.ctex"
+path.etc2="res://.godot/imported/map_sc2a5_Ucupaint Table Color.png-0b1dbc1165f590214c1bda4c744c8c86.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Map Assets/map_sc2a5_Ucupaint Table Color.png"
-dest_files=["res://.godot/imported/map_sc2a5_Ucupaint Table Color.png-0b1dbc1165f590214c1bda4c744c8c86.s3tc.ctex"]
+dest_files=["res://.godot/imported/map_sc2a5_Ucupaint Table Color.png-0b1dbc1165f590214c1bda4c744c8c86.s3tc.ctex", "res://.godot/imported/map_sc2a5_Ucupaint Table Color.png-0b1dbc1165f590214c1bda4c744c8c86.etc2.ctex"]
 
 [params]
 

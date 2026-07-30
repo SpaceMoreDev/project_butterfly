@@ -34,7 +34,7 @@ const SIDE_LIMIT :float = deg_to_rad(65.0)
 
 @export var rotation_sensitivity := 0.01
 
-var cool_time : float =  0.25
+var cool_time : float =  1
 var on_cool_down : bool = false
 var ct : float  = 0.0
 
@@ -67,8 +67,9 @@ func _body_entered(body):
 	
 	if body is Interactable and is_catching:
 		if abs(mousedelta.y) > abs(mousedelta.x):
-			body.Interact()
-			on_cool_down = true
+			if sign(mousedelta.y) > 0:
+				body.Interact()
+				on_cool_down = true
 	pass
 
 func _animation_reset(anim):

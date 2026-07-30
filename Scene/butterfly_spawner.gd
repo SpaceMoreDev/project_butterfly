@@ -12,6 +12,7 @@ var time_between : float = 1
 var player : CharacterBody3D
 var Butterflies : Array[ButterFly]
 
+@export var type_to_spawn : butterflies_types
 
 func _ready():
 	
@@ -19,8 +20,12 @@ func _ready():
 	
 	var ct : int = 0
 	while ct < max_count :
-		var instance := butterfly_scene.instantiate()
+		var instance : ButterFly = butterfly_scene.instantiate()
 		add_child(instance)
+		instance.spawner = self
+		if type_to_spawn:
+			instance._type = type_to_spawn
+		instance.setup()
 		instance.active = false
 		Butterflies.append(instance)
 		ct+=1

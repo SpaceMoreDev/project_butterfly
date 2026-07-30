@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://coy7d0ybm5k8i"
 path.s3tc="res://.godot/imported/Mask (Wave 2).png-3b39cf22d21068dbb4d7e989c0230952.s3tc.ctex"
+path.etc2="res://.godot/imported/Mask (Wave 2).png-3b39cf22d21068dbb4d7e989c0230952.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/Mask (Wave 2).png"
-dest_files=["res://.godot/imported/Mask (Wave 2).png-3b39cf22d21068dbb4d7e989c0230952.s3tc.ctex"]
+dest_files=["res://.godot/imported/Mask (Wave 2).png-3b39cf22d21068dbb4d7e989c0230952.s3tc.ctex", "res://.godot/imported/Mask (Wave 2).png-3b39cf22d21068dbb4d7e989c0230952.etc2.ctex"]
 
 [params]
 

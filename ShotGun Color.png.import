@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cncjophmp5aoc"
 path.s3tc="res://.godot/imported/ShotGun Color.png-c22b98838217e71bb692aee4da7ba104.s3tc.ctex"
+path.etc2="res://.godot/imported/ShotGun Color.png-c22b98838217e71bb692aee4da7ba104.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://ShotGun Color.png"
-dest_files=["res://.godot/imported/ShotGun Color.png-c22b98838217e71bb692aee4da7ba104.s3tc.ctex"]
+dest_files=["res://.godot/imported/ShotGun Color.png-c22b98838217e71bb692aee4da7ba104.s3tc.ctex", "res://.godot/imported/ShotGun Color.png-c22b98838217e71bb692aee4da7ba104.etc2.ctex"]
 
 [params]
 

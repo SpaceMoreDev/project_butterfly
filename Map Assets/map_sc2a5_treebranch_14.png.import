@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bff7xwotnk0va"
 path.s3tc="res://.godot/imported/map_sc2a5_treebranch_14.png-e96150e2518e31f42be64330b5a0b519.s3tc.ctex"
+path.etc2="res://.godot/imported/map_sc2a5_treebranch_14.png-e96150e2518e31f42be64330b5a0b519.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Map Assets/map_sc2a5_treebranch_14.png"
-dest_files=["res://.godot/imported/map_sc2a5_treebranch_14.png-e96150e2518e31f42be64330b5a0b519.s3tc.ctex"]
+dest_files=["res://.godot/imported/map_sc2a5_treebranch_14.png-e96150e2518e31f42be64330b5a0b519.s3tc.ctex", "res://.godot/imported/map_sc2a5_treebranch_14.png-e96150e2518e31f42be64330b5a0b519.etc2.ctex"]
 
 [params]
 

@@ -16,5 +16,5 @@ func Play():
 	var random = RandomNumberGenerator.new()
 	var stream = score_sounds[random.randi_range(0,score_sounds.size()-1)]
 	audio.stream = stream
-	audio.volume_db = -10.0
+	audio.volume_db = 10.0
 	audio.play()

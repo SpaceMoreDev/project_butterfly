@@ -37,7 +37,7 @@ func _ready() -> void:
 		)
 
 func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("ui_accept"):
+	if event.is_pressed() and not event.is_echo():
 		if not is_anim_playing:
 			continue_anim = true
 

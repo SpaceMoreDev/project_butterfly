@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://chvpnp5278aws"
 path.s3tc="res://.godot/imported/A_Sign1.png-da5863aeec6a3ac05b00f9c71b422548.s3tc.ctex"
+path.etc2="res://.godot/imported/A_Sign1.png-da5863aeec6a3ac05b00f9c71b422548.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Map Assets/Assets/A_Sign1.png"
-dest_files=["res://.godot/imported/A_Sign1.png-da5863aeec6a3ac05b00f9c71b422548.s3tc.ctex"]
+dest_files=["res://.godot/imported/A_Sign1.png-da5863aeec6a3ac05b00f9c71b422548.s3tc.ctex", "res://.godot/imported/A_Sign1.png-da5863aeec6a3ac05b00f9c71b422548.etc2.ctex"]
 
 [params]
 

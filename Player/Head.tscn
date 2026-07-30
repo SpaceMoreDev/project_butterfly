@@ -70,7 +70,7 @@ transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(-262, 10)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_aeui4"]
-radius = 0.37454784
+radius = 0.68449616
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vm6fl"]
 transparency = 1
@@ -137,6 +137,7 @@ collision_mask = 16
 monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="net_hand/net/Area3D" unique_id=1871247701]
+transform = Transform3D(1, -3.7252903e-09, 0, -1.1175871e-08, 1.0000002, 4.4703484e-08, 0, -1.4901161e-08, 1, -0.009453058, 0.2628647, -0.19958162)
 shape = SubResource("SphereShape3D_aeui4")
 
 [node name="Jar" type="Node3D" parent="." unique_id=720132064]

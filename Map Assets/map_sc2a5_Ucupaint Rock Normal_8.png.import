@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cf3n4rajwbo5c"
 path.s3tc="res://.godot/imported/map_sc2a5_Ucupaint Rock Normal_8.png-45b6c1279f47c0c88e5dd82305d65263.s3tc.ctex"
+path.etc2="res://.godot/imported/map_sc2a5_Ucupaint Rock Normal_8.png-45b6c1279f47c0c88e5dd82305d65263.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Map Assets/map_sc2a5_Ucupaint Rock Normal_8.png"
-dest_files=["res://.godot/imported/map_sc2a5_Ucupaint Rock Normal_8.png-45b6c1279f47c0c88e5dd82305d65263.s3tc.ctex"]
+dest_files=["res://.godot/imported/map_sc2a5_Ucupaint Rock Normal_8.png-45b6c1279f47c0c88e5dd82305d65263.s3tc.ctex", "res://.godot/imported/map_sc2a5_Ucupaint Rock Normal_8.png-45b6c1279f47c0c88e5dd82305d65263.etc2.ctex"]
 
 [params]
 

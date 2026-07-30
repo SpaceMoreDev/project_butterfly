@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bty1xr4wv1u6d"
 path.s3tc="res://.godot/imported/WTF3.png-d61a9b3a409d17858a3f415fea049aac.s3tc.ctex"
+path.etc2="res://.godot/imported/WTF3.png-d61a9b3a409d17858a3f415fea049aac.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Map Assets/Assets/waterfall/WTF3.png"
-dest_files=["res://.godot/imported/WTF3.png-d61a9b3a409d17858a3f415fea049aac.s3tc.ctex"]
+dest_files=["res://.godot/imported/WTF3.png-d61a9b3a409d17858a3f415fea049aac.s3tc.ctex", "res://.godot/imported/WTF3.png-d61a9b3a409d17858a3f415fea049aac.etc2.ctex"]
 
 [params]
 

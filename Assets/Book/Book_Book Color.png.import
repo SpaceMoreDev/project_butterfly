@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bcvq623b7m7r"
 path.s3tc="res://.godot/imported/Book_Book Color.png-e4f9137b6d9d2aec983414f5f0c8d7a8.s3tc.ctex"
+path.etc2="res://.godot/imported/Book_Book Color.png-e4f9137b6d9d2aec983414f5f0c8d7a8.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/Book/Book_Book Color.png"
-dest_files=["res://.godot/imported/Book_Book Color.png-e4f9137b6d9d2aec983414f5f0c8d7a8.s3tc.ctex"]
+dest_files=["res://.godot/imported/Book_Book Color.png-e4f9137b6d9d2aec983414f5f0c8d7a8.s3tc.ctex", "res://.godot/imported/Book_Book Color.png-e4f9137b6d9d2aec983414f5f0c8d7a8.etc2.ctex"]
 
 [params]
 

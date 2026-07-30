@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://vtxoeub5bprj"
 path.s3tc="res://.godot/imported/bush_G.png-c23fdd05f2a4c8af4dae77e251b67b0b.s3tc.ctex"
+path.etc2="res://.godot/imported/bush_G.png-c23fdd05f2a4c8af4dae77e251b67b0b.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/bush_G.png"
-dest_files=["res://.godot/imported/bush_G.png-c23fdd05f2a4c8af4dae77e251b67b0b.s3tc.ctex"]
+dest_files=["res://.godot/imported/bush_G.png-c23fdd05f2a4c8af4dae77e251b67b0b.s3tc.ctex", "res://.godot/imported/bush_G.png-c23fdd05f2a4c8af4dae77e251b67b0b.etc2.ctex"]
 
 [params]
 

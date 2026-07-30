@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cf36y4kw86hnh"
 path.s3tc="res://.godot/imported/S1_Ucupaint Base_skin Color.png-f80f07660032e52940ad6dd66ef7a6b4.s3tc.ctex"
+path.etc2="res://.godot/imported/S1_Ucupaint Base_skin Color.png-f80f07660032e52940ad6dd66ef7a6b4.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/Butterfly/S1_Ucupaint Base_skin Color.png"
-dest_files=["res://.godot/imported/S1_Ucupaint Base_skin Color.png-f80f07660032e52940ad6dd66ef7a6b4.s3tc.ctex"]
+dest_files=["res://.godot/imported/S1_Ucupaint Base_skin Color.png-f80f07660032e52940ad6dd66ef7a6b4.s3tc.ctex", "res://.godot/imported/S1_Ucupaint Base_skin Color.png-f80f07660032e52940ad6dd66ef7a6b4.etc2.ctex"]
 
 [params]
 
