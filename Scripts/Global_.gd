@@ -14,6 +14,7 @@ var score = 0
 
 var Player_net : NetHand
 var Player_gun : ShotGun
+var Player_book : Book
 
 var max_count_of_butterflies : int = 0
 

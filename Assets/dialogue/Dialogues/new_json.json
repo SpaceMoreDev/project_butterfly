@@ -126,11 +126,6 @@
 				"animation": "Idle"
 			},{
 				"speaker": "Man",
-				"line": " It Could Be You, your dog, your cat, even your Cow!",
-				"talking": "0",
-				"animation": "Idle"
-			},{
-				"speaker": "Man",
 				"line": "Today could be that day.",
 				"talking": "0",
 				"animation": "Idle"

@@ -11,7 +11,7 @@ class_name MovementController
 @export var player_anim : AnimationPlayer
 @onready var footsteps: AnimationPlayer = $AnimationPlayer
 var is_shooting = false
-var is_interacting : bool = false
+var is_interacting : bool = true
 
 var can_look :
 	set(val):

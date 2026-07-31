@@ -20,6 +20,7 @@ var can_look:bool:
 @export var headbob_amplitude :=0.2
 @export var headbob_time :=0.0
 @export var vel_length :=0.0
+@onready var shotgun_hand : Node3D = $Hand
 
 func _enter_tree() -> void:
 	controller = get_node(controller_path)
@@ -50,15 +51,20 @@ func _physics_process(delta: float) -> void:
 	if joystick_axis != Vector2.ZERO:
 		mouse_axis = joystick_axis * 1000.0 * delta
 		camera_rotation()
-	
+
+func _process(delta: float) -> void:
 	headbob_time += delta * controller.velocity.length()
 	if controller.get_real_velocity().length() > 1.0:
 		var h_bob = _HeadBob(headbob_time)
 		cam.h_offset = lerp(cam.h_offset, h_bob.x * vel_length, 5 * delta)
 		cam.v_offset = lerp(cam.v_offset, h_bob.y * vel_length, 5 * delta)
+		
+		#shotgun_hand.position = lerp(shotgun_hand.position, Vector3(h_bob.x,h_bob.y,shotgun_hand.position.z) * vel_length, 5*delta)
 	else:
 		cam.h_offset = lerp(cam.h_offset, 0.0, 5 * delta)
 		cam.v_offset = lerp(cam.v_offset, 0.0, 5 * delta)
+		
+		#shotgun_hand.position = lerp(shotgun_hand.position, Vector3.ZERO, 5*delta)
 
 func _HeadBob(time) -> Vector2:
 	var pos = Vector2.ZERO

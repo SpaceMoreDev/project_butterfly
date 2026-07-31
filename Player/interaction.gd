@@ -7,7 +7,7 @@ var can_interact:bool:
 	get:
 		return controller.is_interacting
 
-const RAY_LENGTH = 6
+const RAY_LENGTH = 10
 
 @export_node_path("MovementController") var c_path := NodePath("../")
 @onready var controller: MovementController = get_node(c_path)
@@ -22,7 +22,7 @@ func _physics_process(delta):
 
 	var origin = cam.project_ray_origin(mousepos)
 	var end = origin + cam.project_ray_normal(mousepos) * RAY_LENGTH
-	var query = PhysicsRayQueryParameters3D.create(origin, end)
+	var query = PhysicsRayQueryParameters3D.create(origin, end,1<<2)
 	query.collide_with_areas = true
 
 	var result = space_state.intersect_ray(query)
@@ -32,7 +32,7 @@ func _physics_process(delta):
 		if obj is Interactable:
 			if not can_interact:
 				can_interact = true
-			if Input.is_action_just_pressed("interact"):
+			if Input.is_action_just_pressed("Interact"):
 				obj.Interact()
 			
 			

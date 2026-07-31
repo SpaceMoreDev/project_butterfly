@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://cl8d02kdcf6f5" path="res://Assets/Book/Page2BFJ.png" id="13_05oep"]
 [ext_resource type="Texture2D" uid="uid://b2emvgpkywmde" path="res://Assets/Book/Page3BFJ.png" id="14_s2hpm"]
 [ext_resource type="Texture2D" uid="uid://b5uea50dcchha" path="res://Assets/Book/Page4BFJ.png" id="14_sqcjl"]
+[ext_resource type="Texture2D" uid="uid://dotekvgy7nspx" path="res://crosshair.png" id="14_ykasc"]
 [ext_resource type="Texture2D" uid="uid://p75rjpnjoa85" path="res://flash1.png" id="15_00ku8"]
 [ext_resource type="Texture2D" uid="uid://dk32amxjiomtw" path="res://Assets/Book/Page5BFJ.png" id="15_qv2u7"]
 [ext_resource type="Texture2D" uid="uid://iy8xmsbvgql8" path="res://Assets/Book/Page1BFJ.png" id="15_sqcjl"]
@@ -128,82 +129,58 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath("../MeshInstance3D:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0.24, -0.35, -0.628)]
+"values": [Vector3(0.352, 0.352, 0.352)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".:rotation")
+tracks/1/path = NodePath("../MeshInstance3D:material_override:albedo_color")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0.19198623, 1.8727382, -0.41887903)]
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../MeshInstance3D:scale")
+tracks/2/path = NodePath("../AudioStreamPlayer3D:playing")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.352, 0.352, 0.352)]
+"update": 1,
+"values": [false]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("../MeshInstance3D:material_override:albedo_color")
+tracks/3/path = NodePath("Shotgun/CPUParticles3D:emitting")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
+"update": 1,
+"values": [false]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("../AudioStreamPlayer3D:playing")
+tracks/4/path = NodePath("Shotgun/CPUParticles3D/OmniLight3D:light_energy")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Shotgun/CPUParticles3D:emitting")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Shotgun/CPUParticles3D/OmniLight3D:light_energy")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -342,83 +319,86 @@ albedo_texture = ExtResource("12_00ku8")
 [node name="Head" type="Node3D" unique_id=955601237]
 physics_interpolation_mode = 1
 script = ExtResource("1_enjfg")
+headbob_amplitude = 0.05
 
-[node name="Camera" type="Camera3D" parent="." unique_id=1478984677]
-physics_interpolation_mode = 1
-cull_mask = 1048573
-current = true
-fov = 60.0
+[node name="Hand" type="Node3D" parent="." unique_id=2040606177]
 
-[node name="CameraShake" type="Node3D" parent="." unique_id=5202881]
-physics_interpolation_mode = 1
-transform = Transform3D(1, 0, 3.5527137e-15, 0, 1, 8.881784e-16, 0, 0, 1, 0, 0, 0)
-script = ExtResource("2_irtxf")
-randomStrength = 0.35
-
-[node name="HeadBob" type="Node3D" parent="." unique_id=1905633388]
-physics_interpolation_mode = 1
-
-[node name="net_hand" type="Node3D" parent="." unique_id=1594775810]
-visible = false
+[node name="net_hand" type="Node3D" parent="Hand" unique_id=1594775810]
 script = ExtResource("7_i6cme")
-_active = false
 
-[node name="net" parent="net_hand" unique_id=925678904 instance=ExtResource("2_xfbis")]
+[node name="net" parent="Hand/net_hand" unique_id=925678904 instance=ExtResource("2_xfbis")]
 transform = Transform3D(-0.51357836, 0.018219069, -0.12963541, 0, 0.52484196, 0.07376175, 0.1309094, 0.07147629, -0.5085802, 0.455, -1.555, -1.288)
 
-[node name="AnimationTree" type="AnimationTree" parent="net_hand/net" unique_id=546557214]
+[node name="AnimationTree" type="AnimationTree" parent="Hand/net_hand/net" unique_id=546557214]
 tree_root = SubResource("AnimationNodeStateMachine_dpcb8")
 advance_expression_base_node = NodePath("../..")
 anim_player = NodePath("../AnimationPlayer")
 
-[node name="Area3D" type="Area3D" parent="net_hand/net" unique_id=1772385657]
+[node name="Area3D" type="Area3D" parent="Hand/net_hand/net" unique_id=1772385657]
 transform = Transform3D(1.0000002, 0, -7.4505806e-08, -1.1175871e-08, 1, 0, 1.4901161e-08, 0, 1.0000001, 0, 2.468, 0.175)
 collision_layer = 16
 collision_mask = 16
 monitorable = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="net_hand/net/Area3D" unique_id=1871247701]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hand/net_hand/net/Area3D" unique_id=1871247701]
 transform = Transform3D(1, -3.7252903e-09, 0, -2.6077032e-08, 1.0000002, 8.940697e-08, 0, -1.4901161e-08, 1, -0.03680992, 0.0026018322, -0.12777889)
 shape = SubResource("SphereShape3D_aeui4")
 
-[node name="Book" parent="." unique_id=369547485 instance=ExtResource("11_ji5ww")]
+[node name="Book" parent="Hand" unique_id=369547485 instance=ExtResource("11_ji5ww")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -0.615)
 script = ExtResource("12_4p2t4")
 inactive_transform = Vector3(0, -1, -0.615)
 active_transform = Vector3(0, -0.185, -0.615)
 all_pages = Array[Texture2D]([ExtResource("15_udlcd"), ExtResource("15_sqcjl"), ExtResource("13_05oep"), ExtResource("14_s2hpm"), ExtResource("14_sqcjl"), ExtResource("15_qv2u7")])
 
-[node name="AnimationPlayer" parent="Book" index="1" unique_id=1020760046]
+[node name="AnimationPlayer" parent="Hand/Book" index="1" unique_id=1020760046]
 autoplay = &"Idle"
 
-[node name="ShotGun" type="Node3D" parent="." unique_id=1503847516]
+[node name="ShotGun" type="Node3D" parent="Hand" unique_id=1503847516]
 script = ExtResource("4_cldr2")
-_active = true
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="ShotGun" unique_id=895831067]
+[node name="CanvasLayer" type="CanvasLayer" parent="Hand/ShotGun" unique_id=138629071]
+
+[node name="TextureRect" type="TextureRect" parent="Hand/ShotGun/CanvasLayer" unique_id=480110180]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("14_ykasc")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Hand/ShotGun" unique_id=895831067]
 stream = ExtResource("12_es1v0")
 volume_db = -80.0
 max_db = 1.0
 bus = &"New Bus"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ShotGun" unique_id=134911881]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Hand/ShotGun" unique_id=134911881]
 transform = Transform3D(-0.3480817, -0.002637854, 0.05230838, -0.00854653, 0.34970188, -0.039237082, -0.05167284, -0.04007036, -0.34587324, 0.182, -0.126, -1.208)
 material_override = SubResource("StandardMaterial3D_dpcb8")
 cast_shadow = 0
 mesh = SubResource("PlaneMesh_aeui4")
 
-[node name="shotgun" parent="ShotGun" unique_id=386872980 instance=ExtResource("3_i6cme")]
-transform = Transform3D(-0.3457634, 0.04547367, 0.937219, -0.39926365, 0.89676076, -0.19080898, -0.8491382, -0.4401723, -0.29191118, 0.24, -0.35, -0.628)
+[node name="shotgun" parent="Hand/ShotGun" unique_id=386872980 instance=ExtResource("3_i6cme")]
+transform = Transform3D(0.023983702, 0.19300985, 0.9809035, -0.07360113, 0.9788637, -0.19080897, -0.996999, -0.06761932, 0.037682537, 0.24, -0.205, -0.628)
 
-[node name="Shotgun" parent="ShotGun/shotgun" index="0" unique_id=153550908]
+[node name="Shotgun" parent="Hand/ShotGun/shotgun" index="0" unique_id=153550908]
 transform = Transform3D(0.04000001, 2.3283064e-10, 0, 0, 0.04000001, 2.4738256e-10, -1.1641532e-10, 2.3283064e-10, 0.04000001, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_rl845")
 
-[node name="CPUParticles3D" type="CPUParticles3D" parent="ShotGun/shotgun/Shotgun" index="0" unique_id=267831965]
+[node name="CPUParticles3D" type="CPUParticles3D" parent="Hand/ShotGun/shotgun/Shotgun" index="0" unique_id=267831965]
 transform = Transform3D(0.5995923, -1.8400294, -24.92499, 4.8252487, 24.471598, -1.6904833, 24.522585, -4.7702265, 0.94206375, 12.524067, 0.96713233, 0.13052511)
 emitting = false
 amount = 1
-lifetime = 0.5
+lifetime = 0.25
 one_shot = true
 explosiveness = 0.1
 randomness = 0.4
@@ -435,7 +415,7 @@ scale_amount_curve = SubResource("Curve_4fqg5")
 color = Color(0.7792914, 0.7792914, 0.7792913, 1)
 color_ramp = SubResource("Gradient_02xh5")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="ShotGun/shotgun/Shotgun/CPUParticles3D" unique_id=2017007553]
+[node name="OmniLight3D" type="OmniLight3D" parent="Hand/ShotGun/shotgun/Shotgun/CPUParticles3D" unique_id=2017007553]
 transform = Transform3D(1.0000001, 7.4505834e-08, -7.450582e-09, -2.9802337e-08, 1.0000002, -2.6077029e-08, -3.7252896e-09, -6.053596e-09, 0.9999997, 0, 1.4901161e-08, -1.1920929e-07)
 light_color = Color(0.9999997, 0.91624135, 0.69021094, 1)
 light_energy = 0.0
@@ -444,49 +424,49 @@ shadow_enabled = true
 omni_range = 100.0
 omni_attenuation = 0.5
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="ShotGun" unique_id=2048154864]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Hand/ShotGun" unique_id=2048154864]
 root_node = NodePath("../shotgun")
 libraries/ = SubResource("AnimationLibrary_00ku8")
 
-[node name="Jar" type="Node3D" parent="." unique_id=720132064]
+[node name="Jar" type="Node3D" parent="Hand" unique_id=720132064]
 transform = Transform3D(-8.168722e-09, -1.4992411e-09, 0.19, -0.034298636, 0.18687858, 0, -0.18687858, -0.034298636, -8.305164e-09, -0.439, -1.3212978, -0.838)
 script = ExtResource("3_3wvon")
 
-[node name="container" parent="Jar" unique_id=1797219808 instance=ExtResource("3_oowo0")]
+[node name="container" parent="Hand/Jar" unique_id=1797219808 instance=ExtResource("3_oowo0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)
 
-[node name="butterfly4" parent="Jar/container" unique_id=2011391745 instance=ExtResource("9_2kqho")]
+[node name="butterfly4" parent="Hand/Jar/container" unique_id=2011391745 instance=ExtResource("9_2kqho")]
 transform = Transform3D(-0.04714072, -0.11287976, -0.10825486, -0.03406756, 0.11776148, -0.10795748, 0.15264459, -0.008578017, -0.05752621, 0.13693476, 0.39828038, 0.021881342)
 
-[node name="Empty_001" parent="Jar/container/butterfly4/Butterfly/Skeleton3D" parent_id_path=PackedInt32Array(2011391745, 1413909928) index="0" unique_id=947929560]
+[node name="Empty_001" parent="Hand/Jar/container/butterfly4/Butterfly/Skeleton3D" parent_id_path=PackedInt32Array(2011391745, 1413909928) index="0" unique_id=947929560]
 material_override = SubResource("StandardMaterial3D_vm6fl")
 
-[node name="AnimationPlayer" parent="Jar/container/butterfly4" index="1" unique_id=1344750978]
+[node name="AnimationPlayer" parent="Hand/Jar/container/butterfly4" index="1" unique_id=1344750978]
 autoplay = &"Butterfly"
 
-[node name="butterfly6" parent="Jar/container" unique_id=2139218565 instance=ExtResource("9_2kqho")]
+[node name="butterfly6" parent="Hand/Jar/container" unique_id=2139218565 instance=ExtResource("9_2kqho")]
 transform = Transform3D(-0.1386813, -0.080550596, -0.031020958, -0.0508684, 0.12369498, -0.093782395, 0.069736086, -0.06995949, -0.130099, 0.04629612, 0.89213014, -0.2255218)
 
-[node name="Empty_001" parent="Jar/container/butterfly6/Butterfly/Skeleton3D" parent_id_path=PackedInt32Array(2139218565, 1413909928) index="0" unique_id=947929560]
+[node name="Empty_001" parent="Hand/Jar/container/butterfly6/Butterfly/Skeleton3D" parent_id_path=PackedInt32Array(2139218565, 1413909928) index="0" unique_id=947929560]
 material_override = SubResource("StandardMaterial3D_es1v0")
 
-[node name="AnimationPlayer" parent="Jar/container/butterfly6" index="1" unique_id=1344750978]
+[node name="AnimationPlayer" parent="Hand/Jar/container/butterfly6" index="1" unique_id=1344750978]
 autoplay = &"Butterfly"
 
-[node name="butterfly5" parent="Jar/container" unique_id=1231741750 instance=ExtResource("9_2kqho")]
+[node name="butterfly5" parent="Hand/Jar/container" unique_id=1231741750 instance=ExtResource("9_2kqho")]
 transform = Transform3D(0.16253945, 0.004415948, 0.015640516, 0.004415944, 0.1392893, -0.085218474, -0.015640516, 0.08521848, 0.13847889, 0.0037164688, 1.1241283, 0.021881342)
 
-[node name="Empty_001" parent="Jar/container/butterfly5/Butterfly/Skeleton3D" parent_id_path=PackedInt32Array(1231741750, 1413909928) index="0" unique_id=947929560]
+[node name="Empty_001" parent="Hand/Jar/container/butterfly5/Butterfly/Skeleton3D" parent_id_path=PackedInt32Array(1231741750, 1413909928) index="0" unique_id=947929560]
 material_override = SubResource("StandardMaterial3D_ykasc")
 
-[node name="AnimationPlayer" parent="Jar/container/butterfly5" index="1" unique_id=1344750978]
+[node name="AnimationPlayer" parent="Hand/Jar/container/butterfly5" index="1" unique_id=1344750978]
 autoplay = &"Butterfly"
 
-[node name="CollectionUI" type="CanvasLayer" parent="Jar" unique_id=1758316876]
+[node name="CollectionUI" type="CanvasLayer" parent="Hand/Jar" unique_id=1758316876]
 visible = false
 script = ExtResource("11_6sv8d")
 
-[node name="Label" type="Label" parent="Jar/CollectionUI" unique_id=922985698]
+[node name="Label" type="Label" parent="Hand/Jar/CollectionUI" unique_id=922985698]
 offset_left = 43.0
 offset_top = 23.0
 offset_right = 83.0
@@ -502,8 +482,20 @@ text = "Collected 0"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[editable path="Book"]
-[editable path="ShotGun/shotgun"]
-[editable path="Jar/container/butterfly4"]
-[editable path="Jar/container/butterfly6"]
-[editable path="Jar/container/butterfly5"]
+[node name="Camera" type="Camera3D" parent="." unique_id=1478984677]
+physics_interpolation_mode = 1
+cull_mask = 1048573
+current = true
+fov = 60.0
+
+[node name="CameraShake" type="Node3D" parent="." unique_id=5202881]
+physics_interpolation_mode = 1
+transform = Transform3D(1, 0, 3.5527137e-15, 0, 1, 8.881784e-16, 0, 0, 1, 0, 0, 0)
+script = ExtResource("2_irtxf")
+randomStrength = 0.35
+
+[editable path="Hand/Book"]
+[editable path="Hand/ShotGun/shotgun"]
+[editable path="Hand/Jar/container/butterfly4"]
+[editable path="Hand/Jar/container/butterfly6"]
+[editable path="Hand/Jar/container/butterfly5"]

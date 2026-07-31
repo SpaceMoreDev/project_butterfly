@@ -27,7 +27,7 @@ func _input(event: InputEvent) -> void:
 	if not _active:
 		return
 	
-	if Input.is_action_just_pressed("interact"):
+	if Input.is_action_just_pressed("Action"):
 		if not shotgun_anim.is_playing():
 			print("pew pew")
 			
