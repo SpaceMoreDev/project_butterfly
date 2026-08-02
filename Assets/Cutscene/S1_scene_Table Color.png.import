@@ -4,9 +4,8 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bj4hy2tsos8y2"
 path.s3tc="res://.godot/imported/S1_scene_Table Color.png-7624becaa75669915a379e062db6fefd.s3tc.ctex"
-path.etc2="res://.godot/imported/S1_scene_Table Color.png-7624becaa75669915a379e062db6fefd.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -16,7 +15,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/Cutscene/S1_scene_Table Color.png"
-dest_files=["res://.godot/imported/S1_scene_Table Color.png-7624becaa75669915a379e062db6fefd.s3tc.ctex", "res://.godot/imported/S1_scene_Table Color.png-7624becaa75669915a379e062db6fefd.etc2.ctex"]
+dest_files=["res://.godot/imported/S1_scene_Table Color.png-7624becaa75669915a379e062db6fefd.s3tc.ctex"]
 
 [params]
 

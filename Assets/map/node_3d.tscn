@@ -145,7 +145,7 @@ transform = Transform3D(0.77806807, 0, 0.62817997, 0, 1, 0, -0.62817997, 0, 0.77
 transform = Transform3D(-0.64585847, 0, 0.7634572, 0, 1, 0, -0.7634572, 0, -0.64585847, -31.528551, 11.2706995, 113.84892)
 
 [node name="Player" parent="." unique_id=1117564067 instance=ExtResource("2_pfsc5")]
-transform = Transform3D(0, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, 0, -22.720284, 12.154703, 94.98193)
+transform = Transform3D(0, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, 0, 10.252011, 3.2848082, -17.885788)
 
 [node name="MeshInstance3D" parent="Player/Head/Hand/ShotGun" parent_id_path=PackedInt32Array(1117564067, 315625654, 1503847516) index="2" unique_id=134911881]
 transform = Transform3D(-0.3480817, -0.0026378522, 0.05230838, -0.00854653, 0.34970188, -0.039237097, -0.05167284, -0.040070374, -0.34587324, 0.182, -0.126, -1.208)
