@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://blf4tdvnwpud7"]
+
+[ext_resource type="Texture2D" uid="uid://b0pa7s8757h5c" path="res://Assets/MagicTree/MagicTree_Ucupaint MagicTree Color.png" id="1_mepy3"]
+[ext_resource type="Texture2D" uid="uid://bf3bcrjkl2lih" path="res://Assets/MagicTree/MagicTree_Ucupaint MagicTree Normal.png" id="2_uusfj"]
+
+[resource]
+albedo_texture = ExtResource("1_mepy3")
+metallic_specular = 0.17
+roughness = 0.87
+normal_enabled = true
+normal_scale = 16.0
+normal_texture = ExtResource("2_uusfj")
+detail_enabled = true
+detail_albedo = ExtResource("1_mepy3")
+detail_normal = ExtResource("2_uusfj")
+texture_filter = 0
