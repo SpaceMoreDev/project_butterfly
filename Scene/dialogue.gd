@@ -45,6 +45,8 @@ func _next_line():
 		var nect_scene = _parsed_data[_scene_index].get("next_scene")
 		
 		$"../../BlackScreen".visible = true
+		$"../../BlackScreen/AudioStreamPlayer2D".playing = true
+		visible = false
 		await get_tree().create_timer(1).timeout
 		
 		get_tree().change_scene_to_file(nect_scene)

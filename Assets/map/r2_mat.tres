@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bkpq3kpxf728u"]
+
+[ext_resource type="Texture2D" uid="uid://b21lqkbhpkfhj" path="res://Assets/map/rock_2_Ucupaint Brock Color.png" id="1_2svbm"]
+[ext_resource type="Texture2D" uid="uid://x6g1kxucnrex" path="res://Assets/map/new_map_Map Color.png" id="1_b4pvl"]
+[ext_resource type="Texture2D" uid="uid://ug0mqrs6yttf" path="res://Assets/map/new_map_Map Normal.png" id="2_ymnuw"]
+[ext_resource type="Texture2D" uid="uid://u0xnouk1dhw4" path="res://Assets/map/rock_2_Ucupaint Brock Normal.png" id="4_tknpg"]
+
+[resource]
+diffuse_mode = 2
+albedo_color = Color(0.811932, 0.65179765, 0.58236665, 1)
+albedo_texture = ExtResource("1_2svbm")
+normal_enabled = true
+normal_scale = 15.61
+normal_texture = ExtResource("4_tknpg")
+detail_albedo = ExtResource("1_b4pvl")
+detail_normal = ExtResource("2_ymnuw")
+texture_filter = 0

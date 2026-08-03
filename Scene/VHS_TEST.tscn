@@ -11,9 +11,30 @@
 [ext_resource type="Resource" uid="uid://dyoynhgfji8nh" path="res://Assets/dialogue/Data/dia_Test.tres" id="5_8sg0t"]
 [ext_resource type="PackedScene" uid="uid://c4wn4nxwmiebn" path="res://container.blend" id="6_i6sfn"]
 [ext_resource type="PackedScene" uid="uid://bbs3vu0slfn76" path="res://butterfly.glb" id="7_0nwn4"]
+[ext_resource type="AudioStream" uid="uid://c6cetvxh7akvt" path="res://Audio/noise.wav" id="7_1cy0k"]
+[ext_resource type="Texture2D" uid="uid://bx428j1g4bqqg" path="res://Assets/transition/VHS_f1.png" id="8_hannc"]
 [ext_resource type="Texture2D" uid="uid://bcx2jdhcske5i" path="res://butterfly_butterfly.png" id="8_mg2fg"]
-[ext_resource type="Texture2D" uid="uid://celfh6pnicgyd" path="res://Assets/Cutscene/Butterflywall.png" id="9_0nwn4"]
+[ext_resource type="Texture2D" uid="uid://ci0xig8xe17d8" path="res://Assets/transition/VHS_f2.png" id="9_gajwd"]
+[ext_resource type="Texture2D" uid="uid://jv2h45edonx8" path="res://Assets/transition/VHS_f3.png" id="10_yja66"]
+[ext_resource type="Texture2D" uid="uid://djlm1uf3pplbh" path="res://Assets/transition/VHS_f4.png" id="11_1cy0k"]
+[ext_resource type="Texture2D" uid="uid://ddjagetwwwhnv" path="res://Assets/Cutscene/Wall2.png" id="11_gx8pg"]
+[ext_resource type="Texture2D" uid="uid://leugbw122nt6" path="res://Assets/transition/VHS_f5.png" id="12_6vm4t"]
 [ext_resource type="AudioStream" uid="uid://bp881ll0jqb0x" path="res://Audio/120Curious.wav" id="14_gx8pg"]
+[ext_resource type="Texture2D" uid="uid://xynbh34voi8w" path="res://Assets/Cutscene/Seamless white black marble noise texture.jpg" id="16_yja66"]
+[ext_resource type="Texture2D" uid="uid://bj4hy2tsos8y2" path="res://Assets/Cutscene/S1_scene_Table Color.png" id="18_gajwd"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_aeui4"]
+frames = 5
+speed_scale = 30.0
+frame_0/texture = ExtResource("8_hannc")
+frame_1/texture = ExtResource("9_gajwd")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("10_yja66")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("11_1cy0k")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("12_6vm4t")
+frame_4/duration = 1.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vj80r"]
 shader = ExtResource("1_cobfo")
@@ -144,8 +165,11 @@ albedo_color = Color(0.3129209, 0.7530745, 1.9768668, 1)
 albedo_texture = ExtResource("8_mg2fg")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dpcb8"]
-shading_mode = 0
-albedo_color = Color(0.070866145, 0.13645232, 0.13099533, 1)
+diffuse_mode = 2
+albedo_color = Color(0.7375424, 0.87941873, 0.74575716, 1)
+albedo_texture = ExtResource("16_yja66")
+uv1_scale = Vector3(9.495, 9.495, 9.495)
+uv1_triplanar = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_aeui4"]
 orientation = 2
@@ -156,8 +180,17 @@ alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 2
 diffuse_mode = 2
-albedo_color = Color(0.8298225, 0.9266605, 0.8348569, 1)
-albedo_texture = ExtResource("9_0nwn4")
+albedo_color = Color(1.3807716, 1.3807716, 1.3807716, 1)
+albedo_texture = ExtResource("11_gx8pg")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yja66"]
+resource_name = "Table"
+cull_mode = 2
+shading_mode = 0
+diffuse_mode = 2
+albedo_texture = ExtResource("18_gajwd")
+texture_filter = 2
+metadata/_gltf_primary_texture_coord = 0
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hannc"]
 animation = &"Idle_face"
@@ -347,7 +380,7 @@ input_2/break_loop_at_end = false
 input_2/reset = true
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_aeui4"]
-graph_offset = Vector2(-713, 181)
+graph_offset = Vector2(-472.38846, 226.59503)
 nodes/StateMachine/node = SubResource("AnimationNodeStateMachine_mg2fg")
 nodes/StateMachine/position = Vector2(-380, 80)
 nodes/Blend2/node = SubResource("AnimationNodeBlend2_hannc")
@@ -448,6 +481,29 @@ spot_angle = 37.6
 spot_angle_attenuation = 0.00026166282
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=882426837]
+
+[node name="BlackScreen" type="ColorRect" parent="CanvasLayer" unique_id=1459341990]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="TextureRect" parent="CanvasLayer/BlackScreen" unique_id=714276720]
+self_modulate = Color(1, 1, 1, 0.3019608)
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AnimatedTexture_aeui4")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CanvasLayer/BlackScreen" unique_id=1566285583]
+stream = ExtResource("7_1cy0k")
 
 [node name="Effects" type="Node2D" parent="CanvasLayer" unique_id=400710727]
 
@@ -567,15 +623,6 @@ autoplay = &"indicator_hovering"
 libraries/ = SubResource("AnimationLibrary_i8mu5")
 autoplay = &"fade_in"
 
-[node name="BlackScreen" type="ColorRect" parent="CanvasLayer" unique_id=470258342]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
-
 [node name="container" parent="." unique_id=1797219808 instance=ExtResource("6_i6sfn")]
 transform = Transform3D(0.075, 0, 0, 0, 0.075, 0, 0, 0, 0.075, -0.1949003, 0.7938066, 0.67123544)
 
@@ -613,14 +660,17 @@ material_override = SubResource("StandardMaterial3D_dpcb8")
 mesh = SubResource("PlaneMesh_aeui4")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1388569216]
-transform = Transform3D(1.614, 0, 0, 0, 1.094, 0, 0, 0, 1.614, 0, 1.802, -1.663)
+transform = Transform3D(1.454, 0, 0, 0, 0.958, 0, 0, 0, 1.454, -0.3, 1.082, -1.663)
 material_override = SubResource("StandardMaterial3D_i6sfn")
 mesh = SubResource("PlaneMesh_aeui4")
 
 [node name="S1_scene" parent="." unique_id=1140626582 instance=ExtResource("5_0nwn4")]
 
+[node name="Cube_001" parent="S1_scene" index="0" unique_id=493209719]
+material_override = SubResource("StandardMaterial3D_yja66")
+
 [node name="Camera" parent="S1_scene" index="1" unique_id=934119077]
-transform = Transform3D(0.9986407, 0.00059284805, 0.052118413, -0.0042645396, 0.9975121, 0.07036611, -0.05194703, -0.07049273, 0.9961587, 0, 0.93012303, 1.21817)
+transform = Transform3D(0.9986407, 0.00059284805, 0.052118413, -0.0042645396, 0.9975121, 0.07036611, -0.05194703, -0.07049273, 0.9961587, 0, 0.93012303, 1.2181684)
 
 [node name="S1" parent="." unique_id=1946898872 instance=ExtResource("4_pwftu")]
 

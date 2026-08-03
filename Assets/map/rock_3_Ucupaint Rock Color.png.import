@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7fr1vn55wlvv"
-path.s3tc="res://.godot/imported/new_map_Map Fake Lighting.png-d8062a3738ef309ad804c63992240819.s3tc.ctex"
+uid="uid://cw5q6n5yfo0n6"
+path.s3tc="res://.godot/imported/rock_3_Ucupaint Rock Color.png-054b60d702706d070c918c8a4e0e849c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "de6cdd6f5ea3aaada995d4cff4ecf462"
+"md5": "f832a1e64073b6c1f25ae7cd7663d055"
 }
 
 [deps]
 
-source_file="res://Assets/map/new_map_Map Fake Lighting.png"
-dest_files=["res://.godot/imported/new_map_Map Fake Lighting.png-d8062a3738ef309ad804c63992240819.s3tc.ctex"]
+source_file="res://Assets/map/rock_3_Ucupaint Rock Color.png"
+dest_files=["res://.godot/imported/rock_3_Ucupaint Rock Color.png-054b60d702706d070c918c8a4e0e849c.s3tc.ctex"]
 
 [params]
 

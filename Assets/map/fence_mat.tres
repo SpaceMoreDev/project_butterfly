@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ufhdn1xlp2r2"]
+
+[ext_resource type="Texture2D" uid="uid://d1vdgopg8ycgg" path="res://Assets/map/fence_GATE.png" id="1_ypbsk"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+shading_mode = 2
+diffuse_mode = 2
+albedo_color = Color(0.61339027, 0.61339027, 0.61339027, 1)
+albedo_texture = ExtResource("1_ypbsk")
+texture_filter = 0

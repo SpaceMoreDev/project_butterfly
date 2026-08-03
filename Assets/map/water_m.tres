@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bsp458m0rf4k1"]
+
+[ext_resource type="Texture2D" uid="uid://81ydisiy46u8" path="res://Assets/map/Plane Color.png" id="1_qt3u5"]
+
+[resource]
+render_priority = 1
+transparency = 1
+shading_mode = 2
+diffuse_mode = 2
+albedo_color = Color(1, 1, 1, 0.8784314)
+albedo_texture = ExtResource("1_qt3u5")
+uv1_scale = Vector3(7.245, 7.245, 7.245)
+uv1_triplanar = true
+texture_filter = 0
+disable_receive_shadows = true

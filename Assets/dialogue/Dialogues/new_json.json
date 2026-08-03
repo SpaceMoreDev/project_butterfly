@@ -1,39 +1,45 @@
 [
 	{
 		"scene": "intro scene",
-		"next_scene": "res://Scene/_map_day.scn",
+		"next_scene": "res://Assets/map/Final_map.tscn",
 		"dialogue": [
 			{
 				"speaker": "Man",
 				"line": "There we are... Just a bit more- and..!",
 				"talking": "1",
 				"animation": "None"
-			},{
+			},
+			{
 				"speaker": "Man",
 				"line": "Perfect.",
 				"talking": "1",
 				"animation": "None"
-			},{
+			},
+			{
 				"speaker": "Man",
 				"line": "*clears throat*",
 				"talking": "2",
 				"animation": "Cough"
-			},{
+			},
+			{
 				"speaker": "Man",
 				"line": "Now then, I've done a bit more digging this time around.",
 				"talking": "0",
 				"animation": "Idle"
-			},{
+			},
+			{
 				"speaker": "Man",
 				"line": "The Locals say it isn't worth the trouble",
 				"talking": "0",
 				"animation": "Idle2"
-			},{
+			},
+			{
 				"speaker": "Man",
 				"line": "it's been gated off to the public for the last 2 years.",
 				"talking": "0",
 				"animation": "Idle2"
-			},{
+			},
+			{
 				"speaker": "Man",
 				"line": "The valley- I mean.",
 				"talking": "1",
@@ -44,99 +50,115 @@
 				"line": "And The Valley, is exactly what I've been searching for.",
 				"talking": "0",
 				"animation": "Idle2"
-			},{
+			},
+			{
 				"speaker": "Man",
 				"line": "Some things I've been meaning to add to the collection.",
 				"talking": "0",
 				"animation": "Idle2"
-			},{
+			},
+			{
 				"speaker": "Man",
 				"line": "Today's the day.",
 				"talking": "1",
 				"animation": "Idle"
-			},{
+			},
+			{
 				"speaker": "Man",
 				"line": ". . .",
 				"talking": "2",
 				"animation": "Idle"
-			},{
+			},
+			{
 				"speaker": "Man",
 				"line": "My Mother always prattled on",
 				"talking": "0",
 				"animation": "Slide"
-			},{
+			},
+			{
 				"speaker": "Man",
 				"line": "about how nothing I'd desire in life, would be free.",
 				"talking": "0",
 				"animation": "None"
-			},{
+			},
+			{
 				"speaker": "Man",
 				"line": "Not even Life itself.",
 				"talking": "0",
 				"animation": "None"
-			},{
+			},
+			{
 				"speaker": "Man",
 				"line": "But that Life, is precious.",
 				"talking": "0",
 				"animation": "None"
-			},{
+			},
+			{
 				"speaker": "Man",
 				"line": "And should not be traded for anything. ",
 				"talking": "0",
 				"animation": "Idle"
-			},{
+			},
+			{
 				"speaker": "Man",
 				"line": "No matter one's circumstance.",
 				"talking": "0",
 				"animation": "Idle"
-			},{
+			},
+			{
 				"speaker": "Man",
 				"line": "Well, Mother....",
 				"talking": "1",
 				"animation": "Idle3"
-			},{
+			},
+			{
 				"speaker": "Man",
 				"line": "if you were here right now",
 				"talking": "0",
 				"animation": "Idle3"
-			},{
+			},
+			{
 				"speaker": "Man",
 				"line": "I'd say you're full of it.",
 				"talking": "0",
 				"animation": "Idle3"
-			},{
+			},
+			{
 				"speaker": "Man",
 				"line": "The average lifespan of a butterfly is about 2 to 3 weeks",
 				"talking": "0",
 				"animation": "Idle3"
-			},{
+			},
+			{
 				"speaker": "Man",
 				"line": "given that the right conditions are met.",
 				"talking": "0",
 				"animation": "Idle3"
-			},{
+			},
+			{
 				"speaker": "Man",
 				"line": "For something of this size, Death is an absolution.",
 				"talking": "0",
 				"animation": "Idle3"
-			},{
+			},
+			{
 				"speaker": "Man",
 				"line": "It could happen to anyone really.",
 				"talking": "0",
 				"animation": "Idle"
-			},{
+			},
+			{
 				"speaker": "Man",
 				"line": "Today could be that day.",
 				"talking": "0",
 				"animation": "Idle"
-			},{
+			},
+			{
 				"speaker": "Man",
 				"line": "Ah, but for me, today will be filled with profit.",
 				"talking": "0",
 				"animation": "Idle"
 			}
-
-
-			]
+		]
 	}
 ]

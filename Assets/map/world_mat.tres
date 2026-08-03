@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bjrg1ccvgt1k8"]
+
+[ext_resource type="Texture2D" uid="uid://x6g1kxucnrex" path="res://Assets/map/new_map_Map Color.png" id="1_j26ff"]
+[ext_resource type="Texture2D" uid="uid://ug0mqrs6yttf" path="res://Assets/map/new_map_Map Normal.png" id="2_bmr23"]
+
+[resource]
+diffuse_mode = 2
+albedo_color = Color(1.8247963, 1.8247963, 1.8247963, 1)
+albedo_texture = ExtResource("1_j26ff")
+normal_enabled = true
+normal_scale = 15.61
+normal_texture = ExtResource("2_bmr23")
+detail_albedo = ExtResource("1_j26ff")
+detail_normal = ExtResource("2_bmr23")
+texture_filter = 0
