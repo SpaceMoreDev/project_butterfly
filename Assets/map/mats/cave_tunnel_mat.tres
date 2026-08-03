@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cftav0xrt7jjq"]
+
+[ext_resource type="Texture2D" uid="uid://30h5ciu3e5xn" path="res://Assets/map/new_map_Ucupaint cave Color.png" id="1_crb32"]
+
+[resource]
+diffuse_mode = 2
+albedo_texture = ExtResource("1_crb32")
+texture_filter = 0

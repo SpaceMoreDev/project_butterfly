@@ -7,7 +7,8 @@ enum BF_Type
 	WaffleAcer,
 	AlaeDivisa,
 	AlaeFlavae,
-	MorningBlues
+	MorningBlues,
+	Glow
 }
 
 @export var Type : BF_Type = BF_Type.WaffleAcer

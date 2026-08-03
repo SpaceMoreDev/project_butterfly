@@ -101,7 +101,7 @@ func Interact():
 	($particles as CPUParticles3D).emitting = true
 	main_bf_object.visible = false
 	captured = true
-	Global.add_score.emit(1)
+	Global.add_score.emit(butterflies_types.BF_Type.keys()[_type.Type])
 	$CollisionShape3D.disabled = true
 	await get_tree().create_timer(2).timeout
 	active = false

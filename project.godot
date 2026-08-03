@@ -157,3 +157,4 @@ common/physics_interpolation=true
 
 rendering_device/driver.windows="d3d12"
 shading/overrides/force_vertex_shading=true
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

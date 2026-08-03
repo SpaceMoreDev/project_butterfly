@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bjrg1ccvgt1k8"]
+
+[ext_resource type="Texture2D" uid="uid://ccrvt5mmjgk16" path="res://Assets/map/new_map_Ucupaint Plane Color.png" id="1_3qspr"]
+[ext_resource type="Texture2D" uid="uid://cy6j41uuul8mg" path="res://Assets/map/new_map_Ucupaint Plane Normal.png" id="2_uk86p"]
+
+[resource]
+diffuse_mode = 2
+normal_enabled = true
+normal_scale = 8.02
+normal_texture = ExtResource("2_uk86p")
+detail_enabled = true
+detail_albedo = ExtResource("1_3qspr")
+detail_normal = ExtResource("2_uk86p")
+texture_filter = 0

@@ -2,14 +2,14 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://by6prowhsmq54"
+uid="uid://cbu6tt67loe21"
 path.s3tc="res://.godot/imported/new_map_Ucupaint cave Color_3.png-863cbedf1d234435f6a61f8cffe4fc7c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "c13d6decc09d84bede0eff2dda7e1ed7"
+"md5": "c5906d239529c6c3d99cdc2a6f38c8e0"
 }
 
 [deps]

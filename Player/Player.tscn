@@ -51,34 +51,36 @@ physics_interpolation_mode = 1
 speed = 5
 camera = NodePath("Head")
 
-[node name="AudioStream" type="AudioStreamPlayer3D" parent="." index="0" unique_id=1911994643]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="0" unique_id=1594424134]
+
+[node name="AudioStream" type="AudioStreamPlayer3D" parent="." index="1" unique_id=1911994643]
 bus = &"New Bus 2"
 
-[node name="Interact" type="Node3D" parent="." index="1" unique_id=669894461]
+[node name="Interact" type="Node3D" parent="." index="2" unique_id=669894461]
 script = ExtResource("2_v0k0e")
 
-[node name="Collision" parent="." index="2"]
+[node name="Collision" parent="." index="3" unique_id=1502962929]
 physics_interpolation_mode = 1
 shape = SubResource("CapsuleShape3D_j23h2")
 
-[node name="Collision2" type="CollisionShape3D" parent="." index="3" unique_id=1176322972]
+[node name="Collision2" type="CollisionShape3D" parent="." index="4" unique_id=1176322972]
 physics_interpolation_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.94323426)
 shape = SubResource("CapsuleShape3D_j23h2")
 
-[node name="Head" parent="." index="4" unique_id=315625654 instance=ExtResource("2_41iu1")]
+[node name="Head" parent="." index="5" unique_id=315625654 instance=ExtResource("2_41iu1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6710161, 0)
 
-[node name="Sprint" type="Node" parent="." index="5" unique_id=1121165758]
+[node name="Sprint" type="Node" parent="." index="6" unique_id=1121165758]
 physics_interpolation_mode = 1
 script = ExtResource("3_bgqcu")
 sprint_speed = 7
 
-[node name="audio_manager" type="Node" parent="." index="6" unique_id=473677349]
+[node name="audio_manager" type="Node" parent="." index="7" unique_id=473677349]
 script = ExtResource("5_8g4oa")
 score_sounds = Array[AudioStream]([ExtResource("6_s1rgi"), ExtResource("7_j23h2"), ExtResource("8_0j2ni")])
 
-[node name="Repulser" type="Area3D" parent="." index="7" unique_id=1425382398]
+[node name="Repulser" type="Area3D" parent="." index="8" unique_id=1425382398]
 collision_mask = 16
 monitorable = false
 script = ExtResource("9_j23h2")
@@ -87,5 +89,5 @@ script = ExtResource("9_j23h2")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7500274, -0.81861675)
 shape = SubResource("SphereShape3D_aeui4")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="8" unique_id=1481838880]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="9" unique_id=1481838880]
 libraries/ = SubResource("AnimationLibrary_j23h2")

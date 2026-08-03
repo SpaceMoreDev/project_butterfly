@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ba3he3lpuvuq3" path="res://Assets/BF/AlaeDivisa.png" id="4_8v8lw"]
 [ext_resource type="Texture2D" uid="uid://dofb5c4bqdckp" path="res://Assets/BF/AlaeFlavae.png" id="5_ye0oy"]
 [ext_resource type="Texture2D" uid="uid://dlcqp1x3qbkmf" path="res://Assets/BF/MorningBlues.png" id="6_4tav1"]
+[ext_resource type="Texture2D" uid="uid://c51yr44a2iwv3" path="res://Assets/BF/Glow_butterfly.png" id="7_ye0oy"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_aeui4"]
 
@@ -64,7 +65,8 @@ bf_visual = Dictionary[int, Texture2D]({
 0: ExtResource("3_u475r"),
 1: ExtResource("4_8v8lw"),
 2: ExtResource("5_ye0oy"),
-3: ExtResource("6_4tav1")
+3: ExtResource("6_4tav1"),
+4: ExtResource("7_ye0oy")
 })
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=151729297]

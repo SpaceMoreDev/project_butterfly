@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dybhe77ghof13"
-path.s3tc="res://.godot/imported/new_map_Grass.png-972cca47f8e48fd42ec05d20c3e07b6c.s3tc.ctex"
+uid="uid://ei63nwod2pcl"
+path.s3tc="res://.godot/imported/MagicTree_cacoon Color.png-b39f3e95c664df4ef6ec24f3717074f6.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "0e483b45f8420ff6a9e8cf731e61eca5"
+"md5": "c2c5be88eeff42aab3d43002e13ab981"
 }
 
 [deps]
 
-source_file="res://Assets/map/new_map_Grass.png"
-dest_files=["res://.godot/imported/new_map_Grass.png-972cca47f8e48fd42ec05d20c3e07b6c.s3tc.ctex"]
+source_file="res://Assets/MagicTree/MagicTree_cacoon Color.png"
+dest_files=["res://.godot/imported/MagicTree_cacoon Color.png-b39f3e95c664df4ef6ec24f3717074f6.s3tc.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://coc3cvluy0rua"
+uid="uid://c086tx8mrs14"
 path="res://.godot/imported/new_map.glb-a6b3d955f828289a57978d97b47ed81e.scn"
 
 [deps]
@@ -41,25 +41,25 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "materials": {
-"Material.003": {
+"cave": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://Assets/map/cave_treearea_mat.tres",
+"use_external/fallback_path": "res://Assets/map/mats/cave_treearea_mat.tres",
 "use_external/path": "uid://d4h7o64n4fi1p"
 },
-"Plane": {
+"cave_entrance": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://Assets/map/world_mat.tres",
-"use_external/path": "uid://bjrg1ccvgt1k8"
+"use_external/fallback_path": "res://Assets/map/mats/cave_entance_mat.tres",
+"use_external/path": "uid://vqgm6eetmj8h"
 },
-"Plane.002": {
+"tunnel": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://Assets/map/cave_tunnel_mat.tres",
+"use_external/fallback_path": "res://Assets/map/mats/cave_tunnel_mat.tres",
 "use_external/path": "uid://cftav0xrt7jjq"
 },
-"Plane.004": {
+"world": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://Assets/map/cave_entance_mat.tres",
-"use_external/path": "uid://vqgm6eetmj8h"
+"use_external/fallback_path": "res://Assets/map/mats/world_mat.tres",
+"use_external/path": "uid://bjrg1ccvgt1k8"
 }
 },
 "nodes": {

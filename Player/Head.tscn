@@ -8,10 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://c4wn4nxwmiebn" path="res://container.blend" id="3_oowo0"]
 [ext_resource type="Texture2D" uid="uid://cncjophmp5aoc" path="res://ShotGun Color.png" id="4_bdho6"]
 [ext_resource type="Script" uid="uid://cmgwbss78wa42" path="res://shotgun.gd" id="4_cldr2"]
+[ext_resource type="Texture2D" uid="uid://c6kvcu0fypgmp" path="res://Assets/Book/Guide_page.png" id="6_ykasc"]
 [ext_resource type="Script" uid="uid://bsul5mu5smpa3" path="res://Player/net_hand.gd" id="7_i6cme"]
 [ext_resource type="PackedScene" uid="uid://bbs3vu0slfn76" path="res://butterfly.glb" id="9_2kqho"]
 [ext_resource type="Texture2D" uid="uid://bhobhihdubluh" path="res://Assets/Butterfly/BirdWingBF.png" id="10_udlcd"]
-[ext_resource type="Script" uid="uid://xx2fs681pgtb" path="res://Player/PlayerUI.gd" id="11_6sv8d"]
 [ext_resource type="Texture2D" uid="uid://dfkoyoc7ekvb1" path="res://Assets/Butterfly/BlueMorphoBF.png" id="11_cldr2"]
 [ext_resource type="PackedScene" uid="uid://datmfdttqlr5l" path="res://Assets/Book/Book.glb" id="11_ji5ww"]
 [ext_resource type="Texture2D" uid="uid://dnr6koh4fobuj" path="res://Assets/Butterfly/CommonPosyBF.png" id="12_00ku8"]
@@ -24,8 +24,16 @@
 [ext_resource type="Texture2D" uid="uid://p75rjpnjoa85" path="res://flash1.png" id="15_00ku8"]
 [ext_resource type="Texture2D" uid="uid://dk32amxjiomtw" path="res://Assets/Book/Page5BFJ.png" id="15_qv2u7"]
 [ext_resource type="Texture2D" uid="uid://iy8xmsbvgql8" path="res://Assets/Book/Page1BFJ.png" id="15_sqcjl"]
-[ext_resource type="Texture2D" uid="uid://cn6leoe82v56m" path="res://Assets/dialogue/Data/Guide_page.png" id="15_udlcd"]
 [ext_resource type="Texture2D" uid="uid://clsgdxgq27mo" path="res://Muzzleflash.png" id="18_es1v0"]
+[ext_resource type="Script" uid="uid://bboyn8kiy2k85" path="res://Player/objective.gd" id="26_4fqg5"]
+[ext_resource type="Script" uid="uid://c62sj6bog4db0" path="res://Assets/Objectives/Butterfly_Objectives.gd" id="27_duqv3"]
+[ext_resource type="Texture2D" uid="uid://fjqdnm1h25e1" path="res://Assets/Sticknote.png" id="28_02xh5"]
+[ext_resource type="Resource" uid="uid://c8xwc12gogsqo" path="res://Assets/Objectives/objective_1.tres" id="28_8pk3i"]
+[ext_resource type="Resource" uid="uid://b8ht85s58r808" path="res://Assets/Objectives/objective_2.tres" id="29_8pk3i"]
+[ext_resource type="Resource" uid="uid://b8om14p2xki6i" path="res://Assets/Objectives/objective_3.tres" id="30_r8bvb"]
+[ext_resource type="Script" uid="uid://5cn6e0s8q8e5" path="res://Scene/dialogue.gd" id="31_37co2"]
+[ext_resource type="Resource" uid="uid://dyoynhgfji8nh" path="res://Assets/dialogue/Data/dia_Test.tres" id="32_gyt3r"]
+[ext_resource type="Texture2D" uid="uid://bp813hxuofgx4" path="res://Assets/dialogue/dialogue_indicator.png" id="33_l0ury"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qy1gf"]
 animation = &"Catching"
@@ -316,6 +324,87 @@ shading_mode = 0
 albedo_color = Color(0.3129209, 0.7530745, 1.9768668, 1)
 albedo_texture = ExtResource("12_00ku8")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ff5cg"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.20724732, 0.09584386, 0.40865993, 1)
+
+[sub_resource type="Animation" id="Animation_mg2fg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(520, 18)]
+}
+
+[sub_resource type="Animation" id="Animation_x0wre"]
+resource_name = "indicator_hovering"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(524.65, 28.11), Vector2(524.65, 25.865), Vector2(524.65, 28.11)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yu4ho"]
+_data = {
+&"RESET": SubResource("Animation_mg2fg"),
+&"indicator_hovering": SubResource("Animation_x0wre")
+}
+
+[sub_resource type="Animation" id="Animation_i8mu5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8sg0t"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_284f2"]
+_data = {
+&"RESET": SubResource("Animation_i8mu5"),
+&"fade_in": SubResource("Animation_8sg0t")
+}
+
 [node name="Head" type="Node3D" unique_id=955601237]
 physics_interpolation_mode = 1
 script = ExtResource("1_enjfg")
@@ -349,7 +438,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -0.615)
 script = ExtResource("12_4p2t4")
 inactive_transform = Vector3(0, -1, -0.615)
 active_transform = Vector3(0, -0.185, -0.615)
-all_pages = Array[Texture2D]([ExtResource("15_udlcd"), ExtResource("15_sqcjl"), ExtResource("13_05oep"), ExtResource("14_s2hpm"), ExtResource("14_sqcjl"), ExtResource("15_qv2u7")])
+all_pages = Array[Texture2D]([ExtResource("6_ykasc"), ExtResource("15_sqcjl"), ExtResource("13_05oep"), ExtResource("14_s2hpm"), ExtResource("14_sqcjl"), ExtResource("15_qv2u7")])
 
 [node name="AnimationPlayer" parent="Hand/Book" index="1" unique_id=1020760046]
 autoplay = &"Idle"
@@ -389,7 +478,7 @@ cast_shadow = 0
 mesh = SubResource("PlaneMesh_aeui4")
 
 [node name="shotgun" parent="Hand/ShotGun" unique_id=386872980 instance=ExtResource("3_i6cme")]
-transform = Transform3D(0.023983702, 0.19300984, 0.98090345, -0.07360112, 0.97886366, -0.19080897, -0.996999, -0.06761931, 0.037682533, 0.24, -0.205, -0.628)
+transform = Transform3D(0.023983702, 0.19300981, 0.98090315, -0.07360112, 0.97886336, -0.19080892, -0.996999, -0.06761928, 0.037682522, 0.24, -0.205, -0.628)
 
 [node name="Shotgun" parent="Hand/ShotGun/shotgun" index="0" unique_id=153550908]
 transform = Transform3D(0.04000001, 2.3283064e-10, 0, 0, 0.04000001, 2.4738256e-10, -1.1641532e-10, 2.3283064e-10, 0.04000001, 0, 0, 0)
@@ -429,9 +518,10 @@ omni_attenuation = 0.5
 root_node = NodePath("../shotgun")
 libraries/ = SubResource("AnimationLibrary_00ku8")
 
-[node name="Jar" type="Node3D" parent="Hand" unique_id=720132064]
+[node name="Jar" type="Node3D" parent="Hand" unique_id=720132064 node_paths=PackedStringArray("_objective")]
 transform = Transform3D(-8.168722e-09, -1.4992411e-09, 0.19, -0.034298636, 0.18687858, 0, -0.18687858, -0.034298636, -8.305164e-09, -0.439, -1.3212978, -0.838)
 script = ExtResource("3_3wvon")
+_objective = NodePath("../../CollectionUI")
 
 [node name="container" parent="Hand/Jar" unique_id=1797219808 instance=ExtResource("3_oowo0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)
@@ -463,26 +553,6 @@ material_override = SubResource("StandardMaterial3D_ykasc")
 [node name="AnimationPlayer" parent="Hand/Jar/container/butterfly5" index="1" unique_id=1344750978]
 autoplay = &"Butterfly"
 
-[node name="CollectionUI" type="CanvasLayer" parent="Hand/Jar" unique_id=1758316876]
-visible = false
-script = ExtResource("11_6sv8d")
-
-[node name="Label" type="Label" parent="Hand/Jar/CollectionUI" unique_id=922985698]
-offset_left = 43.0
-offset_top = 23.0
-offset_right = 83.0
-offset_bottom = 86.0
-theme_override_colors/font_shadow_color = Color(0.89411765, 0, 0, 0.38431373)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 2
-theme_override_constants/shadow_offset_y = 1
-theme_override_constants/outline_size = 5
-theme_override_constants/shadow_outline_size = 9
-theme_override_font_sizes/font_size = 45
-text = "Collected 0"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
 [node name="Camera" type="Camera3D" parent="." unique_id=1478984677]
 physics_interpolation_mode = 1
 cull_mask = 1048573
@@ -494,6 +564,113 @@ physics_interpolation_mode = 1
 transform = Transform3D(1, 0, 3.5527137e-15, 0, 1, 8.881784e-16, 0, 0, 1, 0, 0, 0)
 script = ExtResource("2_irtxf")
 randomStrength = 0.35
+
+[node name="CollectionUI" type="CanvasLayer" parent="." unique_id=1758316876]
+script = ExtResource("26_4fqg5")
+objectives_list = Array[ExtResource("27_duqv3")]([ExtResource("28_8pk3i"), ExtResource("29_8pk3i"), ExtResource("30_r8bvb")])
+
+[node name="Objective" type="Control" parent="CollectionUI" unique_id=603312184]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="TextureRect" type="TextureRect" parent="CollectionUI/Objective" unique_id=1844998003]
+layout_mode = 1
+offset_left = -28.780762
+offset_top = -18.0
+offset_right = 312.16046
+offset_bottom = 290.0
+texture = ExtResource("28_02xh5")
+
+[node name="Label" type="Label" parent="CollectionUI/Objective/TextureRect" unique_id=922985698]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.48051947
+anchor_right = 0.5
+anchor_bottom = 0.48051947
+offset_left = -119.0
+offset_top = -72.0
+offset_right = 119.0
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.998553, 0.85900307, 0.5869908, 1)
+theme_override_colors/font_shadow_color = Color(0.35585862, 0.36681545, 1, 0.38431373)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 9
+theme_override_font_sizes/font_size = 33
+text = "Collect WaffleAcer  0/1"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Dialogue" type="CanvasLayer" parent="." unique_id=282401939]
+layer = 2
+visible = false
+
+[node name="UI" type="Control" parent="Dialogue" unique_id=1318551637]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Dialogue/UI" unique_id=1937533799]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.83500004
+anchor_right = 1.0
+anchor_bottom = 0.95800006
+offset_left = 38.0
+offset_top = 0.19998169
+offset_right = -38.0
+offset_bottom = 0.15997314
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_styles/panel = SubResource("StyleBoxFlat_ff5cg")
+script = ExtResource("31_37co2")
+_dia_data = ExtResource("32_gyt3r")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Dialogue/UI/PanelContainer" unique_id=56062868]
+layout_mode = 2
+text = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="indicator" type="Control" parent="Dialogue/UI/PanelContainer" unique_id=408703292]
+visible = false
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Dialogue/UI/PanelContainer/indicator" unique_id=1683096844]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 520.0
+offset_top = 18.0
+offset_right = 569.4752
+offset_bottom = 61.889412
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.63, 0.63)
+texture = ExtResource("33_l0ury")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Dialogue/UI/PanelContainer/indicator" unique_id=1828345750]
+libraries/ = SubResource("AnimationLibrary_yu4ho")
+autoplay = &"indicator_hovering"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Dialogue/UI/PanelContainer" unique_id=241378258]
+libraries/ = SubResource("AnimationLibrary_284f2")
+autoplay = &"fade_in"
 
 [editable path="Hand/Book"]
 [editable path="Hand/ShotGun/shotgun"]

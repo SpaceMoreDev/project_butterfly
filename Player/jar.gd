@@ -1,15 +1,17 @@
 extends Node3D
 
-@onready var ui_jar : JarUI = $CollectionUI
+@export var _objective : Objective 
 
 var _active = false
 var active : bool:
 	set(val):
 		_active = val
 		if val:
-			ui_jar.visible = true
+			if _objective:
+				_objective.visible = true
 		else:
-			ui_jar.visible = false
+			if _objective:
+				_objective.visible = false
 	get:
 		return _active
 

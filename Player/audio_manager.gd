@@ -7,9 +7,9 @@ var audio: AudioStreamPlayer3D
 func _ready() -> void:
 	audio = AudioStreamPlayer3D.new()
 	add_child(audio)
-	Global.add_score.connect(_play_score)
+	Global.updated_score.connect(_play_score)
 	
-func _play_score(i):
+func _play_score():
 	Play()
 
 func Play():

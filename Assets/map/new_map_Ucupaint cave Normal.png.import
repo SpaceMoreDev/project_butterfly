@@ -1,0 +1,44 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://crmjw7agndq08"
+path.s3tc="res://.godot/imported/new_map_Ucupaint cave Normal.png-840bfd04dbd6f21c372e4288e9f27493.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "4dd71efd6e804d7aeca46b8a2cdb6f08"
+}
+
+[deps]
+
+source_file="res://Assets/map/new_map_Ucupaint cave Normal.png"
+dest_files=["res://.godot/imported/new_map_Ucupaint cave Normal.png-840bfd04dbd6f21c372e4288e9f27493.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://Assets/map/new_map_Ucupaint cave Normal.png"
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
