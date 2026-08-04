@@ -491,7 +491,6 @@ headbob_amplitude = 0.05
 [node name="Hand" type="Node3D" parent="." unique_id=2040606177]
 
 [node name="net_hand" type="Node3D" parent="Hand" unique_id=1594775810]
-visible = false
 script = ExtResource("7_i6cme")
 
 [node name="net" parent="Hand/net_hand" unique_id=925678904 instance=ExtResource("2_xfbis")]
@@ -530,6 +529,7 @@ bones/4/rotation = Quaternion(5.2684914e-05, 0.00029616072, -0.17519656, 0.98453
 autoplay = &"Idle"
 
 [node name="ShotGun" type="Node3D" parent="Hand" unique_id=1503847516]
+visible = false
 script = ExtResource("4_cldr2")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Hand/ShotGun" unique_id=138629071]

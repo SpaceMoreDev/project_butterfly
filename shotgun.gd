@@ -2,9 +2,9 @@ extends Node3D
 class_name  ShotGun
 
 @export var _active : bool = false
-@onready var _anim : AnimationTree = $AnimationTree
+var _anim : AnimationTree
 var shooting
-@onready var bullets_container= $ammoUI/Ammo
+var bullets_container
 var bullets_array : Array[Control]
 
 var active : bool :
@@ -23,6 +23,10 @@ var active : bool :
 var current_ammo = 8
 
 func _ready() -> void:
+	if not active:
+		return
+	_anim = $AnimationTree
+	bullets_container = $ammoUI/Ammo
 	if bullets_container:
 		for i in bullets_container.get_children():
 			bullets_array.append(i)
