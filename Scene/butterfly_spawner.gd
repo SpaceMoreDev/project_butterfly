@@ -44,7 +44,7 @@ func _ready():
 			var distance = (player.global_position - global_position).length()
 			if distance > 10:
 				var dot  = player_dir.dot(self_to_player)
-				if abs(dot) < 0.7:
+				if dot > 0.7:
 					spawn_randomly()
 					Global.max_count_of_butterflies += 1
 		)

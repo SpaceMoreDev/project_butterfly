@@ -1,6 +1,6 @@
 extends PanelContainer
 
-class_name Dialgoue
+class_name CutsceneDialgoue
 
 var _current_dialgoue : JSON
 var _speaker : String = ""
@@ -49,7 +49,7 @@ func _next_line():
 		visible = false
 		await get_tree().create_timer(1).timeout
 		
-		get_tree().change_scene_to_file(nect_scene)
+		get_tree().call_deferred("change_scene_to_file",nect_scene)
 		return
 	
 	_speaker =  _parsed_dialogue[_line_index].get("speaker")

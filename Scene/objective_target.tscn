@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://crmtsq5jwjvlu"]
+
+[ext_resource type="Script" uid="uid://dyee5pholcgul" path="res://Assets/map/objective_target.gd" id="1_gtpsb"]
+[ext_resource type="PackedScene" uid="uid://b1n66hikwu4ik" path="res://Assets/Arrow.glb" id="2_sqcvi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_aeui4"]
+size = Vector3(3.0002441, 2.9592285, 2.484375)
+
+[node name="Objective_target" type="Area3D" unique_id=1269269127]
+collision_layer = 64
+collision_mask = 2
+script = ExtResource("1_gtpsb")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=775838363]
+shape = SubResource("BoxShape3D_aeui4")
+
+[node name="Arrow" parent="." unique_id=140742296 instance=ExtResource("2_sqcvi")]
+
+[node name="AnimationPlayer" parent="Arrow" index="1" unique_id=1851753806]
+autoplay = &"Default"
+
+[editable path="Arrow"]

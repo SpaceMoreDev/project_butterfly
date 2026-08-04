@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bbwsh1cwpsg3v"]
+
+[ext_resource type="Script" uid="uid://dbs65tybe8pw7" path="res://Assets/map/TriggerDialogue.gd" id="1_g8foc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_aeui4"]
+size = Vector3(4.5214844, 1, 2.998291)
+
+[node name="dialogue_trigger" type="Area3D" unique_id=1053818605]
+collision_layer = 32
+collision_mask = 3
+script = ExtResource("1_g8foc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=182653095]
+shape = SubResource("BoxShape3D_aeui4")

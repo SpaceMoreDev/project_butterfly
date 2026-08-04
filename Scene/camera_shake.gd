@@ -12,7 +12,7 @@ func _ready():
 	Global.updated_score.connect(score_changed)
 	Global.shoot.connect(player_shoot)
 
-func score_changed():
+func score_changed(score):
 	apply_shake()
 
 func player_shoot():

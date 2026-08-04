@@ -1,0 +1,32 @@
+[
+	{
+		"scene": "Test scene",
+		"dialogue": [
+			{
+				"speaker": "Man",
+				"line": "This is line 1",
+			},
+			{
+				"speaker": "Man",
+				"line": "This is line 2",
+			}
+		]
+	},
+	{
+		"scene": "Cabin scene",
+		"dialogue": [
+			{
+				"speaker": "Man",
+				"line": "This is a cabin",
+			},
+			{
+				"speaker": "Man",
+				"line": "yeep..",
+			},
+			{
+				"speaker": "Man",
+				"line": "*burps*",
+			}
+		]
+	}
+]

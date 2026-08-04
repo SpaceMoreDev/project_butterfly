@@ -53,6 +53,9 @@ func _physics_process(delta: float) -> void:
 		camera_rotation()
 
 func _process(delta: float) -> void:
+	if not Global.can_move:
+		return
+	
 	headbob_time += delta * controller.velocity.length()
 	if controller.get_real_velocity().length() > 1.0:
 		var h_bob = _HeadBob(headbob_time)

@@ -24,6 +24,10 @@ func _physics_process(delta: float) -> void:
 			controller.speed = normal_speed
 			controller.footsteps.speed_scale = 1
 			cam.set_fov(lerp(cam.fov, normal_fov, delta * 8))
+	else:
+		controller.speed = normal_speed
+		controller.footsteps.speed_scale = 1
+		cam.set_fov(lerp(cam.fov, normal_fov, delta * 8))
 
 
 func can_sprint() -> bool:

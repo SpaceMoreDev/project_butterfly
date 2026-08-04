@@ -38,6 +38,8 @@ func _ready() -> void:
 # Called every physics tick. 'delta' is constant
 func _physics_process(delta: float) -> void:
 	if !canmove: 
+		if footsteps.is_playing():
+			footsteps.stop()
 		return
 	
 	input_axis = Input.get_vector(&"move_back", &"move_forward",

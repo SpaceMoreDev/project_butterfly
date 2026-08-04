@@ -1,9 +1,15 @@
 [gd_resource type="Resource" script_class="ObjectiveData" format=3 uid="uid://b8om14p2xki6i"]
 
+[ext_resource type="Script" uid="uid://bcveeafljnper" path="res://Assets/Butterfly/BF_Types.gd" id="1_1b6wq"]
 [ext_resource type="Script" uid="uid://c62sj6bog4db0" path="res://Assets/Objectives/Butterfly_Objectives.gd" id="2_1c7tr"]
+
+[sub_resource type="Resource" id="Resource_1c7tr"]
+script = ExtResource("1_1b6wq")
+Type = 2
+metadata/_custom_type_script = "uid://bcveeafljnper"
 
 [resource]
 script = ExtResource("2_1c7tr")
-objective_text = "RUN!"
+butterfly = SubResource("Resource_1c7tr")
 collect_count = 5
 metadata/_custom_type_script = "uid://c62sj6bog4db0"

@@ -31,9 +31,17 @@
 [ext_resource type="Resource" uid="uid://c8xwc12gogsqo" path="res://Assets/Objectives/objective_1.tres" id="28_8pk3i"]
 [ext_resource type="Resource" uid="uid://b8ht85s58r808" path="res://Assets/Objectives/objective_2.tres" id="29_8pk3i"]
 [ext_resource type="Resource" uid="uid://b8om14p2xki6i" path="res://Assets/Objectives/objective_3.tres" id="30_r8bvb"]
-[ext_resource type="Script" uid="uid://5cn6e0s8q8e5" path="res://Scene/dialogue.gd" id="31_37co2"]
-[ext_resource type="Resource" uid="uid://dyoynhgfji8nh" path="res://Assets/dialogue/Data/dia_Test.tres" id="32_gyt3r"]
+[ext_resource type="Script" uid="uid://cnqywsg1lunsa" path="res://Player/DialogueBox.gd" id="32_i71sr"]
+[ext_resource type="JSON" path="res://Assets/dialogue/Dialogues/Game_Dialogues.json" id="33_1r455"]
 [ext_resource type="Texture2D" uid="uid://bp813hxuofgx4" path="res://Assets/dialogue/dialogue_indicator.png" id="33_l0ury"]
+[ext_resource type="Script" uid="uid://tuvey5od3kxn" path="res://Assets/dialogue/Data/DialogueData.gd" id="34_l0ury"]
+[ext_resource type="Script" uid="uid://djudsmkrlp15b" path="res://Player/transition.gd" id="36_1dx8r"]
+[ext_resource type="Texture2D" uid="uid://bx428j1g4bqqg" path="res://Assets/transition/VHS_f1.png" id="36_1r455"]
+[ext_resource type="Texture2D" uid="uid://ci0xig8xe17d8" path="res://Assets/transition/VHS_f2.png" id="37_1dx8r"]
+[ext_resource type="Texture2D" uid="uid://jv2h45edonx8" path="res://Assets/transition/VHS_f3.png" id="38_fkxbl"]
+[ext_resource type="Texture2D" uid="uid://djlm1uf3pplbh" path="res://Assets/transition/VHS_f4.png" id="39_stjdx"]
+[ext_resource type="Texture2D" uid="uid://leugbw122nt6" path="res://Assets/transition/VHS_f5.png" id="40_46mxt"]
+[ext_resource type="AudioStream" uid="uid://c6cetvxh7akvt" path="res://Audio/noise.wav" id="41_evuba"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qy1gf"]
 animation = &"Catching"
@@ -132,6 +140,33 @@ point_count = 2
 offsets = PackedFloat32Array(0, 0.5276382, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0.003921569, 0.003921569, 0.003921569, 0.85490197, 0.14901961, 0.14901961, 0.14901961, 0)
 
+[sub_resource type="Animation" id="Animation_1dx8r"]
+resource_name = "Idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.24, -0.28, -0.628)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.19198622, 1.4538592, -0.35430184)]
+}
+
 [sub_resource type="Animation" id="Animation_00ku8"]
 length = 0.001
 tracks/0/type = "value"
@@ -193,6 +228,30 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.24, -0.205, -0.628)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.19198622, 1.7505653, -0.44156832)]
 }
 
 [sub_resource type="Animation" id="Animation_cldr2"]
@@ -299,6 +358,7 @@ tracks/7/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_00ku8"]
 _data = {
+&"Idle": SubResource("Animation_1dx8r"),
 &"RESET": SubResource("Animation_00ku8"),
 &"Shoot": SubResource("Animation_cldr2")
 }
@@ -331,6 +391,11 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.20724732, 0.09584386, 0.40865993, 1)
+
+[sub_resource type="Resource" id="Resource_cak0m"]
+script = ExtResource("34_l0ury")
+dialogue_Json = ExtResource("33_1r455")
+metadata/_custom_type_script = "uid://tuvey5od3kxn"
 
 [sub_resource type="Animation" id="Animation_mg2fg"]
 length = 0.001
@@ -405,6 +470,19 @@ _data = {
 &"fade_in": SubResource("Animation_8sg0t")
 }
 
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_yubum"]
+frames = 5
+speed_scale = 30.0
+frame_0/texture = ExtResource("36_1r455")
+frame_1/texture = ExtResource("37_1dx8r")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("38_fkxbl")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("39_stjdx")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("40_46mxt")
+frame_4/duration = 1.0
+
 [node name="Head" type="Node3D" unique_id=955601237]
 physics_interpolation_mode = 1
 script = ExtResource("1_enjfg")
@@ -413,6 +491,7 @@ headbob_amplitude = 0.05
 [node name="Hand" type="Node3D" parent="." unique_id=2040606177]
 
 [node name="net_hand" type="Node3D" parent="Hand" unique_id=1594775810]
+visible = false
 script = ExtResource("7_i6cme")
 
 [node name="net" parent="Hand/net_hand" unique_id=925678904 instance=ExtResource("2_xfbis")]
@@ -439,6 +518,13 @@ script = ExtResource("12_4p2t4")
 inactive_transform = Vector3(0, -1, -0.615)
 active_transform = Vector3(0, -0.185, -0.615)
 all_pages = Array[Texture2D]([ExtResource("6_ykasc"), ExtResource("15_sqcjl"), ExtResource("13_05oep"), ExtResource("14_s2hpm"), ExtResource("14_sqcjl"), ExtResource("15_qv2u7")])
+
+[node name="Skeleton3D" parent="Hand/Book/Armature" parent_id_path=PackedInt32Array(369547485, 1508834667) index="0" unique_id=893617336]
+bones/0/rotation = Quaternion(-0.08485918, -0.7019964, 0.08485925, 0.7019964)
+bones/1/rotation = Quaternion(0.69848573, 0.110080376, -0.11008005, 0.6984858)
+bones/2/rotation = Quaternion(-2.479e-08, 5.895505e-08, 0.17549276, 0.98448074)
+bones/3/rotation = Quaternion(-0.11007997, -0.6984858, 0.6984858, -0.110080354)
+bones/4/rotation = Quaternion(5.2684914e-05, 0.00029616072, -0.17519656, 0.9845335)
 
 [node name="AnimationPlayer" parent="Hand/Book" index="1" unique_id=1020760046]
 autoplay = &"Idle"
@@ -478,7 +564,7 @@ cast_shadow = 0
 mesh = SubResource("PlaneMesh_aeui4")
 
 [node name="shotgun" parent="Hand/ShotGun" unique_id=386872980 instance=ExtResource("3_i6cme")]
-transform = Transform3D(0.023983702, 0.19300981, 0.98090315, -0.07360112, 0.97886336, -0.19080892, -0.996999, -0.06761928, 0.037682522, 0.24, -0.205, -0.628)
+transform = Transform3D(-0.2418816, 0.0933145, 0.96580774, -0.41950598, 0.88747126, -0.19080889, -0.8749329, -0.4513153, -0.17551707, 0.24, -0.205, -0.628)
 
 [node name="Shotgun" parent="Hand/ShotGun/shotgun" index="0" unique_id=153550908]
 transform = Transform3D(0.04000001, 2.3283064e-10, 0, 0, 0.04000001, 2.4738256e-10, -1.1641532e-10, 2.3283064e-10, 0.04000001, 0, 0, 0)
@@ -517,6 +603,9 @@ omni_attenuation = 0.5
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Hand/ShotGun" unique_id=2048154864]
 root_node = NodePath("../shotgun")
 libraries/ = SubResource("AnimationLibrary_00ku8")
+autoplay = &"Idle"
+next/Shoot = &"Idle"
+blend_times = [&"Idle", &"Idle", 0.2, &"Idle", &"Shoot", 0.1]
 
 [node name="Jar" type="Node3D" parent="Hand" unique_id=720132064 node_paths=PackedStringArray("_objective")]
 transform = Transform3D(-8.168722e-09, -1.4992411e-09, 0.19, -0.034298636, 0.18687858, 0, -0.18687858, -0.034298636, -8.305164e-09, -0.439, -1.3212978, -0.838)
@@ -575,25 +664,27 @@ anchors_preset = 0
 
 [node name="TextureRect" type="TextureRect" parent="CollectionUI/Objective" unique_id=1844998003]
 layout_mode = 1
-offset_left = -28.780762
-offset_top = -18.0
-offset_right = 312.16046
-offset_bottom = 290.0
+offset_left = 3.0
+offset_top = -10.0
+offset_right = 304.09094
+offset_bottom = 262.0
 texture = ExtResource("28_02xh5")
+metadata/_edit_group_ = true
 
 [node name="Label" type="Label" parent="CollectionUI/Objective/TextureRect" unique_id=922985698]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.48051947
-anchor_right = 0.5
-anchor_bottom = 0.48051947
+anchor_left = 0.4882246
+anchor_top = 0.54044116
+anchor_right = 0.4882246
+anchor_bottom = 0.54044116
 offset_left = -119.0
 offset_top = -72.0
 offset_right = 119.0
 offset_bottom = 72.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
 theme_override_colors/font_color = Color(0.998553, 0.85900307, 0.5869908, 1)
 theme_override_colors/font_shadow_color = Color(0.35585862, 0.36681545, 1, 0.38431373)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -605,12 +696,12 @@ theme_override_font_sizes/font_size = 33
 text = "Collect WaffleAcer  0/1"
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 2
+autowrap_mode = 3
+clip_text = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Dialogue" type="CanvasLayer" parent="." unique_id=282401939]
 layer = 2
-visible = false
 
 [node name="UI" type="Control" parent="Dialogue" unique_id=1318551637]
 layout_mode = 3
@@ -621,6 +712,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="Dialogue/UI" unique_id=1937533799]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.83500004
@@ -634,8 +726,8 @@ grow_horizontal = 2
 grow_vertical = 0
 pivot_offset_ratio = Vector2(0.5, 0.5)
 theme_override_styles/panel = SubResource("StyleBoxFlat_ff5cg")
-script = ExtResource("31_37co2")
-_dia_data = ExtResource("32_gyt3r")
+script = ExtResource("32_i71sr")
+_dia_data = SubResource("Resource_cak0m")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Dialogue/UI/PanelContainer" unique_id=56062868]
 layout_mode = 2
@@ -671,6 +763,33 @@ autoplay = &"indicator_hovering"
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Dialogue/UI/PanelContainer" unique_id=241378258]
 libraries/ = SubResource("AnimationLibrary_284f2")
 autoplay = &"fade_in"
+
+[node name="Transition" type="CanvasLayer" parent="." unique_id=2093987180]
+layer = 3
+visible = false
+script = ExtResource("36_1dx8r")
+
+[node name="BlackScreen" type="ColorRect" parent="Transition" unique_id=1835949104]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="TextureRect" parent="Transition/BlackScreen" unique_id=541710825]
+self_modulate = Color(1, 1, 1, 0.3019608)
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AnimatedTexture_yubum")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Transition/BlackScreen" unique_id=533599247]
+stream = ExtResource("41_evuba")
 
 [editable path="Hand/Book"]
 [editable path="Hand/ShotGun/shotgun"]

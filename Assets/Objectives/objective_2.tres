@@ -7,5 +7,5 @@
 script = ExtResource("2_x5tns")
 objective_text = "Collect the butterfly"
 butterfly = ExtResource("1_rdw2e")
-collect_count = 5
+collect_count = 3
 metadata/_custom_type_script = "uid://c62sj6bog4db0"

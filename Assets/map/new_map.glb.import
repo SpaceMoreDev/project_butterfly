@@ -65,15 +65,6 @@ _subresources={
 "nodes": {
 "PATH:Plane": {
 "mesh_instance/cast_shadow": 0
-},
-"PATH:Plane_002": {
-"mesh_instance/cast_shadow": 0
-},
-"PATH:Plane_004": {
-"mesh_instance/cast_shadow": 0
-},
-"PATH:treeCave": {
-"mesh_instance/cast_shadow": 0
 }
 }
 }

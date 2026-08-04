@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://dyoynhgfji8nh"]
 
-[ext_resource type="JSON" path="res://Assets/dialogue/Dialogues/new_json.json" id="1_0q7y8"]
+[ext_resource type="JSON" path="res://Assets/dialogue/Dialogues/Cutscenes.json" id="1_0q7y8"]
 [ext_resource type="Script" uid="uid://tuvey5od3kxn" path="res://Assets/dialogue/Data/DialogueData.gd" id="1_n4nk1"]
 
 [resource]

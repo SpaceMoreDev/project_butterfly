@@ -41,7 +41,7 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "animations": {
-"Fail": {
+"IDLE": {
 "save_to_file/enabled": false,
 "save_to_file/fallback_path": "",
 "save_to_file/keep_custom_tracks": "",
@@ -2097,7 +2097,7 @@ _subresources={
 "slice_99/start_frame": 0,
 "slices/amount": 0
 },
-"Walking": {
+"Prowl FINAL": {
 "save_to_file/enabled": false,
 "save_to_file/fallback_path": "",
 "save_to_file/keep_custom_tracks": "",
@@ -4153,7 +4153,7 @@ _subresources={
 "slice_99/start_frame": 0,
 "slices/amount": 0
 },
-"prowl": {
+"STRIDE": {
 "save_to_file/enabled": false,
 "save_to_file/fallback_path": "",
 "save_to_file/keep_custom_tracks": "",
@@ -6208,6 +6208,13 @@ _subresources={
 "slice_99/save_to_file/path": "",
 "slice_99/start_frame": 0,
 "slices/amount": 0
+}
+},
+"materials": {
+"Monster_Texture": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://m_monster.tres",
+"use_external/path": "uid://caom8ixbn4wve"
 }
 },
 "nodes": {

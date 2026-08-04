@@ -84,7 +84,7 @@ func _input(event: InputEvent) -> void:
 		return
 	
 	if event is InputEventMouseButton:
-		if event.is_pressed() and event.button_index == MouseButton.MOUSE_BUTTON_LEFT:
+		if event.is_pressed() and event.button_index == MouseButton.MOUSE_BUTTON_LEFT and Global.can_move:
 			#Global.can_look = false
 			move = true
 		elif event.is_released() and event.button_index == MouseButton.MOUSE_BUTTON_LEFT:
@@ -93,7 +93,7 @@ func _input(event: InputEvent) -> void:
 			Global.can_look = true
 			Global.mouse_sensitivity = base_sensitivity
 			move = false
-	if move:
+	if move and Global.can_move:
 		if event is InputEventMouseMotion:
 			mousedelta = event.relative
 			
@@ -135,6 +135,9 @@ func _process(delta: float) -> void:
 	if not _active:
 		return
 	
+	if not Global.can_move:
+		return
+	
 	if on_cool_down:
 		if ct < cool_time:
 			ct += delta
@@ -147,8 +150,7 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	if not _active:
 		return
-	
-	if move:
+	if move and  Global.can_move:
 		var mousex = mousedelta.x* delta
 		var mousey = -mousedelta.y* delta
 		

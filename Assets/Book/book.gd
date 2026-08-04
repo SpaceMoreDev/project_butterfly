@@ -8,12 +8,18 @@ var _active = false
 var active : bool:
 	set(val):
 		_active = val
+		
+		if Global.PlayerDialogue:
+			if Global.PlayerDialogue.active:
+				return
+		
 		if val:
 			Global._use_net(false)
 			if Global.Player:
 				Global.Player.velocity = Vector3.ZERO
 				(Global.Player.camera.cam as Camera3D).v_offset = 0.0
-				Global.Player.canmove = false
+			Global.can_move = false
+			
 			_anim.play("Idle")
 			animation_complete = true
 			_anim.reset_section()
@@ -24,8 +30,7 @@ var active : bool:
 			get_tree().create_tween().tween_property(self,"position", inactive_transform, 0.1).finished.connect(
 				func() -> void:
 					Global._use_net(true)
-					if Global.Player:
-						Global.Player.canmove = true
+					Global.can_move = true
 			)
 	get:
 		return _active
@@ -73,7 +78,6 @@ func _refresh_book():
 			mat_next_page.albedo_texture = all_pages[curent_index+1]
 
 func _input(event: InputEvent) -> void:
-	
 	if Input.is_action_just_pressed("Bring_Book"):
 		active = !active
 	

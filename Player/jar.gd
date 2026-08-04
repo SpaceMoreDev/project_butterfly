@@ -18,11 +18,12 @@ var active : bool:
 var show : bool :
 	set (val):
 		active = val
-		var tween = get_tree().create_tween()
-		if val:
-			tween.tween_property(self, "position", Vector3(-0.439,-0.46,-0.838), 0.1)
-		else:
-			tween.tween_property(self, "position", Vector3(-0.439,-1.321,-0.838), 0.1)
+		if Global.can_move:
+			var tween = get_tree().create_tween()
+			if val:
+				tween.tween_property(self, "position", Vector3(-0.439,-0.46,-0.838), 0.1)
+			else:
+				tween.tween_property(self, "position", Vector3(-0.439,-1.321,-0.838), 0.1)
 	get:
 		return active
 
@@ -30,6 +31,8 @@ func _ready() -> void:
 	active = false
 
 func _process(delta: float) -> void:
+	if not Global.can_move:
+		return
 	if Input.is_action_just_pressed("jar"):
 		show = true
 		print("sss")
