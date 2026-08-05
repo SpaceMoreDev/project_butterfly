@@ -31,7 +31,8 @@
 [ext_resource type="Shader" uid="uid://b1pg71a23bxt4" path="res://shaders/pixelize.gdshader" id="29_8kh50"]
 [ext_resource type="Shader" uid="uid://vcuuulp5wbch" path="res://Scene/VHS_TEST.gdshader" id="30_4a3gn"]
 [ext_resource type="PackedScene" uid="uid://bbwsh1cwpsg3v" path="res://Scene/dialogue_trigger.tscn" id="31_jqubq"]
-[ext_resource type="PackedScene" uid="uid://crmtsq5jwjvlu" path="res://Scene/objective_target.tscn" id="32_y8ke3"]
+[ext_resource type="Script" uid="uid://cmtwsypm0lh5b" path="res://Assets/map/switch_footsteps.gd" id="32_x6wet"]
+[ext_resource type="AudioStream" uid="uid://2rpetb7a4ll7" path="res://Audio/Blowing Winds.wav" id="33_5epve"]
 
 [sub_resource type="Resource" id="Resource_bnioh"]
 script = ExtResource("3_y8ke3")
@@ -173,6 +174,9 @@ shader_parameter/tape_crease_discoloration = 0.30000000447036
 shader_parameter/bottom_border_thickness = 12.30000018328476
 shader_parameter/bottom_border_jitter = 6.5
 shader_parameter/noise_intensity = 0.1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gw1ya"]
+size = Vector3(72.12872, 100, 54.52594)
 
 [node name="Spawner" type="Node3D" unique_id=645978166]
 script = ExtResource("1_bnioh")
@@ -1538,10 +1542,12 @@ mesh = SubResource("PlaneMesh_dpcb8")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=974009470]
 stream = ExtResource("24_4qo4e")
+autoplay = true
 
 [node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="." unique_id=1230815923]
 stream = ExtResource("25_tpuaq")
 volume_db = -5.0
+autoplay = true
 
 [node name="MagicTree" parent="." unique_id=744526207 instance=ExtResource("26_ftkbm")]
 transform = Transform3D(-5.0344048, 0, -0.23741704, 0, 5.04, 0, 0.23741704, 0, -5.0344048, 47.51471, -18.695297, -105.78414)
@@ -1617,9 +1623,19 @@ dialogue_to_trigger_index = 1
 transform = Transform3D(2.585, 0, 0, 0, 2.585, 0, 0, 0, 2.585, 54.190918, 1.6819885, -19.05579)
 dialogue_to_trigger_index = 2
 
-[node name="Objective_target" parent="." unique_id=1269269127 instance=ExtResource("32_y8ke3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.46896, 3.7173529, 33.915653)
+[node name="Area3D" type="Area3D" parent="." unique_id=667707415]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.48326, 0, -38.518715)
+collision_layer = 524288
+collision_mask = 3
+script = ExtResource("32_x6wet")
 
-[node name="Objective_target2" parent="." unique_id=996296602 instance=ExtResource("32_y8ke3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.219836, 3.7173529, 55.241177)
-objective_id = 1
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1781009063]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.935638, 0, 6.4413757)
+shape = SubResource("BoxShape3D_gw1ya")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D" unique_id=1319633091]
+transform = Transform3D(0.91495013, 0, 0.40356687, 0, 1, 0, -0.40356687, 0, 0.91495013, 13.935638, 0, -31.94471)
+shape = SubResource("BoxShape3D_gw1ya")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Area3D" unique_id=642074078]
+stream = ExtResource("33_5epve")

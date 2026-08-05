@@ -44,7 +44,7 @@ func _ready() -> void:
 		func(mode: Global.GAMEMODE):
 			if mode == Global.GAMEMODE.SHOTGUN:
 				active = true
-				
+				Global._use_net(false)
 				if _ui_ammo:
 					_ui_ammo.visible = true
 				if _ui_ch:

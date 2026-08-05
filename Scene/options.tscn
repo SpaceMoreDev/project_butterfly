@@ -12,6 +12,7 @@ bg_color = Color(0.08619449, 1.7856508e-05, 0.35707965, 1)
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Options" type="CanvasLayer" unique_id=564392618]
+process_mode = 3
 layer = 3
 
 [node name="Menu" type="Panel" parent="." unique_id=220304106]

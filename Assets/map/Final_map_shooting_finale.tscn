@@ -30,6 +30,8 @@
 [ext_resource type="Shader" uid="uid://b1pg71a23bxt4" path="res://shaders/pixelize.gdshader" id="28_he1jx"]
 [ext_resource type="Shader" uid="uid://vcuuulp5wbch" path="res://Scene/VHS_TEST.gdshader" id="29_x7382"]
 [ext_resource type="PackedScene" uid="uid://c0cu12m7vwp4u" path="res://Scene/monster.tscn" id="30_lwmxx"]
+[ext_resource type="Script" uid="uid://cmtwsypm0lh5b" path="res://Assets/map/switch_footsteps.gd" id="31_nib7n"]
+[ext_resource type="AudioStream" uid="uid://2rpetb7a4ll7" path="res://Audio/Blowing Winds.wav" id="32_uhm5i"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bx3fh"]
 
@@ -141,6 +143,9 @@ shader_parameter/bottom_border_thickness = 12.30000018328476
 shader_parameter/bottom_border_jitter = 6.5
 shader_parameter/noise_intensity = 0.1
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_yx8h1"]
+size = Vector3(72.12872, 100, 54.52594)
+
 [node name="Map" type="Node3D" unique_id=645978166]
 script = ExtResource("1_lwmxx")
 current_mode = 1
@@ -156,13 +161,6 @@ shadow_enabled = true
 
 [node name="Player" parent="." unique_id=1117564067 instance=ExtResource("2_uhm5i")]
 transform = Transform3D(0.9659257, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.9659257, -8.429643, 3.285, 48.55842)
-current_mode = 0
-canmove = true
-gravity_multiplier = 3.0
-acceleration = 8
-deceleration = 10
-air_control = 0.3
-jump_height = 10
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Player" unique_id=1089117919]
 transform = Transform3D(1.0000002, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1.0000002, 0, 0.71901584, -0.57300186)
@@ -1551,3 +1549,20 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Monster" parent="." unique_id=121857839 instance=ExtResource("30_lwmxx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.1115, 2.1713986, -19.224112)
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1997147264]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.48326, 0, -38.518715)
+collision_layer = 524288
+collision_mask = 3
+script = ExtResource("31_nib7n")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1277259099]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.935638, 0, 6.4413757)
+shape = SubResource("BoxShape3D_yx8h1")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D" unique_id=2025943211]
+transform = Transform3D(0.91495013, 0, 0.40356687, 0, 1, 0, -0.40356687, 0, 0.91495013, 13.935638, 0, -31.94471)
+shape = SubResource("BoxShape3D_yx8h1")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Area3D" unique_id=1373232946]
+stream = ExtResource("32_uhm5i")

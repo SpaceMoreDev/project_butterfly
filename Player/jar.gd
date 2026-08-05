@@ -1,5 +1,7 @@
 extends Node3D
 
+class_name JarHand
+
 @export var _objective : Objective 
 
 var _active = false
@@ -14,9 +16,11 @@ var show : bool :
 	set (val):
 		_show = val
 		if val:
+			Global.jar_on = true
 			if _objective:
 				_objective.visible = true
 		else:
+			Global.jar_on = false
 			if _objective:
 				_objective.visible = false
 		
@@ -30,6 +34,7 @@ var show : bool :
 		return _show
 
 func _ready() -> void:
+	Global._jar = self
 	show = false
 	Global.change_current_mode.connect(
 		func(mode: Global.GAMEMODE):
@@ -42,6 +47,10 @@ func _ready() -> void:
 	
 
 func _input(event: InputEvent) -> void:
+	if Global.PlayerDialogue:
+			if Global.PlayerDialogue.active:
+				return
+	
 	if not active:
 		return
 	if not Global.can_move:

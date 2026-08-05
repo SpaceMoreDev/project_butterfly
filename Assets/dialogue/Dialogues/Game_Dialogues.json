@@ -4,7 +4,11 @@
 		"dialogue": [
 			{
 				"speaker": "Man",
-				"line": "Look at those beauties, soon they'll be hanging in lovely little displays.",
+				"line": "Look at those beauties",
+			},
+			{
+				"speaker": "Man",
+				"line": "soon they'll be hanging in lovely little displays."
 			},
 			{
 				"speaker": "Man",
@@ -25,7 +29,11 @@
 			},
 			{
 				"speaker": "Man",
-				"line": "Looks kind of... lived in? There's no bed though... strange."
+				"line": "Looks kind of... lived in?"
+			},
+			{
+				"speaker": "Man",
+				"line": "There's no bed though... strange."
 			}
 		]
 	},
@@ -43,7 +51,11 @@
 		"dialogue": [
 			{
 				"speaker": "Man",
-				"line": "Well isn't that terrific. What the hell moved those rocks?"
+				"line": "Well isn't that terrific."
+			},
+			{
+				"speaker": "Man",
+				"line": "What the hell moved those rocks?"
 			}
 		]
 	}
@@ -53,7 +65,11 @@
 		"dialogue": [
 			{
 				"speaker": "Man",
-				"line": "There's not many butterflies around at this time.."
+				"line": "Not enough fish in the sea"
+			},
+			{
+				"speaker": "Man",
+				"line": "where are all the butterflies?"
 			}
 		]
 	}

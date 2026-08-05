@@ -44,7 +44,7 @@ var Player : MovementController
 var PlayerDialogue : Dialogue
 var butterflies_height : float = -1.5
 var butterflies_speed : float = 3.0
-
+var jar_on = false
 var can_look = true
 
 var can_move:bool: 
@@ -57,7 +57,7 @@ var can_move:bool:
 		return false
 
 var score = 0
-
+var _jar : JarHand
 var Player_net : NetHand
 var Player_gun : ShotGun
 var Player_book : Book
@@ -84,6 +84,22 @@ func _use_gun(active): #dont use
 		Player_gun.active = active
 
 func start_dialogue(index):
+	if _jar :
+		if _jar.show:
+			_jar.show = false
+		
+	
+	if Player_book:
+		if Player_book.active:
+			Player_book.active = false
+	
+	if Player_net:
+		Player_net.forward_rotation = 0
+		Player_net.side_rotation = 0
+		can_look = true
+		mouse_sensitivity = Player_net.base_sensitivity
+		Player_net.move = false
+	
 	if PlayerDialogue:
 		PlayerDialogue._scene_index = index
 		PlayerDialogue._line_index = 0

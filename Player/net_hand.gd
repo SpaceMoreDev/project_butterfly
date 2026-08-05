@@ -54,6 +54,7 @@ var active : bool = true:
 
 func _ready() -> void:
 	Global.Player_net = self
+	await get_tree().physics_frame
 	
 	Global.change_current_mode.connect(
 		func(mode: Global.GAMEMODE):
@@ -87,6 +88,11 @@ func _animation_reset(anim):
 	is_catching = false
 
 func _input(event: InputEvent) -> void:
+	
+	if Global.PlayerDialogue:
+			if Global.PlayerDialogue.active:
+				return
+	
 	if not _active:
 		return
 	if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
@@ -99,11 +105,12 @@ func _input(event: InputEvent) -> void:
 			focused_sensitivity = base_sensitivity/2
 			move = true
 		elif event.is_released() and event.button_index == MouseButton.MOUSE_BUTTON_LEFT:
-			forward_rotation = 0
-			side_rotation = 0
-			Global.can_look = true
-			Global.mouse_sensitivity = base_sensitivity
-			move = false
+			if move:
+				forward_rotation = 0
+				side_rotation = 0
+				Global.can_look = true
+				Global.mouse_sensitivity = base_sensitivity
+				move = false
 	if move and Global.can_move:
 		if event is InputEventMouseMotion:
 			mousedelta = event.relative

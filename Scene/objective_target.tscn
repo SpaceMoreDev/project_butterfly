@@ -16,8 +16,9 @@ metadata/_edit_group_ = true
 shape = SubResource("BoxShape3D_aeui4")
 
 [node name="Arrow" parent="." unique_id=140742296 instance=ExtResource("2_sqcvi")]
+visible = false
 
-[node name="AnimationPlayer" parent="Arrow" index="1" unique_id=1851753806]
+[node name="AnimationPlayer" parent="Arrow" index="1" unique_id=2026990333]
 autoplay = &"Default"
 
 [editable path="Arrow"]

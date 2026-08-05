@@ -19,7 +19,7 @@ var active : bool:
 				Global.Player.velocity = Vector3.ZERO
 				(Global.Player.camera.cam as Camera3D).v_offset = 0.0
 			Global.can_move = false
-			
+			Global._use_net(false)
 			_anim.play("Idle")
 			animation_complete = true
 			_anim.reset_section()
@@ -29,6 +29,7 @@ var active : bool:
 			_anim.stop()
 			get_tree().create_tween().tween_property(self,"position", inactive_transform, 0.1).finished.connect(
 				func() -> void:
+					Global._use_net(true)
 					Global.can_move = true
 			)
 	get:
@@ -42,7 +43,7 @@ var active : bool:
 @onready var mat_current_page : StandardMaterial3D = $Armature/Skeleton3D/Pages.get_active_material(0)
 @onready var mat_next_page : StandardMaterial3D = $Armature/Skeleton3D/Pages.get_active_material(1)
 @onready var _anim : AnimationPlayer = $AnimationPlayer
-
+@onready var instruct_ui = $CanvasLayer/Instructions
 var forward : bool = true
 var animation_complete : bool = true
 
@@ -88,11 +89,22 @@ func _refresh_book():
 			mat_next_page.albedo_texture = all_pages[curent_index+1]
 
 func _input(event: InputEvent) -> void:
+	if Global.PlayerDialogue:
+			if Global.PlayerDialogue.active:
+				return
+	
 	if not can_be_trigged:
+		return
+	
+	if Global.jar_on:
 		return
 	
 	if Input.is_action_just_pressed("Bring_Book"):
 		active = !active
+		if active:
+			instruct_ui.visible = true
+		else:
+			instruct_ui.visible = false
 	
 	if not animation_complete:
 		return

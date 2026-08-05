@@ -518,6 +518,42 @@ surface_material_override/2 = ExtResource("14_115e2")
 [node name="AnimationPlayer" parent="Hand/Book" index="1" unique_id=1020760046]
 autoplay = &"Idle"
 
+[node name="CanvasLayer" type="CanvasLayer" parent="Hand/Book" unique_id=84641097]
+layer = 8
+
+[node name="Instructions" type="Control" parent="Hand/Book/CanvasLayer" unique_id=1911175259]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Hand/Book/CanvasLayer/Instructions" unique_id=2006790952]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 18.725
+offset_top = 404.45
+offset_right = 60.725
+offset_bottom = 427.45
+grow_vertical = 0
+theme_override_constants/outline_size = 9
+text = "<- [Q]"
+
+[node name="Label2" type="Label" parent="Hand/Book/CanvasLayer/Instructions" unique_id=2103028818]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 591.725
+offset_top = 404.45
+offset_right = 631.72485
+offset_bottom = 427.45
+grow_vertical = 0
+theme_override_constants/outline_size = 9
+text = "[E] ->"
+
 [node name="ShotGun" type="Node3D" parent="Hand" unique_id=1503847516]
 script = ExtResource("4_cldr2")
 
@@ -529,6 +565,7 @@ bus = &"New Bus"
 [node name="Crosshair" type="CanvasLayer" parent="Hand/ShotGun" unique_id=138629071]
 
 [node name="TextureRect" type="TextureRect" parent="Hand/ShotGun/Crosshair" unique_id=480110180]
+visible = false
 texture_filter = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -543,6 +580,22 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("14_ykasc")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Hand/ShotGun/Crosshair/TextureRect" unique_id=1486710369]
+layout_mode = 0
+offset_left = -310.0
+offset_top = -234.0
+offset_right = -52.0
+offset_bottom = -122.0
+theme_override_colors/default_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.8556506, 0.56476974, 0.25535795, 0)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/normal_font_size = 47
+bbcode_enabled = true
+text = "[shake rate=20.0 level=5.0] KILL IT [/shake]"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ammoUI" type="CanvasLayer" parent="Hand/ShotGun" unique_id=765266597]
 layer = 5
@@ -619,7 +672,7 @@ text = "no ammo"
 uppercase = true
 
 [node name="shotgun" parent="Hand/ShotGun" unique_id=386872980 instance=ExtResource("3_i6cme")]
-transform = Transform3D(0.043677885, 0.21821253, 0.97492254, -0.3405614, 0.9206563, -0.19080886, -0.93920696, -0.3236869, 0.114527136, 0.24, -0.28, -0.628)
+transform = Transform3D(0.043677885, 0.21821249, 0.97492236, -0.3405614, 0.9206562, -0.19080883, -0.93920696, -0.32368684, 0.114527114, 0.24, -0.28, -0.628)
 
 [node name="Shotgun" parent="Hand/ShotGun/shotgun" index="0" unique_id=153550908]
 transform = Transform3D(0.04000001, 2.3283064e-10, 0, 0, 0.04000001, 2.4738256e-10, -1.1641532e-10, 2.3283064e-10, 0.04000001, 0, 0, 0)

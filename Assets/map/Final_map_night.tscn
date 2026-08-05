@@ -201,7 +201,7 @@ objectives_list = Array[ExtResource("2_u2ug8")]([SubResource("Resource_lsg8l"), 
 [node name="Objective_Targets" type="Node" parent="." unique_id=2072024412]
 
 [node name="Objective_target" parent="Objective_Targets" unique_id=1269269127 instance=ExtResource("33_u2ug8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.716362, 0.041338563, -18.356237)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.45113, -17.860256, -87.40548)
 
 [node name="Objective_target2" parent="Objective_Targets" unique_id=243137480 instance=ExtResource("33_u2ug8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.131597, 3.2285962, 54.711334)
@@ -230,7 +230,7 @@ bones/4/rotation = Quaternion(5.268354e-05, 0.00029616896, -0.17519656, 0.984533
 _active = null
 
 [node name="shotgun" parent="Player/Head/Hand/ShotGun" index="3" unique_id=386872980]
-transform = Transform3D(0.043677885, 0.21821259, 0.9749227, -0.3405614, 0.92065656, -0.19080889, -0.9392069, -0.32368696, 0.11452716, 0.24, -0.28, -0.628)
+transform = Transform3D(0.043677885, 0.21821249, 0.97492224, -0.3405614, 0.9206562, -0.1908088, -0.9392069, -0.32368684, 0.1145271, 0.24, -0.28, -0.628)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Player/Head" parent_id_path=PackedInt32Array(1117564067, 315625654) index="3" unique_id=2033271204]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.048, -0.573)
@@ -1682,6 +1682,10 @@ metadata/_edit_use_anchors_ = true
 [node name="dialogue_trigger" parent="DialogueTriggers" unique_id=1053818605 instance=ExtResource("31_gb7d1")]
 transform = Transform3D(2.69, 0, 0, 0, 2.69, 0, 0, 0, 2.69, 51.730804, 2.7373793, -19.117424)
 dialogue_to_trigger_index = 3
+
+[node name="dialogue_trigger3" parent="DialogueTriggers" unique_id=978902480 instance=ExtResource("31_gb7d1")]
+transform = Transform3D(2.69, 0, 0, 0, 2.69, 0, 0, 0, 2.69, -8.682114, 3.4347184, 11.741344)
+dialogue_to_trigger_index = 4
 
 [node name="dialogue_trigger2" parent="DialogueTriggers" unique_id=1037896946 instance=ExtResource("31_gb7d1")]
 transform = Transform3D(0.67428654, 0, 0.7384698, 0, 1, 0, -0.7384698, 0, 0.67428654, 60.980686, -18.611206, -90.13221)

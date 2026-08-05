@@ -29,6 +29,10 @@ func _ready() -> void:
 	close_btn.button_down.connect(
 		func():
 		visible = false
+		
+		
+		get_tree().paused = false
+		await get_tree().process_frame
 		Global.can_move = true
 		if not in_main_menu:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -36,12 +40,22 @@ func _ready() -> void:
 
 
 func _input(event: InputEvent) -> void:
+	if Global.PlayerDialogue:
+		if Global.PlayerDialogue.active:
+			return
+	
 	if not in_main_menu:
 		if Input.is_action_just_pressed("menu"):
 			visible = !visible
 			if visible:
+				if Global._jar :
+					if Global._jar.show:
+						Global._jar.show = false
+				
 				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 				Global.can_move = false
+				get_tree().paused = true
 			else:
 				Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 				Global.can_move = true
+				get_tree().paused = false
