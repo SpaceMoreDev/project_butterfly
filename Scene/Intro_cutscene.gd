@@ -20,21 +20,23 @@ var is_moving : bool = false
 var anim = "none"
 
 func _transition_mouth(mouth_index : mouth_state):
-	animator["parameters/Transition/transition_request"] = str( mouth_state.find_key( mouth_index) )
+	if animator:
+		animator["parameters/Transition/transition_request"] = str( mouth_state.find_key( mouth_index) )
 
 func _ready() -> void:
-	attached_jar.visible = false
-	
-	animator.animation_started.connect(
-		func (anim)->void:
-		is_anim_playing = true
-		continue_anim = false
-		)
-	animator.animation_finished.connect(
-		func (anim)->void:
-		is_anim_playing = false
-		continue_anim = false
-		)
+	if attached_jar:
+		attached_jar.visible = false
+	if animator:
+		animator.animation_started.connect(
+			func (anim)->void:
+			is_anim_playing = true
+			continue_anim = false
+			)
+		animator.animation_finished.connect(
+			func (anim)->void:
+			is_anim_playing = false
+			continue_anim = false
+			)
 
 func _input(event: InputEvent) -> void:
 	if event.is_pressed() and not event.is_echo():

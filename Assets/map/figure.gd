@@ -1,6 +1,7 @@
 extends Node3D
 
 @export var textures : Array[Texture2D]
+@onready var audio : AudioStreamPlayer3D = $AudioStreamPlayer
 
 var player : MovementController
 var current_mat : StandardMaterial3D
@@ -39,6 +40,8 @@ func _ready() -> void:
 	
 
 func _switch_texture():
+	audio.playing = true
+	
 	var limit_ct = textures.size()-1
 	var rand = randi_range(0,limit_ct)
 	current_mat.albedo_texture = textures[rand]

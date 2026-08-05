@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b63ft6j85gocq"]
+
+[ext_resource type="Texture2D" uid="uid://bio6uf3ojycwp" path="res://Map Assets/Assets/Bigtree_TREE Color.png" id="1_1bcd6"]
+
+[resource]
+diffuse_mode = 2
+albedo_texture = ExtResource("1_1bcd6")
+texture_filter = 0

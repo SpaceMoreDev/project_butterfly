@@ -10,10 +10,13 @@ func _ready() -> void:
 	if Global.current_objective_id == objective_id:
 		visible = true
 	
-	Global.updated_objective.connect(
+	Global.progressed_objective.connect(
 		func(obj_indx):
-		if Global.current_objective_id == objective_id:
-			visible = true
+		if obj_indx == objective_id:
+			if not is_triggered:
+				visible = true
+		else:
+			visible = false
 	)
 	
 	body_entered.connect(

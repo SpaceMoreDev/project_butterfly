@@ -7,7 +7,6 @@ var cam: Camera3D
 @export_node_path("MovementController") var controller_path := NodePath("../")
 var controller: MovementController
 
-@export var mouse_sensitivity := 2.0
 @export var y_limit := 90.0
 var mouse_axis := Vector2()
 var rot := Vector3()
@@ -27,7 +26,7 @@ func _enter_tree() -> void:
 	cam = get_node(cam_path)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Global.mouse_sensitivity = mouse_sensitivity / 1000
+	#Global.mouse_sensitivity = mouse_sensitivity / 1000
 	
 	y_limit = deg_to_rad(y_limit)
 	rot = controller.rotation

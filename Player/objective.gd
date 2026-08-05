@@ -10,6 +10,19 @@ var objective_Text : String
 var objective_count : int = 0
 
 func _ready() -> void:
+	Global.change_objectives.connect(
+		func(objectives : Array[ObjectiveData], next_scene : String):
+		if not objectives.is_empty():
+			next_scene_path = next_scene
+			objective_index = 0
+			objectives_list = objectives
+			var objective : ObjectiveData = objectives_list[objective_index]
+			Global.current_objective_id = objective.objective_id
+			Global.progressed_objective.emit(objective.objective_id)
+			Global.updated_objective.emit(-999)
+		)
+
+	
 	Global.updated_objective.connect(_check_objective)
 	Global.add_score.connect(_check_score)
 	
@@ -18,7 +31,7 @@ func _ready() -> void:
 		#if objectives_list[0].butterfly:
 			#emited_text = butterflies_types.BF_Type.keys()[objectives_list[0].butterfly.Type]
 	#
-	Global.updated_objective.emit(-999)
+	#Global.updated_objective.emit(-999)
 
 func _check_score(butterfly):
 	if objective_index > objectives_list.size() - 1:
@@ -40,6 +53,7 @@ func _check_score(butterfly):
 func _check_objective(objective_id):
 	if objective_id == Global.current_objective_id:
 		objective_index += 1
+		Global.progressed_objective.emit(objective_index)
 	
 	if objective_index > objectives_list.size() - 1:
 		if next_scene_path:
@@ -68,4 +82,5 @@ func _update_collect_objective():
 func set_text(text):
 	objective_Text = text
 	_text.text = str(text)
+	Global.updated_objective_text.emit(text)
 	pass

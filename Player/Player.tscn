@@ -9,9 +9,12 @@
 [ext_resource type="AudioStream" uid="uid://0bfk26akhbx7" path="res://Samples2.wav" id="7_j23h2"]
 [ext_resource type="AudioStream" uid="uid://dmhfs4i41ded7" path="res://Samples3.wav" id="8_0j2ni"]
 [ext_resource type="AudioStream" uid="uid://dh6p8flxip61x" path="res://Audio/MCStepsR.wav" id="9_0j2ni"]
-[ext_resource type="AudioStream" uid="uid://dsthr6q7aj1l8" path="res://Audio/Call2_1.wav" id="9_5wa8t"]
 [ext_resource type="Script" uid="uid://dxx15l58ymsvr" path="res://Player/repulser.gd" id="9_j23h2"]
+[ext_resource type="AudioStream" uid="uid://dv0t6kegmfw5y" path="res://Audio/Monster Loop1.wav" id="9_p7tob"]
 [ext_resource type="AudioStream" uid="uid://dwgrwl51hvvb5" path="res://Audio/MCStepsL.wav" id="10_v0k0e"]
+[ext_resource type="AudioStream" uid="uid://csl33td0hq8le" path="res://Audio/cavestepsL.wav" id="13_dm7nj"]
+[ext_resource type="PackedScene" uid="uid://c3600mtwv75et" path="res://Scene/options.tscn" id="13_p7tob"]
+[ext_resource type="AudioStream" uid="uid://cip0ap4p5pxm2" path="res://Audio/cavestepsR.wav" id="14_3mea3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j23h2"]
 
@@ -42,14 +45,46 @@ tracks/0/keys = {
 }
 tracks/0/use_blend = true
 
+[sub_resource type="Animation" id="Animation_p7tob"]
+resource_name = "Footsteps_cave"
+length = 0.93333334
+loop_mode = 1
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStream")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("13_dm7nj")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.03458494,
+"stream": ExtResource("14_3mea3")
+}],
+"times": PackedFloat32Array(0.03333333, 0.46666667)
+}
+tracks/0/use_blend = true
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_j23h2"]
 _data = {
-&"Footsteps": SubResource("Animation_s1rgi")
+&"Footsteps": SubResource("Animation_s1rgi"),
+&"Footsteps_cave": SubResource("Animation_p7tob")
 }
 
 [node name="Player" unique_id=1117564067 node_paths=PackedStringArray("camera") groups=["Player"] instance=ExtResource("1_t1jcr")]
 physics_interpolation_mode = 1
+current_mode = 0
+canmove = true
+gravity_multiplier = 3.0
 speed = 5
+acceleration = 8
+deceleration = 10
+air_control = 0.3
+jump_height = 10
 camera = NodePath("Head")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="0" unique_id=1594424134]
@@ -81,7 +116,7 @@ sprint_speed = 7
 script = ExtResource("5_8g4oa")
 score_sounds = Array[AudioStream]([ExtResource("6_s1rgi"), ExtResource("7_j23h2"), ExtResource("8_0j2ni")])
 sounds_with_objectives = Dictionary[int, AudioStream]({
--1: ExtResource("9_5wa8t")
+200: ExtResource("9_p7tob")
 })
 
 [node name="Repulser" type="Area3D" parent="." index="8" unique_id=1425382398]
@@ -95,3 +130,5 @@ shape = SubResource("SphereShape3D_aeui4")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="9" unique_id=1481838880]
 libraries/ = SubResource("AnimationLibrary_j23h2")
+
+[node name="Options" parent="." index="10" unique_id=564392618 instance=ExtResource("13_p7tob")]

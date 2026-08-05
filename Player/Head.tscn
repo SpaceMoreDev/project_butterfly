@@ -17,26 +17,26 @@
 [ext_resource type="Texture2D" uid="uid://dnr6koh4fobuj" path="res://Assets/Butterfly/CommonPosyBF.png" id="12_00ku8"]
 [ext_resource type="Script" uid="uid://c5lubxgc71v61" path="res://Assets/Book/book.gd" id="12_4p2t4"]
 [ext_resource type="AudioStream" uid="uid://cpky6gtcfi5lt" path="res://Audio/gunn.wav" id="12_es1v0"]
+[ext_resource type="Material" uid="uid://bbmp8i3ult74b" path="res://Assets/Book/m_book_curr.tres" id="12_evuba"]
 [ext_resource type="Texture2D" uid="uid://cl8d02kdcf6f5" path="res://Assets/Book/Page2BFJ.png" id="13_05oep"]
+[ext_resource type="Material" uid="uid://vxjh51usucbj" path="res://Assets/Book/m_book_next.tres" id="13_yubum"]
+[ext_resource type="Material" uid="uid://iir4ail761ep" path="res://Assets/Book/m_book_cover.tres" id="14_115e2"]
+[ext_resource type="Texture2D" uid="uid://csnpmsc4v36nc" path="res://Assets/shell.png" id="14_fkxbl"]
 [ext_resource type="Texture2D" uid="uid://b2emvgpkywmde" path="res://Assets/Book/Page3BFJ.png" id="14_s2hpm"]
 [ext_resource type="Texture2D" uid="uid://b5uea50dcchha" path="res://Assets/Book/Page4BFJ.png" id="14_sqcjl"]
 [ext_resource type="Texture2D" uid="uid://dotekvgy7nspx" path="res://crosshair.png" id="14_ykasc"]
-[ext_resource type="Texture2D" uid="uid://p75rjpnjoa85" path="res://flash1.png" id="15_00ku8"]
 [ext_resource type="Texture2D" uid="uid://dk32amxjiomtw" path="res://Assets/Book/Page5BFJ.png" id="15_qv2u7"]
 [ext_resource type="Texture2D" uid="uid://iy8xmsbvgql8" path="res://Assets/Book/Page1BFJ.png" id="15_sqcjl"]
 [ext_resource type="Texture2D" uid="uid://clsgdxgq27mo" path="res://Muzzleflash.png" id="18_es1v0"]
 [ext_resource type="Script" uid="uid://bboyn8kiy2k85" path="res://Player/objective.gd" id="26_4fqg5"]
-[ext_resource type="Script" uid="uid://c62sj6bog4db0" path="res://Assets/Objectives/Butterfly_Objectives.gd" id="27_duqv3"]
 [ext_resource type="Texture2D" uid="uid://fjqdnm1h25e1" path="res://Assets/Sticknote.png" id="28_02xh5"]
-[ext_resource type="Resource" uid="uid://c8xwc12gogsqo" path="res://Assets/Objectives/objective_1.tres" id="28_8pk3i"]
-[ext_resource type="Resource" uid="uid://b8ht85s58r808" path="res://Assets/Objectives/objective_2.tres" id="29_8pk3i"]
-[ext_resource type="Resource" uid="uid://b8om14p2xki6i" path="res://Assets/Objectives/objective_3.tres" id="30_r8bvb"]
 [ext_resource type="Script" uid="uid://cnqywsg1lunsa" path="res://Player/DialogueBox.gd" id="32_i71sr"]
 [ext_resource type="JSON" path="res://Assets/dialogue/Dialogues/Game_Dialogues.json" id="33_1r455"]
 [ext_resource type="Texture2D" uid="uid://bp813hxuofgx4" path="res://Assets/dialogue/dialogue_indicator.png" id="33_l0ury"]
 [ext_resource type="Script" uid="uid://tuvey5od3kxn" path="res://Assets/dialogue/Data/DialogueData.gd" id="34_l0ury"]
 [ext_resource type="Script" uid="uid://djudsmkrlp15b" path="res://Player/transition.gd" id="36_1dx8r"]
 [ext_resource type="Texture2D" uid="uid://bx428j1g4bqqg" path="res://Assets/transition/VHS_f1.png" id="36_1r455"]
+[ext_resource type="Script" uid="uid://bigrnh47ink70" path="res://Player/mini_objective.gd" id="36_fkxbl"]
 [ext_resource type="Texture2D" uid="uid://ci0xig8xe17d8" path="res://Assets/transition/VHS_f2.png" id="37_1dx8r"]
 [ext_resource type="Texture2D" uid="uid://jv2h45edonx8" path="res://Assets/transition/VHS_f3.png" id="38_fkxbl"]
 [ext_resource type="Texture2D" uid="uid://djlm1uf3pplbh" path="res://Assets/transition/VHS_f4.png" id="39_stjdx"]
@@ -80,19 +80,6 @@ graph_offset = Vector2(-262, 10)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_aeui4"]
 radius = 0.72360426
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dpcb8"]
-transparency = 1
-shading_mode = 0
-albedo_color = Color(1, 1, 1, 0)
-albedo_texture = ExtResource("15_00ku8")
-texture_filter = 0
-disable_receive_shadows = true
-billboard_mode = 1
-billboard_keep_scale = true
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_aeui4"]
-orientation = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rl845"]
 resource_name = "Cylinder"
@@ -142,6 +129,7 @@ colors = PackedColorArray(1, 1, 1, 1, 0.003921569, 0.003921569, 0.003921569, 0.8
 
 [sub_resource type="Animation" id="Animation_1dx8r"]
 resource_name = "Idle"
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -167,92 +155,8 @@ tracks/1/keys = {
 "values": [Vector3(0.19198622, 1.4538592, -0.35430184)]
 }
 
-[sub_resource type="Animation" id="Animation_00ku8"]
+[sub_resource type="Animation" id="Animation_fkxbl"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../MeshInstance3D:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.352, 0.352, 0.352)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../MeshInstance3D:material_override:albedo_color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../AudioStreamPlayer3D:playing")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Shotgun/CPUParticles3D:emitting")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Shotgun/CPUParticles3D/OmniLight3D:light_energy")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath(".:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.24, -0.205, -0.628)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath(".:rotation")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.19198622, 1.7505653, -0.44156832)]
-}
 
 [sub_resource type="Animation" id="Animation_cldr2"]
 resource_name = "Shoot"
@@ -283,59 +187,23 @@ tracks/1/keys = {
 }
 tracks/2/type = "value"
 tracks/2/imported = false
-tracks/2/enabled = false
-tracks/2/path = NodePath("../MeshInstance3D:scale")
+tracks/2/enabled = true
+tracks/2/path = NodePath("Shotgun/CPUParticles3D:emitting")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.23333333, 0.43333334, 0.6666667),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0.207, 0.207, 0.207), Vector3(0.207, 0.207, 0.207), Vector3(0.142, 0.142, 0.142), Vector3(0.352, 0.352, 0.352)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = false
-tracks/3/path = NodePath("../MeshInstance3D:material_override:albedo_color")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.23333335, 0.4, 0.53333336, 0.6666667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(0.13333334, 0.13333334, 0.13333334, 0.7176471), Color(0, 0, 0, 0.49411765), Color(0, 0, 0, 0)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../AudioStreamPlayer3D:playing")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0.26666668),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Shotgun/CPUParticles3D:emitting")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.23333335, 0.43333337),
+"times": PackedFloat32Array(0, 0.23333335, 0.26666668),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, false]
 }
-tracks/6/type = "method"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("..")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("..")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0.26666668),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -343,13 +211,13 @@ tracks/6/keys = {
 "method": &"_cam_shake"
 }]
 }
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Shotgun/CPUParticles3D/OmniLight3D:light_energy")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Shotgun/CPUParticles3D/OmniLight3D:light_energy")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
 "times": PackedFloat32Array(0, 0.23333333, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
@@ -359,9 +227,41 @@ tracks/7/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_00ku8"]
 _data = {
 &"Idle": SubResource("Animation_1dx8r"),
-&"RESET": SubResource("Animation_00ku8"),
+&"RESET": SubResource("Animation_fkxbl"),
 &"Shoot": SubResource("Animation_cldr2")
 }
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fkxbl"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_stjdx"]
+animation = &"Shoot"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_46mxt"]
+advance_mode = 2
+advance_expression = "shooting"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_evuba"]
+xfade_time = 0.1
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fkxbl"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_yubum"]
+states/Idle/node = SubResource("AnimationNodeAnimation_fkxbl")
+states/Idle/position = Vector2(418, 102)
+states/Shoot/node = SubResource("AnimationNodeAnimation_stjdx")
+states/Shoot/position = Vector2(649, 105)
+transitions = ["Idle", "Shoot", SubResource("AnimationNodeStateMachineTransition_46mxt"), "Shoot", "Idle", SubResource("AnimationNodeStateMachineTransition_evuba"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_fkxbl")]
+graph_offset = Vector2(-99, 7)
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_aeui4"]
+graph_offset = Vector2(-582.2728, 77.57489)
+nodes/StateMachine/node = SubResource("AnimationNodeStateMachine_yubum")
+nodes/StateMachine/position = Vector2(-60, 120)
+node_connections = [&"output", 0, &"StateMachine"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vm6fl"]
 transparency = 1
@@ -470,6 +370,91 @@ _data = {
 &"fade_in": SubResource("Animation_8sg0t")
 }
 
+[sub_resource type="Animation" id="Animation_stjdx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -99)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_46mxt"]
+resource_name = "slide_in"
+length = 1.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.23333335, 1.3666668),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(452, -99), Vector2(452, 0), Vector2(452, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.23333333, 1.3666668, 1.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_evuba"]
+_data = {
+&"RESET": SubResource("Animation_stjdx"),
+&"slide_in": SubResource("Animation_46mxt")
+}
+
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_yubum"]
 frames = 5
 speed_scale = 30.0
@@ -512,10 +497,10 @@ transform = Transform3D(1, -3.7252903e-09, 0, -2.6077032e-08, 1.0000002, 8.94069
 shape = SubResource("SphereShape3D_aeui4")
 
 [node name="Book" parent="Hand" unique_id=369547485 instance=ExtResource("11_ji5ww")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -0.615)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.505, -0.655)
 script = ExtResource("12_4p2t4")
-inactive_transform = Vector3(0, -1, -0.615)
-active_transform = Vector3(0, -0.185, -0.615)
+inactive_transform = Vector3(0, -5, -0.655)
+active_transform = Vector3(0, -0.2, -0.655)
 all_pages = Array[Texture2D]([ExtResource("6_ykasc"), ExtResource("15_sqcjl"), ExtResource("13_05oep"), ExtResource("14_s2hpm"), ExtResource("14_sqcjl"), ExtResource("15_qv2u7")])
 
 [node name="Skeleton3D" parent="Hand/Book/Armature" parent_id_path=PackedInt32Array(369547485, 1508834667) index="0" unique_id=893617336]
@@ -525,17 +510,25 @@ bones/2/rotation = Quaternion(-2.479e-08, 5.895505e-08, 0.17549276, 0.98448074)
 bones/3/rotation = Quaternion(-0.11007997, -0.6984858, 0.6984858, -0.110080354)
 bones/4/rotation = Quaternion(5.2684914e-05, 0.00029616072, -0.17519656, 0.9845335)
 
+[node name="Pages" parent="Hand/Book/Armature/Skeleton3D" index="1" unique_id=2038936738]
+surface_material_override/0 = ExtResource("12_evuba")
+surface_material_override/1 = ExtResource("13_yubum")
+surface_material_override/2 = ExtResource("14_115e2")
+
 [node name="AnimationPlayer" parent="Hand/Book" index="1" unique_id=1020760046]
 autoplay = &"Idle"
 
 [node name="ShotGun" type="Node3D" parent="Hand" unique_id=1503847516]
-visible = false
 script = ExtResource("4_cldr2")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Hand/ShotGun" unique_id=138629071]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Hand/ShotGun" unique_id=50672925]
+stream = ExtResource("12_es1v0")
+volume_db = -5.0
+bus = &"New Bus"
 
-[node name="TextureRect" type="TextureRect" parent="Hand/ShotGun/CanvasLayer" unique_id=480110180]
-visible = false
+[node name="Crosshair" type="CanvasLayer" parent="Hand/ShotGun" unique_id=138629071]
+
+[node name="TextureRect" type="TextureRect" parent="Hand/ShotGun/Crosshair" unique_id=480110180]
 texture_filter = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -551,20 +544,82 @@ grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("14_ykasc")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Hand/ShotGun" unique_id=895831067]
-stream = ExtResource("12_es1v0")
-volume_db = -80.0
-max_db = 1.0
-bus = &"New Bus"
+[node name="ammoUI" type="CanvasLayer" parent="Hand/ShotGun" unique_id=765266597]
+layer = 5
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Hand/ShotGun" unique_id=134911881]
-transform = Transform3D(-0.3480817, -0.002637854, 0.05230838, -0.00854653, 0.34970188, -0.039237082, -0.05167284, -0.04007036, -0.34587324, 0.182, -0.126, -1.208)
-material_override = SubResource("StandardMaterial3D_dpcb8")
-cast_shadow = 0
-mesh = SubResource("PlaneMesh_aeui4")
+[node name="Ammo" type="HBoxContainer" parent="Hand/ShotGun/ammoUI" unique_id=112732933]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -49.0
+offset_right = 157.0
+grow_vertical = 0
+theme_override_constants/separation = -38
+
+[node name="shell" type="TextureRect" parent="Hand/ShotGun/ammoUI/Ammo" unique_id=1020419300]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("14_fkxbl")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="shell2" type="TextureRect" parent="Hand/ShotGun/ammoUI/Ammo" unique_id=2012753880]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("14_fkxbl")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="shell3" type="TextureRect" parent="Hand/ShotGun/ammoUI/Ammo" unique_id=1966564589]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("14_fkxbl")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="shell4" type="TextureRect" parent="Hand/ShotGun/ammoUI/Ammo" unique_id=1855720670]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("14_fkxbl")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="shell5" type="TextureRect" parent="Hand/ShotGun/ammoUI/Ammo" unique_id=1666954760]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("14_fkxbl")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="shell6" type="TextureRect" parent="Hand/ShotGun/ammoUI/Ammo" unique_id=693333373]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("14_fkxbl")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="shell7" type="TextureRect" parent="Hand/ShotGun/ammoUI/Ammo" unique_id=1203719223]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("14_fkxbl")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="no_ammo_label" type="Label" parent="Hand/ShotGun/ammoUI" unique_id=230825695]
+visible = false
+offset_left = 16.88
+offset_top = 444.0
+offset_right = 98.88001
+offset_bottom = 467.0
+theme_override_colors/font_shadow_color = Color(0.7411765, 0.16862746, 0.36078432, 0.13333334)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 16
+text = "no ammo"
+uppercase = true
 
 [node name="shotgun" parent="Hand/ShotGun" unique_id=386872980 instance=ExtResource("3_i6cme")]
-transform = Transform3D(-0.2418816, 0.0933145, 0.96580774, -0.41950598, 0.88747126, -0.19080889, -0.8749329, -0.4513153, -0.17551707, 0.24, -0.205, -0.628)
+transform = Transform3D(0.043677885, 0.21821253, 0.97492254, -0.3405614, 0.9206563, -0.19080886, -0.93920696, -0.3236869, 0.114527136, 0.24, -0.28, -0.628)
 
 [node name="Shotgun" parent="Hand/ShotGun/shotgun" index="0" unique_id=153550908]
 transform = Transform3D(0.04000001, 2.3283064e-10, 0, 0, 0.04000001, 2.4738256e-10, -1.1641532e-10, 2.3283064e-10, 0.04000001, 0, 0, 0)
@@ -604,8 +659,12 @@ omni_attenuation = 0.5
 root_node = NodePath("../shotgun")
 libraries/ = SubResource("AnimationLibrary_00ku8")
 autoplay = &"Idle"
-next/Shoot = &"Idle"
-blend_times = [&"Idle", &"Idle", 0.2, &"Idle", &"Shoot", 0.1]
+
+[node name="AnimationTree" type="AnimationTree" parent="Hand/ShotGun" unique_id=1055653902]
+root_node = NodePath("../shotgun")
+tree_root = SubResource("AnimationNodeBlendTree_aeui4")
+advance_expression_base_node = NodePath("..")
+anim_player = NodePath("../AnimationPlayer")
 
 [node name="Jar" type="Node3D" parent="Hand" unique_id=720132064 node_paths=PackedStringArray("_objective")]
 transform = Transform3D(-8.168722e-09, -1.4992411e-09, 0.19, -0.034298636, 0.18687858, 0, -0.18687858, -0.034298636, -8.305164e-09, -0.439, -1.3212978, -0.838)
@@ -655,8 +714,8 @@ script = ExtResource("2_irtxf")
 randomStrength = 0.35
 
 [node name="CollectionUI" type="CanvasLayer" parent="." unique_id=1758316876]
+visible = false
 script = ExtResource("26_4fqg5")
-objectives_list = Array[ExtResource("27_duqv3")]([ExtResource("28_8pk3i"), ExtResource("29_8pk3i"), ExtResource("30_r8bvb")])
 
 [node name="Objective" type="Control" parent="CollectionUI" unique_id=603312184]
 layout_mode = 3
@@ -693,7 +752,6 @@ theme_override_constants/shadow_offset_y = 1
 theme_override_constants/outline_size = 5
 theme_override_constants/shadow_outline_size = 9
 theme_override_font_sizes/font_size = 33
-text = "Collect WaffleAcer  0/1"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
@@ -764,8 +822,38 @@ autoplay = &"indicator_hovering"
 libraries/ = SubResource("AnimationLibrary_284f2")
 autoplay = &"fade_in"
 
+[node name="MiniObjective" type="CanvasLayer" parent="." unique_id=761536180]
+layer = 2
+script = ExtResource("36_fkxbl")
+
+[node name="UI" type="Control" parent="MiniObjective" unique_id=1119718536]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="MiniObjective/UI" unique_id=507681916]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -640.0
+offset_top = -99.0
+offset_right = -452.00012
+offset_bottom = -34.0
+grow_horizontal = 0
+text = "Test Quest"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MiniObjective/UI" unique_id=475381612]
+libraries/ = SubResource("AnimationLibrary_evuba")
+
 [node name="Transition" type="CanvasLayer" parent="." unique_id=2093987180]
-layer = 3
+layer = 10
 visible = false
 script = ExtResource("36_1dx8r")
 

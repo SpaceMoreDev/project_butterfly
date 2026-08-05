@@ -48,18 +48,25 @@ var active : bool = true:
 		else:
 			visible = false
 			Global._use_gun(true)
+	get:
+		return _active
 
 
 func _ready() -> void:
 	Global.Player_net = self
-	active = _active
+	
+	Global.change_current_mode.connect(
+		func(mode: Global.GAMEMODE):
+			if mode == Global.GAMEMODE.BUTTERFLY_NET:
+				active = true
+			else:
+				active = false
+	)
+	
 	
 	default_net_pos = net.transform
 	base_rotation = net.rotation
 	obj_velocity = net.position
-	
-	base_sensitivity = Global.mouse_sensitivity
-	focused_sensitivity = base_sensitivity/2
 	
 	anim_net.animation_finished.connect(_animation_reset)
 	net_col.body_entered.connect(_body_entered)
@@ -82,10 +89,14 @@ func _animation_reset(anim):
 func _input(event: InputEvent) -> void:
 	if not _active:
 		return
+	if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
+		return
 	
 	if event is InputEventMouseButton:
 		if event.is_pressed() and event.button_index == MouseButton.MOUSE_BUTTON_LEFT and Global.can_move:
 			#Global.can_look = false
+			base_sensitivity = Global.mouse_sensitivity
+			focused_sensitivity = base_sensitivity/2
 			move = true
 		elif event.is_released() and event.button_index == MouseButton.MOUSE_BUTTON_LEFT:
 			forward_rotation = 0

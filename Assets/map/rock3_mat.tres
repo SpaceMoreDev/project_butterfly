@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dc5opw504p1e2"]
+
+[ext_resource type="Texture2D" uid="uid://cw5q6n5yfo0n6" path="res://Assets/map/rock_3_Ucupaint Rock Color.png" id="1_vyxf3"]
+[ext_resource type="Texture2D" uid="uid://c15j3fcuebge0" path="res://Assets/map/rock_3_Ucupaint Rock Normal.png" id="2_yqn4p"]
+
+[resource]
+diffuse_mode = 2
+albedo_texture = ExtResource("1_vyxf3")
+normal_enabled = true
+normal_scale = 16.0
+normal_texture = ExtResource("2_yqn4p")

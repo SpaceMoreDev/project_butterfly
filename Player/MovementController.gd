@@ -1,7 +1,10 @@
 extends CharacterBody3D
 class_name MovementController
 
-@export var canmove = true
+
+
+@export var current_mode : Global.GAMEMODE = Global.GAMEMODE.BUTTERFLY_NET
+@export var canmove : bool = true
 @export var gravity_multiplier := 3.0
 @export var speed := 10
 @export var acceleration := 8
@@ -49,7 +52,10 @@ func _physics_process(delta: float) -> void:
 	
 	if is_on_floor():
 		if input_axis.length_squared() > 0:
-			footsteps.play("Footsteps")
+			if Global.in_cave:
+				footsteps.play("Footsteps_cave")
+			else:
+				footsteps.play("Footsteps")
 		else:
 			footsteps.stop()
 		#if Input.is_action_just_pressed(&"jump"):

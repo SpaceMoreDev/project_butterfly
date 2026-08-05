@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d065g3iwlvy3i"
+path="res://.godot/imported/2 - Dreamy (More Reverb).wav-e2b6ec1fe9e4c8a1dc9a41fa372d39de.sample"
+
+[deps]
+
+source_file="res://Audio/ost/2 - Dreamy (More Reverb).wav"
+dest_files=["res://.godot/imported/2 - Dreamy (More Reverb).wav-e2b6ec1fe9e4c8a1dc9a41fa372d39de.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

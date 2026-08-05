@@ -6,7 +6,7 @@ var _current_dialgoue : JSON
 var _speaker : String = ""
 var _line_index : int = 0
 var _text_speed : float = 0.7
-var _scene_index : int = 0
+@export var _scene_index : int = 0
 
 @export var animation_node : Cutscene1
 @export var _dia_data : DialogueData

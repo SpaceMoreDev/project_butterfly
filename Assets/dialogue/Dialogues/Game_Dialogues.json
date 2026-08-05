@@ -4,11 +4,11 @@
 		"dialogue": [
 			{
 				"speaker": "Man",
-				"line": "This is line 1",
+				"line": "Look at those beauties, soon they'll be hanging in lovely little displays.",
 			},
 			{
 				"speaker": "Man",
-				"line": "This is line 2",
+				"line": "Right on my wall, where they belong."
 			}
 		]
 	},
@@ -17,15 +17,57 @@
 		"dialogue": [
 			{
 				"speaker": "Man",
-				"line": "This is a cabin",
+				"line": "Huh... I missed this last time.",
 			},
 			{
 				"speaker": "Man",
-				"line": "yeep..",
+				"line": "Well isn't this cozy.",
 			},
 			{
 				"speaker": "Man",
-				"line": "*burps*",
+				"line": "Looks kind of... lived in? There's no bed though... strange."
+			}
+		]
+	},
+	{
+		"scene": "blocked tunnel",
+		"dialogue": [
+			{
+				"speaker": "Man",
+				"line": "No caving for me today, thank you."
+			}
+		]
+	},
+	{
+		"scene": "open tunnel",
+		"dialogue": [
+			{
+				"speaker": "Man",
+				"line": "Well isn't that terrific. What the hell moved those rocks?"
+			}
+		]
+	}
+	,
+	{
+		"scene": "no bfs",
+		"dialogue": [
+			{
+				"speaker": "Man",
+				"line": "There's not many butterflies around at this time.."
+			}
+		]
+	}
+	,
+	{
+		"scene": "Big Tree",
+		"dialogue": [
+			{
+				"speaker": "Man",
+				"line": "This.. this is incredible.."
+			},
+			{
+				"speaker": "Man",
+				"line": "What are these butterflies - They glow!"
 			}
 		]
 	}

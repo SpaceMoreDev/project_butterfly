@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://7q30tjw21gft"
+path="res://.godot/imported/Spooky Noise.wav-96950ddd7c62731d1267c4b9a14a7d4b.sample"
+
+[deps]
+
+source_file="res://Audio/Spooky Noise.wav"
+dest_files=["res://.godot/imported/Spooky Noise.wav-96950ddd7c62731d1267c4b9a14a7d4b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

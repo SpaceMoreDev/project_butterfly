@@ -4,6 +4,8 @@ class_name Book
 var current_page : Texture2D
 var curent_index : int = 0
 
+var can_be_trigged : bool = false
+
 var _active = false
 var active : bool:
 	set(val):
@@ -12,9 +14,7 @@ var active : bool:
 		if Global.PlayerDialogue:
 			if Global.PlayerDialogue.active:
 				return
-		
 		if val:
-			Global._use_net(false)
 			if Global.Player:
 				Global.Player.velocity = Vector3.ZERO
 				(Global.Player.camera.cam as Camera3D).v_offset = 0.0
@@ -29,7 +29,6 @@ var active : bool:
 			_anim.stop()
 			get_tree().create_tween().tween_property(self,"position", inactive_transform, 0.1).finished.connect(
 				func() -> void:
-					Global._use_net(true)
 					Global.can_move = true
 			)
 	get:
@@ -48,6 +47,17 @@ var forward : bool = true
 var animation_complete : bool = true
 
 func _ready() -> void:
+	
+	Global.change_current_mode.connect(
+		func(mode: Global.GAMEMODE):
+			print(Global.GAMEMODE.keys()[mode])
+			if mode == Global.GAMEMODE.BUTTERFLY_NET:
+				can_be_trigged = true
+			else:
+				can_be_trigged = false
+	)
+	
+	
 	Global.Player_book = self
 	_refresh_book()
 	
@@ -78,6 +88,9 @@ func _refresh_book():
 			mat_next_page.albedo_texture = all_pages[curent_index+1]
 
 func _input(event: InputEvent) -> void:
+	if not can_be_trigged:
+		return
+	
 	if Input.is_action_just_pressed("Bring_Book"):
 		active = !active
 	

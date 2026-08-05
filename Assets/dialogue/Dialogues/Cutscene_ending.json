@@ -1,0 +1,37 @@
+[
+	{
+		"scene": "Death scene",
+		"next_scene": "res://Scene/main_menu.tscn",
+		"dialogue": [
+			{
+				"speaker": "Man",
+				"line": "Once..",
+				"talking": "1",
+				"animation": "None"
+			},
+			{
+				"speaker": "Man",
+				"line": "Once, I dreamt I was a butterfly.",
+				"talking": "1",
+				"animation": "None"
+			},{
+				"speaker": "Man",
+				"line": ". . .",
+				"talking": "1",
+				"animation": "None"
+			},
+			{
+				"speaker": "Man",
+				"line": "Did I dream that I was a butterfly?",
+				"talking": "2",
+				"animation": "Cough"
+			},
+			{
+				"speaker": "Man",
+				"line": "Or do I now dream that I am a man?",
+				"talking": "0",
+				"animation": "Idle"
+			}
+		]
+	}
+]

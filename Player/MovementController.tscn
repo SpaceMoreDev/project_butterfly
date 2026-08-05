@@ -10,6 +10,14 @@ collision_mask = 3
 floor_block_on_wall = false
 floor_snap_length = 0.5
 script = ExtResource("1_ktghv")
+current_mode = null
+canmove = null
+gravity_multiplier = null
+speed = null
+acceleration = null
+deceleration = null
+air_control = null
+jump_height = null
 
 [node name="Collision" type="CollisionShape3D" parent="." unique_id=1502962929]
 shape = SubResource("CapsuleShape3D_fn1rj")
