@@ -48,13 +48,14 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if Global.PlayerDialogue:
-			if Global.PlayerDialogue.active:
-				return
+		if Global.PlayerDialogue.active:
+			return
 	
 	if not active:
 		return
 	if not Global.can_move:
 		return
+	
 	if Input.is_action_just_pressed("jar"):
 		show = true
 	elif Input.is_action_just_released("jar"):

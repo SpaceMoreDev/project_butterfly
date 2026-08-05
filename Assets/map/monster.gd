@@ -72,7 +72,7 @@ func get_random_pos():
 		active = true
 
 var is_hurt: bool = false
-var health : int  = 6
+var health : int  = 5
 var hurt_effect : float = 0.0
 
 func _stop():
@@ -92,7 +92,7 @@ func _hurt():
 	var clamped_val = clamp(hurt_effect,0.0,0.5)
 	anim["parameters/DeathBlend/blend_amount"] = clamped_val
 	
-	if health < 0:
+	if health <= 0:
 		anim["parameters/Transition/transition_request"] = str(monster_state.find_key(1))
 		_stop()
 		await get_tree().create_timer(10).timeout

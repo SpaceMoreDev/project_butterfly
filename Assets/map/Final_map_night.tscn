@@ -230,7 +230,7 @@ bones/4/rotation = Quaternion(5.268354e-05, 0.00029616896, -0.17519656, 0.984533
 _active = null
 
 [node name="shotgun" parent="Player/Head/Hand/ShotGun" index="3" unique_id=386872980]
-transform = Transform3D(0.043677885, 0.21821249, 0.97492224, -0.3405614, 0.9206562, -0.1908088, -0.9392069, -0.32368684, 0.1145271, 0.24, -0.28, -0.628)
+transform = Transform3D(0.043677885, 0.21821249, 0.9749221, -0.3405614, 0.9206562, -0.19080877, -0.9392069, -0.32368684, 0.114527084, 0.24, -0.28, -0.628)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Player/Head" parent_id_path=PackedInt32Array(1117564067, 315625654) index="3" unique_id=2033271204]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.048, -0.573)

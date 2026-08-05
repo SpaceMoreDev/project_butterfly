@@ -136,15 +136,36 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_fqtvk")
 theme_override_styles/hover = SubResource("StyleBoxFlat_34sut")
 text = "PLAY"
 
+[node name="Button3" type="Button" parent="CanvasLayer" unique_id=1638376184]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -86.0
+offset_top = -68.91
+offset_right = 86.00006
+offset_bottom = -14.910004
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 10
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 39
+theme_override_styles/normal = SubResource("StyleBoxFlat_shpw1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fqtvk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_34sut")
+text = "Continue"
+
 [node name="Button2" type="Button" parent="CanvasLayer" unique_id=896927261]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -185.89499
+offset_left = -182.0
 offset_top = -68.91
-offset_right = -14.893921
+offset_right = -10.998901
 offset_bottom = -14.910004
 grow_horizontal = 0
 grow_vertical = 0

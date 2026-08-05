@@ -15,6 +15,12 @@ extends Node
 
 # Called every physics tick. 'delta' is constant
 func _physics_process(delta: float) -> void:
+	if Global.PlayerDialogue.active:
+		return
+	
+	if not Global.can_move:
+		return
+	
 	if controller.canmove:
 		if can_sprint():
 			controller.speed = sprint_speed
@@ -31,5 +37,11 @@ func _physics_process(delta: float) -> void:
 
 
 func can_sprint() -> bool:
+	if Global.PlayerDialogue.active:
+		return false
+	
+	if not Global.can_move:
+		return false
+	
 	return (controller.is_on_floor() and Input.is_action_pressed(&"sprint") 
 			and controller.input_axis.x >= 0.5)

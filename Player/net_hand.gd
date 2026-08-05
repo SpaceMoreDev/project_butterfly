@@ -64,6 +64,8 @@ func _ready() -> void:
 				active = false
 	)
 	
+	base_sensitivity = Global.mouse_sensitivity
+	focused_sensitivity = base_sensitivity/2
 	
 	default_net_pos = net.transform
 	base_rotation = net.rotation
@@ -71,6 +73,7 @@ func _ready() -> void:
 	
 	anim_net.animation_finished.connect(_animation_reset)
 	net_col.body_entered.connect(_body_entered)
+	
 	
 
 func _body_entered(body):

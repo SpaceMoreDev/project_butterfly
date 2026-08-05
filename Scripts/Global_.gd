@@ -106,6 +106,15 @@ func start_dialogue(index):
 		PlayerDialogue.active = true
 		PlayerDialogue._next_line()
 
+func end_dialogue():
+	await get_tree().physics_frame
+	
+	if Player:
+		if Player.camera:
+			Player.camera.can_look = true
+	can_look = true
+	can_move = true
+
 func _trigger_transition_to_scene(path_to_scene : String, wait_time : float):
 	if transition_screen:
 		transition_screen.active = true

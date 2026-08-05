@@ -71,6 +71,7 @@ func _next_line():
 	
 	if _line_index >=_parsed_dialogue.size():
 		active = false
+		Global.end_dialogue()
 		var nect_scene = _parsed_data[_scene_index].get("next_scene")
 		if nect_scene:
 			visible = false
