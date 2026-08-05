@@ -596,7 +596,7 @@ transform = Transform3D(-0.005059451, 0, 0.99998724, 0, 1, 0, -0.99998724, 0, -0
 transform = Transform3D(-0.64585847, 0, 0.7634572, 0, 1, 0, -0.7634572, 0, -0.64585847, -21.03909, 3.435711, 69.37334)
 
 [node name="cabin" parent="NavigationRegion3D/Trees" unique_id=1539782384 instance=ExtResource("7_2q5s7")]
-transform = Transform3D(-0.98640764, 0, 0.1643168, 0, 1, 0, -0.1643168, 0, -0.98640764, -34.036766, 1.1794116, 17.36693)
+transform = Transform3D(-1.0435605, 0, 0.17383738, 0, 1.0579404, 0, -0.17383738, 0, -1.0435605, -34.036766, 1.1794116, 17.36693)
 
 [node name="Bigtree" parent="NavigationRegion3D/Trees" unique_id=794088716 instance=ExtResource("8_xtmur")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.382583, 1.5969601, 17.77157)
