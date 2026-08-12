@@ -4,8 +4,8 @@ class_name  ShotGun
 @export var _active : bool = false
 
 var shooting : bool = false
-
 var bullets_container : HBoxContainer
+
 @onready var _anim : AnimationTree = $AnimationTree
 @onready var _shot_audio : AudioStreamPlayer3D = $AudioStreamPlayer3D
 @onready var _ui_ammo : Control = $ammoUI/Ammo
@@ -35,11 +35,25 @@ func _fill_bullets():
 	
 	_camera = Global.Player.camera.cam
 
+func add_ammo(num) -> bool :
+	if current_ammo+num >= bullets_array.size():
+		return false
+	
+	if _ui_ammo_label:
+		_ui_ammo_label.visible = false
+	
+	var ct = 0
+	while ct < num:
+		current_ammo += 1
+		bullets_array[current_ammo].visible = true
+		ct+=1
+	return true
+
 func _ready() -> void:
 	bullets_container = $ammoUI/Ammo
 	_anim = $AnimationTree
 	call_deferred("_fill_bullets")
-	
+	Global.shotgun = self
 	Global.change_current_mode.connect(
 		func(mode: Global.GAMEMODE):
 			if mode == Global.GAMEMODE.SHOTGUN:
@@ -84,12 +98,8 @@ func _ready() -> void:
 				var obj :Node3D = result.collider
 					
 				if obj is Monster:
-					print("hit the monster")
+					#print("hit the monster")
 					obj._hurt()
-				else:
-					print("hit something else")
-					
-					
 		)
 
 
@@ -120,6 +130,6 @@ func _input(event: InputEvent) -> void:
 	if current_ammo < 0:
 		return
 	
-	if Input.is_action_just_pressed("Action"):
+	if Input.is_action_just_pressed("Use"):
 		shooting = true
 		

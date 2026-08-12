@@ -3,4 +3,5 @@ extends Interactable
 class_name Collectable
 
 func Interact():
-	print("Collected!")
+	#print("Collected!")
+	pass

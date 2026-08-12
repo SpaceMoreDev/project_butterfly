@@ -11,9 +11,9 @@ func _ready() -> void:
 	Global.updated_score.connect(_play_score)
 	Global.updated_objective.connect(
 		func(scene_id):
-		print(scene_id)
+		#print(scene_id)
 		if sounds_with_objectives.has(scene_id):
-			print("found")
+			#print("found")
 			var stream = sounds_with_objectives[scene_id]
 			audio.stream = stream
 			audio.volume_db = 10.0

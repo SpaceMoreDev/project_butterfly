@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://lyvs8opo0ofg"]
+
+[ext_resource type="Texture2D" uid="uid://djfeylf8lssmw" path="res://Assets/shell_Shell Color.png" id="1_s8bxv"]
+
+[resource]
+shading_mode = 0
+albedo_texture = ExtResource("1_s8bxv")

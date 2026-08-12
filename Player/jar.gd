@@ -38,7 +38,7 @@ func _ready() -> void:
 	show = false
 	Global.change_current_mode.connect(
 		func(mode: Global.GAMEMODE):
-			print(Global.GAMEMODE.keys()[mode])
+			#print(Global.GAMEMODE.keys()[mode])
 			if mode == Global.GAMEMODE.BUTTERFLY_NET:
 				active = true
 			else:
@@ -56,7 +56,7 @@ func _input(event: InputEvent) -> void:
 	if not Global.can_move:
 		return
 	
-	if Input.is_action_just_pressed("jar"):
+	if Input.is_action_just_pressed("Jar"):
 		show = true
-	elif Input.is_action_just_released("jar"):
+	elif Input.is_action_just_released("Jar"):
 		show = false

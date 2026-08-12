@@ -97,7 +97,7 @@ func _hurt():
 		_stop()
 		await get_tree().create_timer(10).timeout
 		Global._trigger_transition_to_scene(path_to_end_2, 3)
-		print("dead")
+		#print("dead")
 
 func _physics_process(delta: float) -> void:
 	if not active:

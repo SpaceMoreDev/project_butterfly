@@ -36,7 +36,7 @@ var _mouse_sensitivity : float = 0.002
 var mouse_sensitivity : float :
 	set(val):
 		_mouse_sensitivity = val
-		print(val)
+		#print(val)
 	get:
 		return _mouse_sensitivity
 	
@@ -46,6 +46,8 @@ var butterflies_height : float = -1.5
 var butterflies_speed : float = 3.0
 var jar_on = false
 var can_look = true
+
+var shotgun : ShotGun
 
 var can_move:bool: 
 	set(val):
@@ -61,6 +63,8 @@ var _jar : JarHand
 var Player_net : NetHand
 var Player_gun : ShotGun
 var Player_book : Book
+
+var is_binding : bool = false
 
 var max_count_of_butterflies : int = 0
 func _ready() -> void:
@@ -105,6 +109,14 @@ func start_dialogue(index):
 		PlayerDialogue._line_index = 0
 		PlayerDialogue.active = true
 		PlayerDialogue._next_line()
+
+func add_ammo(num) -> bool :
+	if shotgun:
+		if shotgun.add_ammo(num):
+			return true
+		else:
+			return false
+	return false
 
 func end_dialogue():
 	await get_tree().physics_frame

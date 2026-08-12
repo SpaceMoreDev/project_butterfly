@@ -45,8 +45,8 @@ func _physics_process(delta: float) -> void:
 			footsteps.stop()
 		return
 	
-	input_axis = Input.get_vector(&"move_back", &"move_forward",
-			&"move_left", &"move_right")
+	input_axis = Input.get_vector(&"move back", &"move forward",
+			&"move left", &"move right")
 	
 	direction_input()
 	

@@ -29,7 +29,7 @@ func _ready():
 	var config = ConfigFile.new()
 	var scene_path = get_tree().current_scene.scene_file_path
 	config.set_value("Progress", "Level_path", scene_path)
-	print(scene_path)
+	#print(scene_path)
 	config.save("user://data.cfg")
 
 func _input(event: InputEvent) -> void:

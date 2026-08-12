@@ -45,7 +45,11 @@ func _switch_texture():
 	var limit_ct = textures.size()-1
 	var rand = randi_range(0,limit_ct)
 	current_mat.albedo_texture = textures[rand]
-	await get_tree().create_timer(wait_time).timeout
+	
+	var rand_wait := RandomNumberGenerator.new()
+	var new_wait = rand_wait.randf_range(60,wait_time)
+	
+	await get_tree().create_timer(new_wait).timeout
 	go_to_random_pos()
 	active = true
 

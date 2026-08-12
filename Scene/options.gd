@@ -28,9 +28,11 @@ func _ready() -> void:
 	
 	close_btn.button_down.connect(
 		func():
+		if Global.is_binding:
+			await get_tree().process_frame
+			return
+		
 		visible = false
-		
-		
 		get_tree().paused = false
 		await get_tree().process_frame
 		Global.can_move = true
@@ -43,6 +45,9 @@ func _input(event: InputEvent) -> void:
 	if Global.PlayerDialogue:
 		if Global.PlayerDialogue.active:
 			return
+	if Global.is_binding:
+		await get_tree().process_frame
+		return
 	
 	if not in_main_menu:
 		if Input.is_action_just_pressed("menu"):

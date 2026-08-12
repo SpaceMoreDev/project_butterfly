@@ -1,6 +1,38 @@
 [gd_scene format=3 uid="uid://c3600mtwv75et"]
 
 [ext_resource type="Script" uid="uid://dpqw166klblpo" path="res://Scene/options.gd" id="1_ch5ns"]
+[ext_resource type="PackedScene" uid="uid://cr8aiegfxo8qx" path="res://Scene/option_keybind.tscn" id="2_5r7rd"]
+[ext_resource type="Script" uid="uid://de88kfuvr3e78" path="res://Scene/option_keybind.gd" id="3_btsos"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_x6wet"]
+action = &"Use"
+
+[sub_resource type="InputEventAction" id="InputEventAction_btsos"]
+action = &"Jar"
+
+[sub_resource type="InputEventAction" id="InputEventAction_5epve"]
+action = &"sprint"
+
+[sub_resource type="InputEventAction" id="InputEventAction_nvoj8"]
+action = &"Journal"
+
+[sub_resource type="InputEventAction" id="InputEventAction_valha"]
+action = &"Journal Next Page"
+
+[sub_resource type="InputEventAction" id="InputEventAction_igds4"]
+action = &"Journal Previous Page"
+
+[sub_resource type="InputEventAction" id="InputEventAction_o0720"]
+action = &"move left"
+
+[sub_resource type="InputEventAction" id="InputEventAction_0vq2k"]
+action = &"move right"
+
+[sub_resource type="InputEventAction" id="InputEventAction_rmrif"]
+action = &"move forward"
+
+[sub_resource type="InputEventAction" id="InputEventAction_r4fjf"]
+action = &"move back"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_shpw1"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -23,9 +55,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -220.0
-offset_top = -130.0
+offset_top = -156.0
 offset_right = 220.0
-offset_bottom = 130.0
+offset_bottom = 156.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
@@ -79,6 +111,69 @@ text = "Fullscreen: "
 [node name="Check" type="CheckBox" parent="Menu/VBoxContainer/HBoxContainer2" unique_id=797633452]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Menu/VBoxContainer" unique_id=504350786]
+layout_mode = 2
+text = "Key bindings:"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Menu/VBoxContainer" unique_id=749013045]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/VBoxContainer/ScrollContainer" unique_id=1235619113]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="VBoxContainer" parent="Menu/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=631916825 instance=ExtResource("2_5r7rd")]
+layout_mode = 2
+script = ExtResource("3_btsos")
+action = SubResource("InputEventAction_x6wet")
+
+[node name="VBoxContainer2" parent="Menu/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1686505946 instance=ExtResource("2_5r7rd")]
+layout_mode = 2
+script = ExtResource("3_btsos")
+action = SubResource("InputEventAction_btsos")
+
+[node name="VBoxContainer3" parent="Menu/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1456511762 instance=ExtResource("2_5r7rd")]
+layout_mode = 2
+script = ExtResource("3_btsos")
+action = SubResource("InputEventAction_5epve")
+
+[node name="VBoxContainer4" parent="Menu/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1466848154 instance=ExtResource("2_5r7rd")]
+layout_mode = 2
+script = ExtResource("3_btsos")
+action = SubResource("InputEventAction_nvoj8")
+
+[node name="VBoxContainer5" parent="Menu/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1569813644 instance=ExtResource("2_5r7rd")]
+layout_mode = 2
+script = ExtResource("3_btsos")
+action = SubResource("InputEventAction_valha")
+
+[node name="VBoxContainer6" parent="Menu/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=968366371 instance=ExtResource("2_5r7rd")]
+layout_mode = 2
+script = ExtResource("3_btsos")
+action = SubResource("InputEventAction_igds4")
+
+[node name="VBoxContainer7" parent="Menu/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1032004057 instance=ExtResource("2_5r7rd")]
+layout_mode = 2
+script = ExtResource("3_btsos")
+action = SubResource("InputEventAction_o0720")
+
+[node name="VBoxContainer8" parent="Menu/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1450802663 instance=ExtResource("2_5r7rd")]
+layout_mode = 2
+script = ExtResource("3_btsos")
+action = SubResource("InputEventAction_0vq2k")
+
+[node name="VBoxContainer9" parent="Menu/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1471418526 instance=ExtResource("2_5r7rd")]
+layout_mode = 2
+script = ExtResource("3_btsos")
+action = SubResource("InputEventAction_rmrif")
+
+[node name="VBoxContainer10" parent="Menu/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=722643589 instance=ExtResource("2_5r7rd")]
+layout_mode = 2
+script = ExtResource("3_btsos")
+action = SubResource("InputEventAction_r4fjf")
 
 [node name="Button" type="Button" parent="Menu" unique_id=1599504676]
 layout_mode = 1

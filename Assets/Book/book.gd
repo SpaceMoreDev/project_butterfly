@@ -51,7 +51,7 @@ func _ready() -> void:
 	
 	Global.change_current_mode.connect(
 		func(mode: Global.GAMEMODE):
-			print(Global.GAMEMODE.keys()[mode])
+			#print(Global.GAMEMODE.keys()[mode])
 			if mode == Global.GAMEMODE.BUTTERFLY_NET:
 				can_be_trigged = true
 			else:
@@ -99,7 +99,7 @@ func _input(event: InputEvent) -> void:
 	if Global.jar_on:
 		return
 	
-	if Input.is_action_just_pressed("Bring_Book"):
+	if Input.is_action_just_pressed("Journal"):
 		active = !active
 		if active:
 			instruct_ui.visible = true
@@ -109,7 +109,7 @@ func _input(event: InputEvent) -> void:
 	if not animation_complete:
 		return
 	
-	if Input.is_action_just_pressed("flip_test"):
+	if Input.is_action_just_pressed("Journal Next Page"):
 		if curent_index+1 > all_pages.size()-1:
 			return
 		
@@ -121,7 +121,7 @@ func _input(event: InputEvent) -> void:
 			
 		_anim.play("PageTurn")
 	
-	if Input.is_action_just_pressed("flip_back"):
+	if Input.is_action_just_pressed("Journal Previous Page"):
 		if curent_index-1 < 0:
 			return
 		

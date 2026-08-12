@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cr8aiegfxo8qx"]
+
+[node name="HBoxContainer" type="HBoxContainer" unique_id=1686505946]
+theme_override_constants/separation = 52
+
+[node name="Label" type="Label" parent="." unique_id=1352115460]
+layout_mode = 2
+text = "action:"
+vertical_alignment = 1
+uppercase = true
+
+[node name="Button" type="Button" parent="." unique_id=651818508]
+layout_mode = 2
+text = "Buttons"
